@@ -56,14 +56,6 @@ const HistoryScreen = () => {
 
 export default HistoryScreen;
 
-DetailTableHistory.propTypes = {
-
-}
-
-DetailTableHistory.defaultProps = {
-
-}
-
 
 const styles = StyleSheet.create({
   "detailTableHistory": {
