@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from "prop-types";
-import {StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight} from 'react-native';
+import {StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableOpacity} from 'react-native';
 import {Image as ReactImage} from 'react-native';
 import Svg, {Defs, Pattern} from 'react-native-svg';
 import {Path as SvgPath} from 'react-native-svg';
@@ -11,7 +11,6 @@ const HistoryTab = () => {
 
      const onPressDetailHistory = () => {
     navigation.navigate("DetailHistory")
-
   }
     return (
     <ScrollView style={styles.history}>
@@ -26,26 +25,17 @@ const HistoryTab = () => {
         </TouchableOpacity>
         <Text style={styles.history_lchS}>Lịch sử</Text>
         <Text style={styles.history_sBan6}>Số bàn: 6</Text>
-        <Svg style={styles.history_ellipse1} preserveAspectRatio="none" viewBox="0 0 44 44" fill="rgba(255, 255, 255, 0)"><Defs><Pattern id="img-ellipse1" patternContentUnits="userSpaceOnUse" width="100%" height="100%"><SvgImage xlinkHref={require('./assets/ellipse1.png')} x="0" y="0" width="44.00px" height="44.00px" /></Pattern></Defs><SvgPath d="M 22 0 C 34.15026473999023 0 44 9.849736213684082 44 22 C 44 34.15026473999023 34.15026473999023 44 22 44 C 9.849736213684082 44 0 34.15026473999023 0 22 C 0 9.849736213684082 9.849736213684082 0 22 0 Z" fill="url(#img-ellipse1)" /></Svg>
+        <Svg style={styles.history_ellipse1} preserveAspectRatio="none" viewBox="0 0 44 44" fill="rgba(255, 255, 255, 0)"><Defs><Pattern id="img-ellipse1" patternContentUnits="userSpaceOnUse" width="100%" height="100%"><SvgImage xlinkHref={require('../assets/ellipse1.png')} x="0" y="0" width="44.00px" height="44.00px" /></Pattern></Defs><SvgPath d="M 22 0 C 34.15026473999023 0 44 9.849736213684082 44 22 C 44 34.15026473999023 34.15026473999023 44 22 44 C 9.849736213684082 44 0 34.15026473999023 0 22 C 0 9.849736213684082 9.849736213684082 0 22 0 Z" fill="url(#img-ellipse1)" /></Svg>
         <View style={styles.history_group143}>
             <View style={styles.history_group143_group142}>
-                <ReactImage source={require('./assets/logoPng.png')} style={styles.history_group143_group142_logoPng} />
+                <ReactImage source={require('../assets/logoPng.png')} style={styles.history_group143_group142_logoPng} />
             </View>
-            <ReactImage dsource={require('./assets/asset1.png')} style={styles.history_group143_asset1} />
+            <ReactImage dsource={require('../assets/asset1.png')} style={styles.history_group143_asset1} />
         </View>
     </ScrollView>
     );
 }
-export default HistoryScreen;
-
-History.propTypes = {
-
-}
-
-History.defaultProps = {
-
-}
-
+export default HistoryTab;
 
 const styles = StyleSheet.create({
   "history": {

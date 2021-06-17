@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
-import { StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableOpacity } from 'react-native';
 import { Image as ReactImage } from 'react-native';
 import Svg, { Defs, Pattern } from 'react-native-svg';
 import { Path as SvgPath } from 'react-native-svg';
@@ -8,7 +8,7 @@ import { Text as SvgText } from 'react-native-svg';
 import { Image as SvgImage } from 'react-native-svg';
 import { RotationGestureHandler } from 'react-native-gesture-handler';
 
-const HistoryScreen = () => {
+const DetailHistory = () => {
 
   const onPressBack = () => {
     navigation.goBack();
@@ -18,10 +18,7 @@ const HistoryScreen = () => {
     <ScrollView style={styles.detailTableHistory}>
       <View style={styles.detailTableHistory_header}>
         <View style={styles.detailTableHistory_header_bg15feb05f}></View>
-
-        <TouchableOpacity onPress={onPressBack}>
           <ReactImage source={require('./assets/btnBack.png')} style={styles.detailTableHistory_header_btnBack} />
-        </TouchableOpacity>
         <Text style={styles.detailTableHistory_header_title96a58c0f}>LỊCH SỬ ĐẶT BÀN</Text>
       </View>
       <View style={styles.detailTableHistory_tableName}>
@@ -61,7 +58,7 @@ const HistoryScreen = () => {
   );
 }
 
-export default HistoryScreen;
+export default DetailHistory;
 
 
 const styles = StyleSheet.create({
