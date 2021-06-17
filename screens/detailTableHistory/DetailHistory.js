@@ -1,57 +1,64 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from "prop-types";
-import {StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight} from 'react-native';
-import {Image as ReactImage} from 'react-native';
-import Svg, {Defs, Pattern} from 'react-native-svg';
-import {Path as SvgPath} from 'react-native-svg';
-import {Text as SvgText} from 'react-native-svg';
-import {Image as SvgImage} from 'react-native-svg';
+import { StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight } from 'react-native';
+import { Image as ReactImage } from 'react-native';
+import Svg, { Defs, Pattern } from 'react-native-svg';
+import { Path as SvgPath } from 'react-native-svg';
+import { Text as SvgText } from 'react-native-svg';
+import { Image as SvgImage } from 'react-native-svg';
 import { RotationGestureHandler } from 'react-native-gesture-handler';
 
 const HistoryScreen = () => {
-  
-    return (
+
+  const onPressBack = () => {
+    navigation.goBack();
+  }
+
+  return (
     <ScrollView style={styles.detailTableHistory}>
-        <View style={styles.detailTableHistory_header}>
-            <View style={styles.detailTableHistory_header_bg15feb05f}></View>
-            <ReactImage source={require('./assets/btnBack.png')} style={styles.detailTableHistory_header_btnBack} />
-            <Text style={styles.detailTableHistory_header_title96a58c0f}>LỊCH SỬ ĐẶT BÀN</Text>
+      <View style={styles.detailTableHistory_header}>
+        <View style={styles.detailTableHistory_header_bg15feb05f}></View>
+
+        <TouchableOpacity onPress={onPressBack}>
+          <ReactImage source={require('./assets/btnBack.png')} style={styles.detailTableHistory_header_btnBack} />
+        </TouchableOpacity>
+        <Text style={styles.detailTableHistory_header_title96a58c0f}>LỊCH SỬ ĐẶT BÀN</Text>
+      </View>
+      <View style={styles.detailTableHistory_tableName}>
+        <View style={styles.detailTableHistory_tableName_bgc5fba65b}></View>
+        <Text style={styles.detailTableHistory_tableName_title}>Bàn số 1</Text>
+      </View>
+      <View style={styles.detailTableHistory_filter}>
+        <Text style={styles.detailTableHistory_filter_label}>Thời gian:</Text>
+        <View style={styles.detailTableHistory_filter_from}>
+          <Svg style={styles.detailTableHistory_filter_from_path9} preserveAspectRatio="none" viewBox="-1.5 -1.5 123 3" fill="transparent"><SvgPath d="M 0 0 L 120 0" /></Svg>
+          <Text style={styles.detailTableHistory_filter_from_x20122021}>20/12/2021</Text>
+          <Svg style={styles.detailTableHistory_filter_from_polygon108eed634} preserveAspectRatio="none" viewBox="0 0 8 3" fill="rgba(84, 71, 65, 1)"><SvgPath d="M 3.999999523162842 0 L 7.999999523162842 3 L 0 3 Z" /></Svg>
         </View>
-        <View style={styles.detailTableHistory_tableName}>
-            <View style={styles.detailTableHistory_tableName_bgc5fba65b}></View>
-            <Text style={styles.detailTableHistory_tableName_title}>Bàn số 1</Text>
+        <ReactImage source={require('./assets/arrow.png')} style={styles.detailTableHistory_filter_arrow} />
+        <View style={styles.detailTableHistory_filter_to}>
+          <Svg style={styles.detailTableHistory_filter_to_line2} preserveAspectRatio="none" viewBox="0 -1 120 2" fill="transparent"><SvgPath d="M 0 0 L 120 0" /></Svg>
+          <Text style={styles.detailTableHistory_filter_to_x21122021}>21/12/2021</Text>
+          <Svg style={styles.detailTableHistory_filter_to_polygon1} preserveAspectRatio="none" viewBox="0 0 8 3" fill="rgba(84, 71, 65, 1)"><SvgPath d="M 3.999999523162842 0 L 7.999999523162842 3 L 0 3 Z" /></Svg>
         </View>
-        <View style={styles.detailTableHistory_filter}>
-            <Text style={styles.detailTableHistory_filter_label}>Thời gian:</Text>
-            <View style={styles.detailTableHistory_filter_from}>
-                <Svg style={styles.detailTableHistory_filter_from_path9} preserveAspectRatio="none" viewBox="-1.5 -1.5 123 3" fill="transparent"><SvgPath d="M 0 0 L 120 0"  /></Svg>
-                <Text style={styles.detailTableHistory_filter_from_x20122021}>20/12/2021</Text>
-                <Svg style={styles.detailTableHistory_filter_from_polygon108eed634} preserveAspectRatio="none" viewBox="0 0 8 3" fill="rgba(84, 71, 65, 1)"><SvgPath d="M 3.999999523162842 0 L 7.999999523162842 3 L 0 3 Z"  /></Svg>
-            </View>
-            <ReactImage source={require('./assets/arrow.png')} style={styles.detailTableHistory_filter_arrow} />
-            <View style={styles.detailTableHistory_filter_to}>
-                <Svg style={styles.detailTableHistory_filter_to_line2} preserveAspectRatio="none" viewBox="0 -1 120 2" fill="transparent"><SvgPath d="M 0 0 L 120 0"  /></Svg>
-                <Text style={styles.detailTableHistory_filter_to_x21122021}>21/12/2021</Text>
-                <Svg style={styles.detailTableHistory_filter_to_polygon1} preserveAspectRatio="none" viewBox="0 0 8 3" fill="rgba(84, 71, 65, 1)"><SvgPath d="M 3.999999523162842 0 L 7.999999523162842 3 L 0 3 Z"  /></Svg>
-            </View>
+      </View>
+      <View style={styles.detailTableHistory_list}>
+        <View style={styles.detailTableHistory_list_item}>
+          <Svg style={styles.detailTableHistory_list_item_space} preserveAspectRatio="none" viewBox="0 -0.5 349.593017578125 1" fill="transparent"><SvgPath d="M 0 0 L 349.593017578125 0" /></Svg>
+          <View style={styles.detailTableHistory_list_item_bg}></View>
+          <View style={styles.detailTableHistory_list_item_voucher}>
+            <Text style={styles.detailTableHistory_list_item_voucher_value46711b42}>Đã sử dụng voucher 5k</Text>
+            <ReactImage source={require('./assets/icon7fc8e711.png')} style={styles.detailTableHistory_list_item_voucher_icon7fc8e711} />
+          </View>
+          <View style={styles.detailTableHistory_list_item_date}>
+            <Text style={styles.detailTableHistory_list_item_date_value}>20/12/2021 08:30 → 09:30</Text>
+            <ReactImage source={require('./assets/icon.png')} style={styles.detailTableHistory_list_item_date_icon} />
+          </View>
+          <ReactImage source={require('./assets/checkIcon.png')} style={styles.detailTableHistory_list_item_checkIcon} />
         </View>
-        <View style={styles.detailTableHistory_list}>
-            <View style={styles.detailTableHistory_list_item}>
-                <Svg style={styles.detailTableHistory_list_item_space} preserveAspectRatio="none" viewBox="0 -0.5 349.593017578125 1" fill="transparent"><SvgPath d="M 0 0 L 349.593017578125 0"  /></Svg>
-                <View style={styles.detailTableHistory_list_item_bg}></View>
-                <View style={styles.detailTableHistory_list_item_voucher}>
-                    <Text style={styles.detailTableHistory_list_item_voucher_value46711b42}>Đã sử dụng voucher 5k</Text>
-                    <ReactImage source={require('./assets/icon7fc8e711.png')} style={styles.detailTableHistory_list_item_voucher_icon7fc8e711} />
-                </View>
-                <View style={styles.detailTableHistory_list_item_date}>
-                    <Text style={styles.detailTableHistory_list_item_date_value}>20/12/2021 08:30 → 09:30</Text>
-                    <ReactImage source={require('./assets/icon.png')} style={styles.detailTableHistory_list_item_date_icon} />
-                </View>
-                <ReactImage source={require('./assets/checkIcon.png')} style={styles.detailTableHistory_list_item_checkIcon} />
-            </View>
-        </View>
+      </View>
     </ScrollView>
-    );
+  );
 }
 
 export default HistoryScreen;
@@ -239,7 +246,7 @@ const styles = StyleSheet.create({
   },
   "detailTableHistory_filter_from_polygon108eed634": {
     "opacity": 1,
-    "transform":[{ rotate: '180deg' }],
+    "transform": [{ rotate: '180deg' }],
     "position": "absolute",
     "width": 8,
     "height": 3,
@@ -249,7 +256,7 @@ const styles = StyleSheet.create({
   "detailTableHistory_filter_arrow": {
     "opacity": 1,
     "position": "absolute",
-    "transform":[{ rotate: '180deg' }],
+    "transform": [{ rotate: '180deg' }],
     "width": 20,
     "height": 20,
     "left": 206.25,
@@ -290,7 +297,7 @@ const styles = StyleSheet.create({
   "detailTableHistory_filter_to_polygon1": {
     "opacity": 1,
     "position": "absolute",
-    "transform":[{ rotate: '180deg' }],
+    "transform": [{ rotate: '180deg' }],
     "width": 8,
     "height": 3,
     "left": 107.5,
