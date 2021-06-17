@@ -7,7 +7,7 @@ import {Path as SvgPath} from 'react-native-svg';
 import {Text as SvgText} from 'react-native-svg';
 import {Image as SvgImage} from 'react-native-svg';
 
-const HistoryScreen = () => {
+const HistoryTab = () => {
 
      const onPressDetailHistory = () => {
     navigation.navigate("DetailHistory")

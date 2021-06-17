@@ -12,6 +12,7 @@ import RegistryScreen from './screens/registry/RegisterScreen';
 import LoginScreen from './screens/login/LoginScreen';
 import HomeScreen from './screens/home/HomeScreen';
 
+
 const Stack = createStackNavigator();
 
 export default function App() {
