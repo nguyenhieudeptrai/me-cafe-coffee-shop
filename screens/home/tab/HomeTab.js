@@ -66,15 +66,6 @@ const HomeTab = () => {
 }
 export default HomeTab;
 
-HomeTab.propTypes = {
-
-}
-
-HomeTab.defaultProps = {
-
-}
-
-
 const styles = StyleSheet.create({
   "home": {
     "backgroundColor": "rgba(249, 249, 249, 1)",

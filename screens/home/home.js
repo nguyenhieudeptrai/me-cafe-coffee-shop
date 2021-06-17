@@ -7,7 +7,7 @@ import { Path as SvgPath } from 'react-native-svg';
 import { Text as SvgText } from 'react-native-svg';
 import { Image as SvgImage } from 'react-native-svg';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeTab from "./tabs/HomeTab";
+import HomeTab from "./tab/HomeTab";
 
 const Tab = createBottomTabNavigator();
 
@@ -67,19 +67,19 @@ const HomeScreen = () => {
           options={{
             img: require('../../assets/tabShop.png')
           }}
-          component={HomeTab} />
+          children={(props) => <></>} />
         <Tab.Screen
           name="Vourcher"
           options={{
             img: require('../../assets/tabVoucher.png')
           }}
-          component={BookingTab} />
+          children={(props) => <></>} />
         <Tab.Screen
           name="Lịch sử"
           options={{
             img: require('../../assets/tabHistory.png')
           }}
-          component={VoucherScreen} />
+          children={(props) => <></>} />
         <Tab.Screen
           name="Tài khoản"
           options={{
