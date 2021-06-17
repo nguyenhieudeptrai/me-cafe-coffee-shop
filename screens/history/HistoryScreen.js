@@ -7,9 +7,7 @@ import {Path as SvgPath} from 'react-native-svg';
 import {Text as SvgText} from 'react-native-svg';
 import {Image as SvgImage} from 'react-native-svg';
 
-export default class History extends Component {
-  render() {
-    
+const HistoryScreen = () => {
     return (
     <ScrollView style={styles.history}>
         <View style={styles.history_rectangle15}></View>
@@ -32,8 +30,8 @@ export default class History extends Component {
         </View>
     </ScrollView>
     );
-  }
 }
+export default HistoryScreen;
 
 History.propTypes = {
 

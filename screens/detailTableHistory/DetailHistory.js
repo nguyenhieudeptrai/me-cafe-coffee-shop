@@ -8,10 +8,8 @@ import {Text as SvgText} from 'react-native-svg';
 import {Image as SvgImage} from 'react-native-svg';
 import { RotationGestureHandler } from 'react-native-gesture-handler';
 
-export default class DetailTableHistory extends Component {
-
-  render() {
-    
+const HistoryScreen = () => {
+  
     return (
     <ScrollView style={styles.detailTableHistory}>
         <View style={styles.detailTableHistory_header}>
@@ -54,8 +52,9 @@ export default class DetailTableHistory extends Component {
         </View>
     </ScrollView>
     );
-  }
 }
+
+export default HistoryScreen;
 
 DetailTableHistory.propTypes = {
 
