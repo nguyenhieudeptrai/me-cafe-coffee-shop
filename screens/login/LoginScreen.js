@@ -13,7 +13,7 @@ const LoginScreen = ({navigation}) => {
     navigation.navigate("Home");
   }
   const onPressRegister=()=>{
-    navigation.navigate("Register");
+    navigation.navigate("Registry");
   }
 
 
