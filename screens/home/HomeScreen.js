@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
-import { StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableOpacity } from 'react-native';
 import { Image as ReactImage } from 'react-native';
 import Svg, { Defs, Pattern } from 'react-native-svg';
 import { Path as SvgPath } from 'react-native-svg';
@@ -59,31 +59,31 @@ const HomeScreen = () => {
         <Tab.Screen
           name="Trang chủ"
           options={{
-            img: require('../../assets/tabHome.png')
+            img: require('./assets/tabHome.png')
           }}
           component={HomeTab} />
         <Tab.Screen
           name="Thông tin quán"
           options={{
-            img: require('../../assets/tabShop.png')
+            img: require('./assets/tabShop.png')
           }}
           children={(props) => <></>} />
         <Tab.Screen
           name="Vourcher"
           options={{
-            img: require('../../assets/tabVoucher.png')
+            img: require('./assets/tabVoucher.png')
           }}
           children={(props) => <></>} />
         <Tab.Screen
           name="Lịch sử"
           options={{
-            img: require('../../assets/tabHistory.png')
+            img: require('./assets/tabHistory.png')
           }}
           children={(props) => <></>} />
         <Tab.Screen
           name="Tài khoản"
           options={{
-            img: require('../../assets/tabAccount.png')
+            img: require('./assets/tabAccount.png')
           }}
           children={(props) => <></>} />
       </Tab.Navigator>
