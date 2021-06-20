@@ -8,7 +8,7 @@ import { Text as SvgText } from 'react-native-svg';
 import { Image as SvgImage } from 'react-native-svg';
 import { RotationGestureHandler } from 'react-native-gesture-handler';
 
-const DetailHistory = () => {
+const DetailHistory = ({navigation}) => {
 
   const onPressBack = () => {
     navigation.goBack();
@@ -18,7 +18,7 @@ const DetailHistory = () => {
     <ScrollView style={styles.detailTableHistory}>
       <View style={styles.detailTableHistory_header}>
         <View style={styles.detailTableHistory_header_bg15feb05f}></View>
-          <ReactImage source={require('./assets/btnBack.png')} style={styles.detailTableHistory_header_btnBack} />
+          <TouchableOpacity onPress={onPressBack}><ReactImage source={require('./assets/btnBack.png')} style={styles.detailTableHistory_header_btnBack} /></TouchableOpacity>
         <Text style={styles.detailTableHistory_header_title96a58c0f}>LỊCH SỬ ĐẶT BÀN</Text>
       </View>
       <View style={styles.detailTableHistory_tableName}>
