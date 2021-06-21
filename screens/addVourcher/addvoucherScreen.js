@@ -1,19 +1,23 @@
 import React, {Component} from 'react';
 import PropTypes from "prop-types";
-import {StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight} from 'react-native';
+import {StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableOpacity} from 'react-native';
 import {Image as ReactImage} from 'react-native';
 
 
-export default class addvoucherScreen extends Component {
+const addvoucherScreen =({navigation}) => {
+  const onPressBack = () => {
+    navigation.goBack();
+  } 
+  const onPressSave = () => {
+    navigation.navigate("./home/tab/VoucherTab");
+  }
 
-render() {
-    
     return (
     <ScrollView dstyle={styles.addvourcher}>
-        <View style={styles.addvourcher_btnHuy}>
+        <TouchableOpacity onPress={onPressSave}  style={styles.addvourcher_btnHuy}>
             <View style={styles.addvourcher_btnHuy_rectangle1505}></View>
             <Text  style={styles.addvourcher_btnHuy_luLi}>LƯU LẠI</Text>
-        </View>
+        </TouchableOpacity>
         <View  style={styles.addvourcher_form}>
             <View  style={styles.addvourcher_form_bgdde23b2a}></View>
             <View  style={styles.addvourcher_form_titlea5a00643}>
@@ -25,15 +29,16 @@ render() {
                 <Text  style={styles.addvourcher_form_enddate_label}>Ngày hết hạn</Text>
             </View>
         </View>
-        <View  style={styles.addvourcher_header}>
+        <TouchableOpacity onPress={onPressBack}  style={styles.addvourcher_header}>
             <View style={styles.addvourcher_header_bg}></View>
             <ReactImage  source={require('./assets/back.png')} style={styles.addvourcher_header_back} />
             <Text  style={styles.addvourcher_header_title}>THÊM VOUCHER</Text>
-        </View>
+        </TouchableOpacity>
     </ScrollView>
     );
-  }
+
 }
+export default addvoucherScreen;
 
 addvoucherScreen.propTypes = {
 
@@ -114,13 +119,7 @@ const styles = StyleSheet.create({
     "borderTopRightRadius": 13,
     "borderBottomLeftRadius": 13,
     "borderBottomRightRadius": 13,
-    "shadowColor": "rgb(0,  0,  0)",
-    "shadowOpacity": 0.16,
-    "shadowOffset": {
-      "width": 0,
-      "height": 3
-    },
-    "shadowRadius": 5,
+
     "width": 363,
     "height": 600,
     "left": 0,
@@ -138,7 +137,7 @@ const styles = StyleSheet.create({
   "addvourcher_form_titlea5a00643_input60ff3925": {
     "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(243, 243, 243, 1)",
+    "backgroundColor": "rgba(217, 217, 217, 1)",
     "borderTopLeftRadius": 7,
     "borderTopRightRadius": 7,
     "borderBottomLeftRadius": 7,
@@ -175,7 +174,7 @@ const styles = StyleSheet.create({
   "addvourcher_form_enddate_input": {
     "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(243, 243, 243, 1)",
+    "backgroundColor": "rgba(217, 217, 217, 1)",
     "borderTopLeftRadius": 7,
     "borderTopRightRadius": 7,
     "borderBottomLeftRadius": 7,
@@ -246,5 +245,5 @@ const styles = StyleSheet.create({
     "height": 27,
     "left": 113,
     "top": 47
-  }
+  },
 });

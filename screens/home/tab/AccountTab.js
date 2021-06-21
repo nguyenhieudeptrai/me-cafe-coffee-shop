@@ -7,7 +7,7 @@ import {Path as SvgPath} from 'react-native-svg';
 import {Text as SvgText} from 'react-native-svg';
 import {Image as SvgImage} from 'react-native-svg';
 
-const Account = () => {
+const AccountTab = () => {
 
     return (
     <ScrollView style={styles.account}>
@@ -50,7 +50,7 @@ const Account = () => {
         <View style={styles.account_info}>
             <View style={styles.account_info_bg}></View>
             <View style={styles.account_info_left}>
-                <Svg style={styles.account_info_left_avatar} preserveAspectRatio="none" viewBox="0 0 60 60" fill="rgba(255, 255, 255, 0)"><Defs><Pattern id="img-avatar" patternContentUnits="userSpaceOnUse" width="100%" height="100%"><SvgImage xlinkHref={require('./assets/avatar.png')} x="0" y="0" width="60.00px" height="60.00px" /></Pattern></Defs><SvgPath d="M 30 0 C 46.56854248046875 0 60 13.43145942687988 60 30 C 60 46.56854248046875 46.56854248046875 60 30 60 C 13.43145942687988 60 0 46.56854248046875 0 30 C 0 13.43145942687988 13.43145942687988 0 30 0 Z" fill="url(#img-avatar)" /></Svg>
+                <Svg style={styles.account_info_left_avatar} preserveAspectRatio="none" viewBox="0 0 60 60" fill="rgba(255, 255, 255, 0)"><Defs><Pattern id="img-avatar" patternContentUnits="userSpaceOnUse" width="100%" height="100%"><SvgImage xlinkHref={require('../assets/avatar.png')} x="0" y="0" width="60.00px" height="60.00px" /></Pattern></Defs><SvgPath d="M 30 0 C 46.56854248046875 0 60 13.43145942687988 60 30 C 60 46.56854248046875 46.56854248046875 60 30 60 C 13.43145942687988 60 0 46.56854248046875 0 30 C 0 13.43145942687988 13.43145942687988 0 30 0 Z" fill="url(#img-avatar)" /></Svg>
                 <Text style={styles.account_info_left_job}>Quản lý</Text>
                 <Text style={styles.account_info_left_name}>Nguyễn Minh Anh</Text>
             </View>
@@ -64,12 +64,12 @@ const Account = () => {
     );
 }
 
-export default Account;
-Account.propTypes = {
+export default AccountTab;
+AccountTab.propTypes = {
 
 }
 
-Account.defaultProps = {
+AccountTab.defaultProps = {
 
 }
 
@@ -147,8 +147,8 @@ const styles = StyleSheet.create({
     "backgroundColor": "transparent",
     "width": 351,
     "height": 604,
-    "left": 21,
-    "top": 179
+    "top": 179,
+    "alignSelf":'center'
   },
   "account_form_bgfec2c280": {
     "opacity": 1,
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
   "account_form_name11525854_input316c160e": {
     "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(243, 243, 243, 1)",
+    "backgroundColor": "rgba(217, 217, 217, 1)",
     "borderTopLeftRadius": 7,
     "borderTopRightRadius": 7,
     "borderBottomLeftRadius": 7,
@@ -234,7 +234,7 @@ const styles = StyleSheet.create({
   "account_form_addressf9fa9f46_input42df5c7e": {
     "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(243, 243, 243, 1)",
+    "backgroundColor": "rgba(217, 217, 217, 1)",
     "borderTopLeftRadius": 7,
     "borderTopRightRadius": 7,
     "borderBottomLeftRadius": 7,
@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 46,
+    "width": 60,
     "height": 18,
     "left": 3,
     "top": 0
@@ -286,7 +286,7 @@ const styles = StyleSheet.create({
   "account_form_phonedbf082b5_inputaba49172": {
     "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(243, 243, 243, 1)",
+    "backgroundColor": "rgba(217, 217, 217, 1)",
     "borderTopLeftRadius": 7,
     "borderTopRightRadius": 7,
     "borderBottomLeftRadius": 7,
@@ -306,7 +306,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 89,
+    "width": 100,
     "height": 18,
     "left": 3,
     "top": 0
@@ -338,7 +338,7 @@ const styles = StyleSheet.create({
   "account_form_mail_inputa77003a1": {
     "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(243, 243, 243, 1)",
+    "backgroundColor": "rgba(217, 217, 217, 1)",
     "borderTopLeftRadius": 7,
     "borderTopRightRadius": 7,
     "borderBottomLeftRadius": 7,
@@ -358,7 +358,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 37,
+    "width": 60,
     "height": 18,
     "left": 4,
     "top": 0
@@ -391,7 +391,7 @@ const styles = StyleSheet.create({
   "account_form_job7c17c74a_input": {
     "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(243, 243, 243, 1)",
+    "backgroundColor": "rgba(217, 217, 217, 1)",
     "borderTopLeftRadius": 7,
     "borderTopRightRadius": 7,
     "borderBottomLeftRadius": 7,
@@ -439,7 +439,7 @@ const styles = StyleSheet.create({
     "width": 318,
     "height": 35,
     "left": 36,
-    "top": 729
+    "top": 650
   },
   "account_btnEdit_bg88e5874f": {
     "opacity": 1,
@@ -464,7 +464,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 63,
+    "width": 80,
     "height": 17,
     "left": 126,
     "top": 10
@@ -481,21 +481,14 @@ const styles = StyleSheet.create({
   "account_info_bg": {
     "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 1)",
+    "backgroundColor": "rgba(217, 217, 217, 1)",
     "borderTopLeftRadius": 28,
     "borderTopRightRadius": 28,
     "borderBottomLeftRadius": 28,
     "borderBottomRightRadius": 28,
-    "shadowColor": "rgb(0,  0,  0)",
-    "shadowOpacity": 0.1607843137254902,
-    "shadowOffset": {
-      "width": 0,
-      "height": 6
-    },
-    "shadowRadius": 6,
-    "width": 313,
+    "width": 350,
     "height": 139,
-    "left": 0,
+    "alignSelf": 'center',
     "top": 0
   },
   "account_info_left": {
@@ -504,19 +497,12 @@ const styles = StyleSheet.create({
     "backgroundColor": "transparent",
     "width": 99,
     "height": 98,
-    "left": 19,
+    "left": 10,
     "top": 21
   },
   "account_info_left_avatar": {
     "opacity": 1,
     "position": "absolute",
-    "shadowColor": "rgb(0,  0,  0)",
-    "shadowOpacity": 0.1607843137254902,
-    "shadowOffset": {
-      "width": 0,
-      "height": 0
-    },
-    "shadowRadius": 6,
     "width": 60,
     "height": 60,
     "left": 19,
@@ -564,8 +550,7 @@ const styles = StyleSheet.create({
   "account_info_right_address": {
     "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(164, 162, 162, 0.9803921568627451)",
+    "backgroundColor": "rgba(204, 153, 129, 0)",
     "fontSize": 13,
     "fontWeight": "400",
     "fontStyle": "normal",
@@ -574,13 +559,12 @@ const styles = StyleSheet.create({
     "width": 189,
     "height": 15,
     "left": 0,
-    "top": 32
+    "top": 28
   },
   "account_info_right_phone": {
     "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(164, 162, 162, 0.9803921568627451)",
+    "backgroundColor": "rgba(204, 153, 129, 0)",
     "fontSize": 13,
     "fontWeight": "400",
     "fontStyle": "normal",

@@ -9,6 +9,10 @@ import { Image as SvgImage } from 'react-native-svg';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeTab from "./tab/HomeTab";
 import HistoryTab from "./tab/HistoryTab";
+import VoucherTab from './tab/VoucherTab';
+import ShopInfoTab from './tab/ShopInfoTab';
+import AccountTab from './tab/AccountTab';
+
 const Tab = createBottomTabNavigator();
 
 const HomeScreen = () => {
@@ -67,13 +71,13 @@ const HomeScreen = () => {
           options={{
             img: require('./assets/tabShop.png')
           }}
-          children={(props) => <></>} />
+          component={ShopInfoTab}/>
         <Tab.Screen
-          name="Vourcher"
+          name="VourcherTab"
           options={{
             img: require('./assets/tabVoucher.png')
           }}
-          children={(props) => <></>} />
+          component={VoucherTab} />
         <Tab.Screen
           name="Lịch sử"
           options={{
@@ -85,7 +89,7 @@ const HomeScreen = () => {
           options={{
             img: require('./assets/tabAccount.png')
           }}
-          children={(props) => <></>} />
+          component={AccountTab} />
       </Tab.Navigator>
     </View>
   );
@@ -131,7 +135,7 @@ const styles = StyleSheet.create({
   },
   "menu_item": {
     flex: 1,
-    "height": 51,
+    "height": 55,
     alignItems: "center",
   },
   "menu_item_rectangle11": {
@@ -152,46 +156,28 @@ const styles = StyleSheet.create({
     "width": 96,
     "height": 79,
     "left": -23,
-    "top": -14
+    "top": -10
   },
   "menu_item_icon": {
-    "borderTopLeftRadius": 0,
-    "borderTopRightRadius": 0,
-    "borderBottomLeftRadius": 0,
-    "borderBottomRightRadius": 0,
-    "width": 33,
-    "height": 33,
-
+    "width": 30,
+    "height": 30,
+    "bottom":7
   },
   "menu_item_title": {
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 0.9411764705882353)",
-    "fontSize": 12,
+    "fontSize": 11,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "center",
-
   },
   "menu_group7_rectangle12": {
     "position": "absolute",
-    "backgroundColor": "rgba(152, 235, 255, 0.2)",
-    "borderTopWidth": 1,
-    "borderTopColor": "rgba(0, 0, 0, 0)",
-    "borderRightWidth": 1,
-    "borderRightColor": "rgba(0, 0, 0, 0)",
-    "borderBottomWidth": 1,
-    "borderBottomColor": "rgba(0, 0, 0, 0)",
-    "borderLeftWidth": 1,
-    "borderLeftColor": "rgba(0, 0, 0, 0)",
-    "borderTopLeftRadius": 0,
-    "borderTopRightRadius": 0,
-    "borderBottomLeftRadius": 0,
-    "borderBottomRightRadius": 0,
-    "width": 96,
-    "height": 79,
+    "width": 100,
+    "height": 89,
     "left": -29,
-    "top": -14
+    "top": -11
   },
   "menu_group8_rectangle13": {
     "position": "absolute",

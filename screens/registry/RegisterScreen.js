@@ -9,10 +9,13 @@ import { Image as SvgImage } from 'react-native-svg';
 
 
 const RegisterScreen = ({ navigation }) => {
-
+  const onPressBack = () => {
+    navigation.goBack();
+  }
+  
   return (
     <View style={styles.register}>
-      <TouchableHighlight onPress={() => { navigation.goBack() }} style={styles.register_header}>
+      <TouchableHighlight onPress={onPressBack} style={styles.register_header}>
         <View>
           <ReactImage source={require('./assets/back.png')} style={styles.register_header_back} />
           <Text style={styles.register_header_title}>Quay lại </Text>
@@ -23,10 +26,11 @@ const RegisterScreen = ({ navigation }) => {
         <ReactImage source={require('./assets/asset1.png')} style={styles.register_logo_asset1} />
         <Text style={styles.register_logo_appName}>ADMIN MANAGEMENT</Text>
       </View>
+      <View style={styles.register_text_Title}><Text style={styles.register_text_NhapSDT}>Nhập số điện thoại của bạn</Text></View>
       <View style={styles.register_inputPhone}>
         <View style={styles.register_inputPhone_country}>
           <ReactImage source={require('./assets/countryLogo.png')} style={styles.register_inputPhone_countryLogo} />
-          <Text style={{ "marginTop": -1.5, "color": "rgba(0, 0, 0, 1)", "fontSize": 15, "fontWeight": "700", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 16.5 }}>+84</Text>
+          <Text style={styles.register_text_mavung}>+84</Text>
         </View>
 
         <TextInput style={styles.register_inputPhone_input} placeholder="Nhập số điện thoại..." />
@@ -52,6 +56,8 @@ const styles = StyleSheet.create({
     "marginLeft": 13,
     "marginTop": 37,
   },
+
+
   "register_header_back": {
     "opacity": 1,
     "position": "absolute",
@@ -78,22 +84,43 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
     "width": 53,
     "height": 17,
     "left": 35,
     "top": 2
   },
+  "register_text_Title": {
+    alignSelf: "flex-start",
+    "alignSelf": 'center',
+    "marginTop": 50,
+  },
+  "register_text_mavung": {
+    "marginTop": -1.5,
+    "color": "rgba(0, 0, 0, 1)",
+    "fontSize": 15,
+    "fontWeight": "700",
+    "fontStyle": "normal",
+    "fontFamily": "Roboto",
+    "textAlign": "center",
+    "lineHeight": 18,
+  },
+  "register_text_NhapSDT": {
+    "color": "rgba(0, 0, 0, 1)",
+    "fontSize": 15,
+    "fontWeight": "700",
+    "fontStyle": "normal",
+    "fontFamily": "Roboto",
+    "textAlign": "center",
+    "lineHeight": 18,
+    "width": 200,
+    "height": 20,
+    "left": 35,
+  },
+
   "register_logo": {
     "marginTop": "5%",
   },
+
   "register_logo_logoPng": {
     "width": 268,
     "height": 191,
@@ -138,25 +165,17 @@ const styles = StyleSheet.create({
     "top": 172
   },
   "register_inputPhone": {
-    borderWidth: 2,
-    borderRadius: 5,
-    borderColor: "rgba(0, 0, 0, 0.4)",
+    "borderWidth": 2,
+    "borderRadius": 5,
+    "borderColor": "rgba(0, 0, 0, 0.4)",
     "width": "70%",
     "height": 48,
-    marginTop: "5%",
-    flexDirection: "row"
+    "marginTop": "5%",
+    "flexDirection": "row"
   },
   "register_inputPhone_line7": {
     "opacity": 1,
     "position": "absolute",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
     "width": 1,
     "height": 36,
     "left": 73,
@@ -200,13 +219,14 @@ const styles = StyleSheet.create({
     "fontWeight": "400",
     "fontFamily": "Roboto",
     "lineHeight": 14,
-    flex: 1,
-    paddingLeft: 5
+    "flex": 1,
+    "paddingLeft": 10
   },
   "register_continue": {
     "marginTop": 30,
-    backgroundColor: "rgba(212, 174, 57, 1)",
-    borderRadius: 5,
+    "backgroundColor": "rgba(212, 174, 57, 1)",
+    "borderRadius": 5,
+    "top": 5
   },
   "register_continue_path643": {
     "width": "40%",
@@ -218,10 +238,10 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    paddingLeft: 30,
-    paddingTop: 10,
-    paddingRight: 30,
-    paddingBottom: 10
+    "paddingLeft": 30,
+    "paddingTop": 10,
+    "paddingRight": 30,
+    "paddingBottom": 10
   },
   "register_bg": {
     "position": "absolute",

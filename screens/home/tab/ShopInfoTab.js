@@ -7,7 +7,7 @@ import {Path as SvgPath} from 'react-native-svg';
 import {Text as SvgText} from 'react-native-svg';
 import {Image as SvgImage} from 'react-native-svg';
 
-const ShopInfo = () => {
+const ShopInfoTab = () => {
 
     
     return (
@@ -40,8 +40,8 @@ const ShopInfo = () => {
             </View>
             <View style={styles.shopInfo_form_image}>
                 <View style={styles.shopInfo_form_image_example}>
-                    <ReactImage source={require('./assets/i1.png')} style={styles.shopInfo_form_image_example_i1} />
-                    <ReactImage source={require('./assets/i2.png')} style={styles.shopInfo_form_image_example_i2} />
+                    <ReactImage source={require('../assets/i1.png')} style={styles.shopInfo_form_image_example_i1} />
+                    <ReactImage source={require('../assets/i2.png')} style={styles.shopInfo_form_image_example_i2} />
                 </View>
                 <View style={styles.shopInfo_form_image_btnAdd620bac46}>
                     <View style={styles.shopInfo_form_image_btnAdd620bac46_bgee288635}></View>
@@ -66,13 +66,13 @@ const ShopInfo = () => {
   
 }
 
-export default ShopInfo;
+export default ShopInfoTab;
 
-ShopInfo.propTypes = {
+ShopInfoTab.propTypes = {
 
 }
 
-ShopInfo.defaultProps = {
+ShopInfoTab.defaultProps = {
 
 }
 
@@ -185,7 +185,7 @@ const styles = StyleSheet.create({
   "shopInfo_form_name_input265489f5": {
     "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(243, 243, 243, 1)",
+    "backgroundColor": "rgba(217, 217, 217, 1)",
     "borderTopLeftRadius": 7,
     "borderTopRightRadius": 7,
     "borderBottomLeftRadius": 7,
@@ -205,7 +205,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 62,
+    "width": 70,
     "height": 18,
     "left": 3,
     "top": 0
@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
   "shopInfo_form_address_inputb3df0a16": {
     "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(243, 243, 243, 1)",
+    "backgroundColor": "rgba(217, 217, 217, 1)",
     "borderTopLeftRadius": 7,
     "borderTopRightRadius": 7,
     "borderBottomLeftRadius": 7,
@@ -257,7 +257,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 46,
+    "width": 70,
     "height": 18,
     "left": 3,
     "top": 0
@@ -289,7 +289,7 @@ const styles = StyleSheet.create({
   "shopInfo_form_phone_rectangle1504": {
     "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(243, 243, 243, 1)",
+    "backgroundColor": "rgba(217, 217, 217, 1)",
     "borderTopLeftRadius": 7,
     "borderTopRightRadius": 7,
     "borderBottomLeftRadius": 7,
@@ -309,7 +309,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 89,
+    "width": 100,
     "height": 18,
     "left": 3,
     "top": 0
@@ -341,7 +341,7 @@ const styles = StyleSheet.create({
   "shopInfo_form_description_input": {
     "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(243, 243, 243, 1)",
+    "backgroundColor": "rgba(217, 217, 217, 1)",
     "borderTopLeftRadius": 7,
     "borderTopRightRadius": 7,
     "borderBottomLeftRadius": 7,
@@ -354,14 +354,14 @@ const styles = StyleSheet.create({
   "shopInfo_form_description_labelb417a0b6": {
     "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
+    "backgroundColor": "rgba(217, 217, 217, 1)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 15,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 38,
+    "width": 70,
     "height": 18,
     "left": 3,
     "top": 0
@@ -444,7 +444,7 @@ const styles = StyleSheet.create({
   "shopInfo_form_image_btnAdd620bac46_bgee288635": {
     "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(243, 243, 243, 1)",
+    "backgroundColor": "rgba(217, 217, 217, 1)",
     "borderTopLeftRadius": 7,
     "borderTopRightRadius": 7,
     "borderBottomLeftRadius": 7,
@@ -472,7 +472,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 97,
+    "width": 100,
     "height": 18,
     "left": 3,
     "top": 0
@@ -498,7 +498,7 @@ const styles = StyleSheet.create({
   "shopInfo_form_menu_btnAdd_bgcd8dfb81": {
     "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(243, 243, 243, 1)",
+    "backgroundColor": "rgba(217, 217, 217, 1)",
     "borderTopLeftRadius": 7,
     "borderTopRightRadius": 7,
     "borderBottomLeftRadius": 7,
@@ -526,7 +526,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 75,
+    "width": 90,
     "height": 18,
     "left": 0,
     "top": 0
