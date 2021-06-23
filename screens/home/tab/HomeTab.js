@@ -11,7 +11,8 @@ const HomeTab = () => {
   return (
     <View style={styles.home}>
       <View style={styles.home_header31ac1837}>
-        <Svg style={styles.home_header31ac1837_headerBg} preserveAspectRatio="none" viewBox="0 0 393 144.60594177246094" fill="rgba(241, 211, 126, 1)"><SvgPath d="M 0 0 L 393 0 L 393 116.5110778808594 C 393 132.0274505615234 377.7776794433594 144.6059417724609 359 144.6059417724609 L 34 144.6059417724609 C 15.22231674194336 144.6059417724609 0 132.0274505615234 0 116.5110778808594 L 0 0 Z" /></Svg>
+        <View style={styles.home_header31ac1837_headerBg} />
+
         <View style={styles.home_header31ac1837_logo}>
           <ReactImage source={require('../assets/logoPng.png')} style={styles.home_header31ac1837_logo_logoPng} />
           <ReactImage source={require('../assets/asset1.png')} style={styles.home_header31ac1837_logo_asset1} />
@@ -34,7 +35,6 @@ const HomeTab = () => {
         </View>
       </View>
       <View style={styles.home_listBooking}>
-        <View style={styles.home_listBooking_bg948a58d1}></View>
         <View style={styles.home_listBooking_table}>
           <View style={styles.home_listBooking_table_bg660f4e5f}></View>
           <View style={styles.home_listBooking_table_info}>
@@ -73,33 +73,11 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   "home_header31ac1837": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "transparent",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
-    "width": 393,
+    width: "100%",
     "height": 144.61,
-    "left": 0,
-    "top": 0
   },
   "home_header31ac1837_headerBg": {
-    "opacity": 1,
     "position": "absolute",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
     "shadowColor": "rgb(0,  0,  0)",
     "shadowOpacity": 0.1607843137254902,
     "shadowOffset": {
@@ -107,10 +85,13 @@ const styles = StyleSheet.create({
       "height": 6
     },
     "shadowRadius": 6,
-    "width": 393,
+    "width": "100%",
     "height": 144.61,
     "left": 0,
-    "top": 0
+    "top": 0,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    backgroundColor: "rgba(241, 211, 126, 1)",
   },
   "home_header31ac1837_logo": {
     "opacity": 1,
@@ -160,9 +141,9 @@ const styles = StyleSheet.create({
     "color": "rgba(51, 51, 51, 1)",
     "fontSize": 23,
     "fontWeight": "500",
-    "fontFamily": "Roboto Medium",
+    "fontFamily": "Roboto",
     "textAlign": "left",
-    "width":220,
+    "width": 220,
     "height": 30,
     "left": 180,
     "top": 47
@@ -191,21 +172,11 @@ const styles = StyleSheet.create({
     "top": 35
   },
   "home_info46474805": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "transparent",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
     "width": 340,
     "height": 139,
-    "left": 27,
-    "top": 109
+    "top": 109,
+    alignSelf: "center"
   },
   "home_info46474805_rectangle1492": {
     "opacity": 1,
@@ -408,38 +379,10 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "home_listBooking": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "transparent",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
-    "width": 365,
-    "height": 484,
-    "left": 14,
-    "top": 268
-  },
-  "home_listBooking_bg948a58d1": {
-    "opacity": 1,
-    "position": "absolute",
+    marginTop: 50,
+    flex: 1,
+    width: "90%",
     "backgroundColor": "rgba(255, 248, 242, 1)",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
-    "borderTopLeftRadius": 9,
-    "borderTopRightRadius": 9,
-    "borderBottomLeftRadius": 9,
-    "borderBottomRightRadius": 9,
     "shadowColor": "rgb(0,  0,  0)",
     "shadowOpacity": 0.1607843137254902,
     "shadowOffset": {
@@ -447,10 +390,6 @@ const styles = StyleSheet.create({
       "height": 3
     },
     "shadowRadius": 6,
-    "width": 365,
-    "height": 484,
-    "left": 0,
-    "top": 0
   },
   "home_listBooking_table": {
     "opacity": 1,
