@@ -28,7 +28,21 @@ const addvoucherScreen =({navigation}) => {
                 <View  style={styles.addvourcher_form_enddate_input}></View>
                 <Text  style={styles.addvourcher_form_enddate_label}>Ngày hết hạn</Text>
             </View>
+            <View  style={styles.addvourcher_form_sotiengiamgia}>
+                <View  style={styles.addvourcher_form_sotiengiamgia_input}></View>
+                <Text  style={styles.addvourcher_form_sotiengiamgia_label}>Số tiền giảm giá</Text>
+            </View>
+            <View  style={styles.addvourcher_form_gioihanphieu}>
+                <View  style={styles.addvourcher_form_gioihanphieu_input}></View>
+                <Text  style={styles.addvourcher_form_gioihanphieu_label}>Số lượng mã ưu đãi</Text>
+            </View>
+            <View  style={styles.addvourcher_form_mota}>
+                <View  style={styles.addvourcher_form_mota_input}></View>
+                <Text  style={styles.addvourcher_form_mota_label}>Mô tả</Text>
+            </View>
         </View>
+
+        
         <TouchableOpacity onPress={onPressBack}  style={styles.addvourcher_header}>
             <View style={styles.addvourcher_header_bg}></View>
             <ReactImage  source={require('./assets/back.png')} style={styles.addvourcher_header_back} />
@@ -112,8 +126,6 @@ const styles = StyleSheet.create({
     "top": 110
   },
   "addvourcher_form_bgdde23b2a": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 1)",
     "borderTopLeftRadius": 13,
     "borderTopRightRadius": 13,
@@ -135,8 +147,6 @@ const styles = StyleSheet.create({
     "top": 9
   },
   "addvourcher_form_titlea5a00643_input60ff3925": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "rgba(217, 217, 217, 1)",
     "borderTopLeftRadius": 7,
     "borderTopRightRadius": 7,
@@ -195,6 +205,111 @@ const styles = StyleSheet.create({
     "fontFamily": "Roboto",
     "textAlign": "left",
     "width": 100,
+    "height": 18,
+    "left": 3,
+    "top": 0
+  },
+  "addvourcher_form_sotiengiamgia": {
+    "opacity": 1,
+    "position": "absolute",
+    "backgroundColor": "transparent",
+    "width": 348,
+    "height": 65,
+    "left": 7,
+    "top": 167
+  },
+  "addvourcher_form_sotiengiamgia_input": {
+    "backgroundColor": "rgba(217, 217, 217, 1)",
+    "borderTopLeftRadius": 7,
+    "borderTopRightRadius": 7,
+    "borderBottomLeftRadius": 7,
+    "borderBottomRightRadius": 7,
+    "width": 348,
+    "height": 43,
+    "left": 0,
+    "top": 22
+  },
+  "addvourcher_form_sotiengiamgia_label": {
+    "opacity": 1,
+    "position": "absolute",
+    "backgroundColor": "rgba(255, 255, 255, 0)",
+    "color": "rgba(84, 71, 65, 1)",
+    "fontSize": 15,
+    "fontWeight": "700",
+    "fontStyle": "normal",
+    "fontFamily": "Roboto",
+    "textAlign": "left",
+    "width": 120,
+    "height": 18,
+    "left": 3,
+    "top": 0
+  },
+  "addvourcher_form_gioihanphieu": {
+    "opacity": 1,
+    "position": "absolute",
+    "backgroundColor": "transparent",
+    "width": 348,
+    "height": 65,
+    "left": 7,
+    "top": 240
+  },
+  "addvourcher_form_gioihanphieu_input": {
+    "backgroundColor": "rgba(217, 217, 217, 1)",
+    "borderTopLeftRadius": 7,
+    "borderTopRightRadius": 7,
+    "borderBottomLeftRadius": 7,
+    "borderBottomRightRadius": 7,
+    "width": 348,
+    "height": 43,
+    "left": 0,
+    "top": 22
+  },
+  "addvourcher_form_gioihanphieu_label": {
+    "opacity": 1,
+    "position": "absolute",
+    "backgroundColor": "rgba(255, 255, 255, 0)",
+    "color": "rgba(84, 71, 65, 1)",
+    "fontSize": 15,
+    "fontWeight": "700",
+    "fontStyle": "normal",
+    "fontFamily": "Roboto",
+    "textAlign": "left",
+    "width": 160,
+    "height": 18,
+    "left": 3,
+    "top": 0
+  },
+  "addvourcher_form_mota": {
+    "opacity": 1,
+    "position": "absolute",
+    "backgroundColor": "transparent",
+    "width": 348,
+    "height": 65,
+    "left": 7,
+    "top": 310
+  },
+  "addvourcher_form_mota_input": {
+    "backgroundColor": "rgba(217, 217, 217, 1)",
+    "borderTopLeftRadius": 7,
+    "borderTopRightRadius": 7,
+    "borderBottomLeftRadius": 7,
+    "borderBottomRightRadius": 7,
+    "width": 348,
+    "height": 83,
+    "left": 0,
+    "top": 22
+  },
+  "addvourcher_form_mota_label": {
+    "opacity": 1,
+    "position": "absolute",
+    "backgroundColor": "rgba(255, 255, 255, 0)",
+    "color": "rgba(84, 71, 65, 1)",
+    "fontSize": 15,
+    "fontWeight": "700",
+    "fontStyle": "normal",
+    "fontFamily": "Roboto",
+    "textAlign": "left",
+    "width": 120,
     "height": 18,
     "left": 3,
     "top": 0
