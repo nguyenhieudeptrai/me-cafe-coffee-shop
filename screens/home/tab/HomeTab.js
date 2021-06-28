@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
-import { StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableOpacity } from 'react-native';
 import { Image as ReactImage } from 'react-native';
 import Svg, { Defs, Pattern } from 'react-native-svg';
 import { Path as SvgPath } from 'react-native-svg';
@@ -9,42 +9,61 @@ import { Image as SvgImage } from 'react-native-svg';
 
 const dataBooking = [
   {
-    tableNum:4,
-    cusName:"Nguyễn Hiếu",
-    startTime:"08:30",
-    duringTo:"09:30",
-    status:"Sắp tới",
+    tableNum: 4,
+    cusName: "Nguyễn Hiếu",
+    startTime: "08:30",
+    duringTo: "09:30",
+    date: "16/05/2021",
+    personNum: 4,
+    phone: "098123405",
+    status: "Sắp tới",
   },
   {
-    tableNum:1,
-    cusName:"Nguyễn Hiếu",
-    startTime:"07:30",
-    duringTo:"08:30",
-    status:"Sắp tới",
+    tableNum: 1,
+    cusName: "Nguyễn Dũng",
+    startTime: "07:30",
+    duringTo: "08:30",
+    date: "16/05/2021",
+    personNum: 6,
+    phone: "098123405",
+    status: "Sắp tới",
   },
   {
-    tableNum:2,
-    cusName:"Trần Thiên Quý",
-    startTime:"07:00",
-    duringTo:"08:00",
-    status:"Đang tại quán",
+    tableNum: 2,
+    cusName: "Nguyễn Văn A",
+    startTime: "07:00",
+    duringTo: "08:00",
+    date: "16/05/2021",
+    personNum: 4,
+    phone: "098123405",
+    status: "Đang tại quán",
   },
   {
-    tableNum:3,
-    cusName:"Trần Thiên Quý",
-    startTime:"07:15",
-    duringTo:"08:15",
-    status:"Đang tại quán",
+    tableNum: 3,
+    cusName: "Nguyễn Văn B",
+    startTime: "07:15",
+    duringTo: "08:15",
+    date: "16/05/2021",
+    personNum: 4,
+    phone: "098123405",
+    status: "Đang tại quán",
   },
   {
-    tableNum:4,
-    cusName:"Trần Thiên Quý",
-    startTime:"07:00",
-    duringTo:"08:00",
-    status:"Đang tại quán",
+    tableNum: 4,
+    cusName: "Trần Thị C",
+    startTime: "07:00",
+    duringTo: "08:00",
+    date: "16/05/2021",
+    personNum: 4,
+    phone: "098123405",
+    status: "Đang tại quán",
   }
 ]
-const HomeTab = () => {
+const HomeTab = ({ navigation }) => {
+
+  const onPressBooking = (item) => {
+    navigation.navigate("BookingDetail", { booking: item });
+  }
   return (
     <View style={styles.home}>
       <View style={styles.home_header}>
@@ -76,8 +95,8 @@ const HomeTab = () => {
         </View>
         <FlatList
           data={dataBooking}
-          renderItem={({ item }) => (
-            <View style={styles.home_listBooking_table}>
+          renderItem={({ item, index }) => (
+            <TouchableOpacity key={index} onPress={() => onPressBooking(item)} style={styles.home_listBooking_table}>
               <View style={styles.home_listBooking_table_headLeft}>
                 <Text style={styles.home_listBooking_table_headLeft_tableNum}>Bàn {item.tableNum}</Text>
               </View>
@@ -92,12 +111,12 @@ const HomeTab = () => {
                 </View>
                 <View style={styles.home_listBooking_table_info_status}>
                   <Text style={styles.home_listBooking_table_info_status_tinhTrng}>Tình trạng:</Text>
-                  <Text style={item.status==="Sắp tới"?
-                  styles.home_listBooking_table_info_status_angTiQuan_green:
-                  styles.home_listBooking_table_info_status_angTiQuan}>{item.status}</Text>
+                  <Text style={item.status === "Sắp tới" ?
+                    styles.home_listBooking_table_info_status_angTiQuan_green :
+                    styles.home_listBooking_table_info_status_angTiQuan}>{item.status}</Text>
                 </View>
               </View>
-            </View>
+            </TouchableOpacity>
           )}
         />
       </View>
@@ -413,7 +432,7 @@ const styles = StyleSheet.create({
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    marginLeft:5,
+    marginLeft: 5,
   },
   "home_listBooking_table_info_time": {
     flexDirection: "row"
@@ -424,7 +443,7 @@ const styles = StyleSheet.create({
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    marginLeft:5,
+    marginLeft: 5,
   },
   "home_listBooking_table_info_time_thiGian": {
     "color": "rgba(51, 51, 51, 1)",
@@ -442,7 +461,7 @@ const styles = StyleSheet.create({
     "fontWeight": "400",
     "fontStyle": "italic",
     "fontFamily": "Roboto",
-    marginLeft:5,
+    marginLeft: 5,
   },
   "home_listBooking_table_info_status_angTiQuan_green": {
     "color": "#26B42A",
@@ -450,7 +469,7 @@ const styles = StyleSheet.create({
     "fontWeight": "400",
     "fontStyle": "italic",
     "fontFamily": "Roboto",
-    marginLeft:5,
+    marginLeft: 5,
   },
   "home_listBooking_table_info_status_tinhTrng": {
     "color": "rgba(51, 51, 51, 1)",

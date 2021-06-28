@@ -17,9 +17,10 @@ const AddVoucherScreen = ({ navigation }) => {
 
   return (
     <View style={styles.addvourcher}>
-      <TouchableOpacity onPress={onPressSave} style={styles.addvourcher_btnHuy}>
-        <View style={styles.addvourcher_btnHuy_rectangle1505}></View>
-        <Text style={styles.addvourcher_btnHuy_luLi}>LƯU LẠI</Text>
+      <TouchableOpacity onPress={onPressBack} style={styles.addvourcher_header}>
+        <View style={styles.addvourcher_header_bg}></View>
+        <ReactImage source={require('./assets/back.png')} style={styles.addvourcher_header_back} />
+        <Text style={styles.addvourcher_header_title}>THÊM VOUCHER</Text>
       </TouchableOpacity>
       <View style={styles.addvourcher_form}>
         <View style={styles.addvourcher_form_bgdde23b2a}></View>
@@ -43,14 +44,13 @@ const AddVoucherScreen = ({ navigation }) => {
           <View style={styles.addvourcher_form_mota_input}></View>
           <Text style={styles.addvourcher_form_mota_label}>Mô tả</Text>
         </View>
+        <TouchableOpacity onPress={onPressSave} style={styles.addvourcher_btnHuy}>
+          <View style={styles.addvourcher_btnHuy_rectangle1505}></View>
+          <Text style={styles.addvourcher_btnHuy_luLi}>LƯU LẠI</Text>
+        </TouchableOpacity>
       </View>
 
 
-      <TouchableOpacity onPress={onPressBack} style={styles.addvourcher_header}>
-        <View style={styles.addvourcher_header_bg}></View>
-        <ReactImage source={require('./assets/back.png')} style={styles.addvourcher_header_back} />
-        <Text style={styles.addvourcher_header_title}>THÊM VOUCHER</Text>
-      </TouchableOpacity>
     </View>
   );
 
@@ -60,12 +60,8 @@ export default AddVoucherScreen;
 
 const styles = StyleSheet.create({
   "addvourcher": {
-    "opacity": 1,
-    "position": "relative",
     "backgroundColor": "rgba(249, 249, 249, 1)",
-    "width": 393,
-    "height": 851,
-
+    flex: 1
   },
   "addvourcher_rectangle22": {
     "opacity": 1,
