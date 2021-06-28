@@ -248,8 +248,6 @@ const styles = StyleSheet.create({
     "fontStyle": "italic",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 67,
-    "height": 18,
     "left": 52,
     "top": 0
   },
@@ -281,8 +279,6 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 66,
-    "height": 42,
     "left": 9,
     "top": 28
   },
@@ -349,8 +345,6 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 36,
-    "height": 13,
     "left": 20,
     "top": 1
   },
@@ -393,9 +387,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 111,
-    "height": 24,
-    "left": 125,
+    "left": 130,
     "top": 69
   },
   "vouchermain_list_btnAdd_addIcon": {
