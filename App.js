@@ -9,7 +9,7 @@ import RegistryScreen from './screens/registry/RegisterScreen';
 import LoginScreen from './screens/login/LoginScreen';
 import HomeScreen from './screens/home/HomeScreen';
 import DetailHistoryScreen from './screens/detailTableHistory/DetailHistoryScreen';
-import addvoucherScreen from './screens/addVourcher/AddVoucherScreen'
+import AddvoucherScreen from './screens/addVourcher/AddvoucherScreen'
 import BookingDetailScreen from './screens/bookingDetail/BookingDetailScreen';
 
 const Stack = createStackNavigator();
@@ -23,7 +23,7 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Registry" component={RegistryScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="AddVoucher" component={addvoucherScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="AddVoucher" component={AddvoucherScreen} options={{ headerShown: false }} />
         <Stack.Screen name="BookingDetail" component={BookingDetailScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>

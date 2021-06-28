@@ -22,10 +22,9 @@ const AddVoucherScreen = ({ navigation }) => {
         <Text style={styles.addvourcher_header_title}>THÊM VOUCHER</Text>
       </TouchableOpacity>
       <View style={styles.addvourcher_form}>
-        <View style={styles.addvourcher_form_bgdde23b2a}></View>
-        <View style={styles.addvourcher_form_titlea5a00643}>
-          <View style={styles.addvourcher_form_titlea5a00643_input60ff3925}></View>
-          <Text style={styles.addvourcher_form_titlea5a00643_label9535316c}>Tên ưu đãi</Text>
+        <View style={styles.addvourcher_form_title}>
+          <Text style={styles.addvourcher_form_title_label}>Tên ưu đãi</Text>
+          <TextInput style={styles.addvourcher_form_title_input} placeholder="Nhập tên"/>
         </View>
         <View style={styles.addvourcher_form_enddate}>
           <View style={styles.addvourcher_form_enddate_input}></View>
@@ -69,11 +68,7 @@ const styles = StyleSheet.create({
     "height": 851,
   },
   "addvourcher_btnHuy": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "transparent",
-    "left": 30,
-    "top": 720
+    alignSelf:"center"
   },
   "addvourcher_btnHuy_rectangle1505": {
     "opacity": 1,
@@ -99,7 +94,9 @@ const styles = StyleSheet.create({
     "top": 10
   },
   "addvourcher_form": {
-    flex:1
+    flex:1,
+    width:"90%",
+    alignSelf:"center"
   },
   "addvourcher_form_bgdde23b2a": {
     "backgroundColor": "rgba(255, 255, 255, 1)",
@@ -110,38 +107,27 @@ const styles = StyleSheet.create({
     "width": 363,
     "height": 600,
   },
-  "addvourcher_form_titlea5a00643": {
+  "addvourcher_form_title": {
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
-    "width": 348,
+    "width": "100%",
     "height": 65,
     "left": 7,
     "top": 9
   },
-  "addvourcher_form_titlea5a00643_input60ff3925": {
+  "addvourcher_form_title_input": {
     "backgroundColor": "rgba(217, 217, 217, 1)",
-    "borderTopLeftRadius": 7,
-    "borderTopRightRadius": 7,
-    "borderBottomLeftRadius": 7,
-    "borderBottomRightRadius": 7,
-    "width": 348,
+    "borderRadius": 7,
     "height": 43,
-    "left": 0,
-    "top": 22
+    flex:1
   },
-  "addvourcher_form_titlea5a00643_label9535316c": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
+  "addvourcher_form_title_label": {
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 15,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "left": 3,
-    "top": 0
   },
   "addvourcher_form_enddate": {
     "flex": 1,
