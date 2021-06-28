@@ -11,7 +11,7 @@ import { Image as SvgImage } from 'react-native-svg';
 const HistoryTab = ({ navigation }) => {
 
   const onPressDetailHistory = () => {
-    navigation.navigate("DetaiHis");
+    navigation.navigate("DetailHistory");
   }
   return (
     <ScrollView style={styles.history}>
