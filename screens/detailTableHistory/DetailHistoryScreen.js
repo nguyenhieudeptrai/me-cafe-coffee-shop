@@ -305,7 +305,7 @@ const styles = StyleSheet.create({
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
-    "width": 171,
+    "width": 200,
     "height": 21,
     "left": 72,
     "top": 39
