@@ -14,8 +14,7 @@ const HistoryTab = ({ navigation }) => {
     navigation.navigate("DetailHistory");
   }
   return (
-    <ScrollView style={styles.history}>
-      <View style={styles.history_rectangle15}></View>
+    <View style={styles.history}>
       <Svg style={styles.history_path6} preserveAspectRatio="none" viewBox="0 -0.000003814697265625 393 743.6717529296875" fill="rgba(249, 249, 249, 1)"><SvgPath d="M 60 0 L 333 0 C 366.1370849609375 0 393 25.64466285705566 393 57.27895736694336 L 393 743.6717529296875 L 0 743.6717529296875 L 0 57.27895736694336 C 0 25.64466285705566 26.8629150390625 0 60 0 Z" /></Svg>
       <TouchableOpacity onPress={onPressDetailHistory} style={styles.history_group59}>
         <View style={styles.history_group59_group58}>
@@ -33,29 +32,15 @@ const HistoryTab = ({ navigation }) => {
         </View>
         <ReactImage source={require('../assets/asset1.png')} style={styles.history_group143_asset1} />
       </View>
-    </ScrollView>
+    </View>
   );
 }
 export default HistoryTab;
 
 const styles = StyleSheet.create({
   "history": {
-    "opacity": 1,
-    "position": "relative",
-    "backgroundColor": "rgba(255, 255, 255, 1)",
-    "alignSelf": 'center',
-    "width": 393,
-    "height": 851,
-    "top": 0
-  },
-  "history_rectangle15": {
-    "opacity": 1,
-    "position": "absolute",
+    flex:1,
     "backgroundColor": "rgba(241, 211, 126, 1)",
-    "width": 393,
-    "height": 851,
-    "left": 0,
-    "top": 0
   },
   "history_path6": {
     "opacity": 1,
