@@ -9,8 +9,8 @@ import { Image as SvgImage } from 'react-native-svg';
 
 const dataBookingTable = [
   {
-    TabbleName: "Bàn 1",
-    personNum: "02 Người",
+    TabbleNum: 1,
+    personNum: 2,
   },
 
 ]
