@@ -17,7 +17,6 @@ const DetailHistoryScreen = ({navigation}) => {
   return (
     <ScrollView style={styles.detailTableHistory}>
       <View style={styles.detailTableHistory_header}>
-        <View style={styles.detailTableHistory_header_bg15feb05f}></View>
           <TouchableOpacity onPress={onPressBack}><ReactImage source={require('./assets/btnBack.png')} style={styles.detailTableHistory_header_btnBack} /></TouchableOpacity>
         <Text style={styles.detailTableHistory_header_title96a58c0f}>LỊCH SỬ ĐẶT BÀN</Text>
       </View>
@@ -82,14 +81,6 @@ const styles = StyleSheet.create({
   "detailTableHistory_header": {
     "opacity": 1,
     "flex":1,
-    "position": "absolute",
-    "backgroundColor": "transparent",
-    "width": 393,
-    "height": 89,
-    "left": 0,
-    "top": 0
-  },
-  "detailTableHistory_header_bg15feb05f": {
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "rgba(241, 211, 126, 1)",
@@ -100,11 +91,12 @@ const styles = StyleSheet.create({
       "height": 3
     },
     "shadowRadius": 6,
-    "width": 393,
+    "width": "100%",
     "height": 89,
     "left": 0,
     "top": 0
   },
+
   "detailTableHistory_header_btnBack": {
     "opacity": 1,
     "position": "absolute",

@@ -49,9 +49,7 @@ const HistoryTab = ({ navigation }) => {
   return (
     <View style={styles.history}>
       <View style={styles.history_group143}>
-        <View style={styles.history_group143_group142}>
           <ReactImage source={require('../assets/logoPng.png')} style={styles.history_group143_group142_logoPng} />
-        </View>
         <ReactImage source={require('../assets/asset1.png')} style={styles.history_group143_asset1} />
       </View>
       <Svg style={styles.history_ellipse1} preserveAspectRatio="none" viewBox="0 0 44 44" fill="rgba(255, 255, 255, 0)"><Defs><Pattern id="img-ellipse1" patternContentUnits="userSpaceOnUse" width="100%" height="100%"><SvgImage xlinkHref={require('../assets/ellipse1.png')} x="0" y="0" width="44.00px" height="44.00px" /></Pattern></Defs><SvgPath d="M 22 0 C 34.15026473999023 0 44 9.849736213684082 44 22 C 44 34.15026473999023 34.15026473999023 44 22 44 C 9.849736213684082 44 0 34.15026473999023 0 22 C 0 9.849736213684082 9.849736213684082 0 22 0 Z" fill="url(#img-ellipse1)" /></Svg>
@@ -99,6 +97,7 @@ const styles = StyleSheet.create({
   "history_group59": {
     "width": 118,
     "height": 118,
+    "margin":30,
   },
   "history_group59_group58": {
     "opacity": 1,
@@ -145,6 +144,8 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
+    "marginLeft":30,
+    "marginTop":10
   },
   "history_sBan6": {
     "color": "rgba(84, 71, 65, 1)",
@@ -152,18 +153,21 @@ const styles = StyleSheet.create({
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
+    "marginLeft":30,
+    "marginTop":5
   },
   "history_ellipse1": {
     "opacity": 1,
     "position": "absolute",
     "width": 44,
     "height": 44,
-    "left": 329,
+    "left": 300,
     "top": 40
   },
   "history_group143": {
     "width": 171,
     "height": 100,
+    "marginLeft":10
   },
   "history_group143_group142": {
     "opacity": 1,
@@ -187,7 +191,7 @@ const styles = StyleSheet.create({
     "position": "absolute",
     "width": 63,
     "height": 20,
-    "left": 108,
+    "left": 90,
     "top": 57
   }
 });
