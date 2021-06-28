@@ -17,51 +17,47 @@ const ShopInfoTab = () => {
   const [isEditShopInfo, onChangeisEditShopInfo] = React.useState(false);
 
   return (
-    <ScrollView style={styles.shopInfo}>
+    <View style={styles.shopInfo}>
       <View style={styles.shopInfo_header}>
         <View style={styles.shopInfo_header_bgf54e5df8}></View>
         <Text style={styles.shopInfo_header_titlea84bead2}>THÔNG TIN QUÁN</Text>
       </View>
-      <View style={styles.shopInfo_form}>
-        <View style={styles.shopInfo_form_bgdb1f3437}></View>
-        <View style={styles.shopInfo_form_name}>
-          <View style={styles.shopInfo_form_name_input}></View>
-          <Text style={styles.shopInfo_form_name_label}>Tên quán</Text>
+      <ScrollView style={styles.shopInfo_form}>
+        <View style={styles.shopInfo_form_textfield}>
+          <Text style={styles.shopInfo_form_textfield_label}>Tên quán</Text>
           {
             !isEditShopInfo ?
-              <Text style={styles.shopInfo_form_name_text}>{name}</Text>
+              <Text style={styles.shopInfo_form_textfield_value}>{name}</Text>
               :
               <TextInput
-                style={styles.shopInfo_form_name_textInput}
+                style={styles.shopInfo_form_textfield_input}
                 value={name}
                 onChangeText={(newValue) => onChangeName(newValue)}
               >
               </TextInput>
           }
         </View>
-        <View style={styles.shopInfo_form_address}>
-          <View style={styles.shopInfo_form_address_input}></View>
-          <Text style={styles.shopInfo_form_address_label}>Địa chỉ</Text>
+        <View style={styles.shopInfo_form_textfield}>
+          <Text style={styles.shopInfo_form_textfield_label}>Địa chỉ</Text>
           {
             !isEditShopInfo ?
-              <Text style={styles.shopInfo_form_address_text}>{address}</Text>
+              <Text style={styles.shopInfo_form_textfield_value}>{address}</Text>
               :
               <TextInput
-                style={styles.shopInfo_form_address_textInput}
+                style={styles.shopInfo_form_textfield_input}
                 value={address}
                 onChangeText={(newValue) => onChangeAddress(newValue)}
               >
               </TextInput>
           }
         </View>
-        <View style={styles.shopInfo_form_phone}>
-          <View style={styles.shopInfo_form_phone_input}></View>
-          <Text style={styles.shopInfo_form_phone_label}>Số điện thoại</Text>
+        <View style={styles.shopInfo_form_textfield}>
+          <Text style={styles.shopInfo_form_textfield_label}>Số điện thoại</Text>
           {
             !isEditShopInfo ?
-              <Text style={styles.shopInfo_form_phone_text}>{phone}</Text>
+              <Text style={styles.shopInfo_form_textfield_value}>{phone}</Text>
               : <TextInput
-                style={styles.shopInfo_form_phone_textInput}
+                style={styles.shopInfo_form_textfield_input}
                 value={phone}
                 onChangeText={(newValue) => onChangePhone(newValue)}
               >
@@ -69,16 +65,15 @@ const ShopInfoTab = () => {
 
           }
         </View>
-        <View style={styles.shopInfo_form_description}>
-          <View style={styles.shopInfo_form_description_input}></View>
-          <Text style={styles.shopInfo_form_description_label}>Mô tả</Text>
+        <View style={styles.shopInfo_form_multiline}>
+          <Text style={styles.shopInfo_form_multiline_label}>Mô tả</Text>
           {
             !isEditShopInfo ?
-              <Text style={styles.shopInfo_form_description_text}>{description}</Text>
+              <Text style={styles.shopInfo_form_multiline_value}>{description}</Text>
               : <TextInput
                 multiline
                 numberOfLines={4}
-                style={styles.shopInfo_form_description_textInput}
+                style={styles.shopInfo_form_multiline_input}
                 value={description}
                 onChangeText={(newValue) => onChangeDescription(newValue)}
               >
@@ -87,43 +82,49 @@ const ShopInfoTab = () => {
           }
         </View>
         <View style={styles.shopInfo_form_image}>
-          <View style={styles.shopInfo_form_image_example}>
+          <Text style={styles.shopInfo_form_textfield_label}>Hình ảnh quán</Text>
+          <ScrollView style={styles.shopInfo_form_image_example} horizontal={true}>
             <ReactImage source={require('../assets/i1.png')} style={styles.shopInfo_form_image_example_i1} />
-            <ReactImage source={require('../assets/i2.png')} style={styles.shopInfo_form_image_example_i2} />
-          </View>
-          <View style={styles.shopInfo_form_image_btnAdd620bac46}>
+            <ReactImage source={require('../assets/i2.png')} style={styles.shopInfo_form_image_example_i1} />
+            <Svg style={styles.shopInfo_form_image_btnAdd}
+              preserveAspectRatio="none" viewBox="0.5625 0.5625 34.875 34.875"
+              fill="rgba(216, 174, 66, 1)">
+              <SvgPath d="M 18 0.5625 C 8.3671875 0.5625 0.5625 8.3671875 0.5625 18 C 0.5625 27.6328125 8.3671875 35.4375 18 35.4375 C 27.6328125 35.4375 35.4375 27.6328125 35.4375 18 C 35.4375 8.3671875 27.6328125 0.5625 18 0.5625 Z M 28.125 19.96875 C 28.125 20.43281173706055 27.74531173706055 20.8125 27.28125 20.8125 L 20.8125 20.8125 L 20.8125 27.28125 C 20.8125 27.74531173706055 20.43281173706055 28.125 19.96875 28.125 L 16.03125 28.125 C 15.56718730926514 28.125 15.1875 27.74531173706055 15.1875 27.28125 L 15.1875 20.8125 L 8.71875 20.8125 C 8.254687309265137 20.8125 7.875 20.43281173706055 7.875 19.96875 L 7.875 16.03125 C 7.875 15.56718730926514 8.254687309265137 15.1875 8.71875 15.1875 L 15.1875 15.1875 L 15.1875 8.71875 C 15.1875 8.254687309265137 15.56718730926514 7.875 16.03125 7.875 L 19.96875 7.875 C 20.43281173706055 7.875 20.8125 8.254687309265137 20.8125 8.71875 L 20.8125 15.1875 L 27.28125 15.1875 C 27.74531173706055 15.1875 28.125 15.56718730926514 28.125 16.03125 L 28.125 19.96875 Z" />
+            </Svg>
+          </ScrollView>
+          {/* <View style={styles.shopInfo_form_image_btnAdd620bac46}>
             <View style={styles.shopInfo_form_image_btnAdd620bac46_bgee288635}></View>
             <Svg style={styles.shopInfo_form_image_btnAdd620bac46_addIcon214e3aa4}
               preserveAspectRatio="none" viewBox="0.5625 0.5625 34.875 34.875"
               fill="rgba(216, 174, 66, 1)">
-              <SvgPath d="M 18 0.5625 C 8.3671875 0.5625 0.5625 8.3671875 0.5625 18 C 0.5625 27.6328125 8.3671875 35.4375 18 35.4375 C 27.6328125 35.4375 35.4375 27.6328125 35.4375 18 C 35.4375 8.3671875 27.6328125 0.5625 18 0.5625 Z M 28.125 19.96875 C 28.125 20.43281173706055 27.74531173706055 20.8125 27.28125 20.8125 L 20.8125 20.8125 L 20.8125 27.28125 C 20.8125 27.74531173706055 20.43281173706055 28.125 19.96875 28.125 L 16.03125 28.125 C 15.56718730926514 28.125 15.1875 27.74531173706055 15.1875 27.28125 L 15.1875 20.8125 L 8.71875 20.8125 C 8.254687309265137 20.8125 7.875 20.43281173706055 7.875 19.96875 L 7.875 16.03125 C 7.875 15.56718730926514 8.254687309265137 15.1875 8.71875 15.1875 L 15.1875 15.1875 L 15.1875 8.71875 C 15.1875 8.254687309265137 15.56718730926514 7.875 16.03125 7.875 L 19.96875 7.875 C 20.43281173706055 7.875 20.8125 8.254687309265137 20.8125 8.71875 L 20.8125 15.1875 L 27.28125 15.1875 C 27.74531173706055 15.1875 28.125 15.56718730926514 28.125 16.03125 L 28.125 19.96875 Z" /></Svg>
-          </View>
-          <Text style={styles.shopInfo_form_image_labela73d757d}>Hình ảnh quán</Text>
+              <SvgPath d="M 18 0.5625 C 8.3671875 0.5625 0.5625 8.3671875 0.5625 18 C 0.5625 27.6328125 8.3671875 35.4375 18 35.4375 C 27.6328125 35.4375 35.4375 27.6328125 35.4375 18 C 35.4375 8.3671875 27.6328125 0.5625 18 0.5625 Z M 28.125 19.96875 C 28.125 20.43281173706055 27.74531173706055 20.8125 27.28125 20.8125 L 20.8125 20.8125 L 20.8125 27.28125 C 20.8125 27.74531173706055 20.43281173706055 28.125 19.96875 28.125 L 16.03125 28.125 C 15.56718730926514 28.125 15.1875 27.74531173706055 15.1875 27.28125 L 15.1875 20.8125 L 8.71875 20.8125 C 8.254687309265137 20.8125 7.875 20.43281173706055 7.875 19.96875 L 7.875 16.03125 C 7.875 15.56718730926514 8.254687309265137 15.1875 8.71875 15.1875 L 15.1875 15.1875 L 15.1875 8.71875 C 15.1875 8.254687309265137 15.56718730926514 7.875 16.03125 7.875 L 19.96875 7.875 C 20.43281173706055 7.875 20.8125 8.254687309265137 20.8125 8.71875 L 20.8125 15.1875 L 27.28125 15.1875 C 27.74531173706055 15.1875 28.125 15.56718730926514 28.125 16.03125 L 28.125 19.96875 Z" />
+            </Svg>
+          </View> */}
+
         </View>
         <View style={styles.shopInfo_form_menu}>
-          <View style={styles.shopInfo_form_menu_btnAdd}>
-            <View style={styles.shopInfo_form_menu_btnAdd_bgcd8dfb81}></View>
-            <Svg style={styles.shopInfo_form_menu_btnAdd_addIcon} preserveAspectRatio="none"
-              viewBox="0.5625 0.5625 34.875 34.875" fill="rgba(216, 174, 66, 1)">
-              <SvgPath d="M 18 0.5625 C 8.3671875 0.5625 0.5625 8.3671875 0.5625 18 C 0.5625 27.6328125 8.3671875 35.4375 18 35.4375 C 27.6328125 35.4375 35.4375 27.6328125 35.4375 18 C 35.4375 8.3671875 27.6328125 0.5625 18 0.5625 Z M 28.125 19.96875 C 28.125 20.43281173706055 27.74531173706055 20.8125 27.28125 20.8125 L 20.8125 20.8125 L 20.8125 27.28125 C 20.8125 27.74531173706055 20.43281173706055 28.125 19.96875 28.125 L 16.03125 28.125 C 15.56718730926514 28.125 15.1875 27.74531173706055 15.1875 27.28125 L 15.1875 20.8125 L 8.71875 20.8125 C 8.254687309265137 20.8125 7.875 20.43281173706055 7.875 19.96875 L 7.875 16.03125 C 7.875 15.56718730926514 8.254687309265137 15.1875 8.71875 15.1875 L 15.1875 15.1875 L 15.1875 8.71875 C 15.1875 8.254687309265137 15.56718730926514 7.875 16.03125 7.875 L 19.96875 7.875 C 20.43281173706055 7.875 20.8125 8.254687309265137 20.8125 8.71875 L 20.8125 15.1875 L 27.28125 15.1875 C 27.74531173706055 15.1875 28.125 15.56718730926514 28.125 16.03125 L 28.125 19.96875 Z" /></Svg>
-          </View>
-          <Text style={styles.shopInfo_form_menu_label}>Menu quán</Text>
+          <Text style={styles.shopInfo_form_textfield_label}>Menu quán</Text>
+          <Svg style={styles.shopInfo_form_image_btnAdd} preserveAspectRatio="none"
+            viewBox="0.5625 0.5625 34.875 34.875" fill="rgba(216, 174, 66, 1)">
+            <SvgPath d="M 18 0.5625 C 8.3671875 0.5625 0.5625 8.3671875 0.5625 18 C 0.5625 27.6328125 8.3671875 35.4375 18 35.4375 C 27.6328125 35.4375 35.4375 27.6328125 35.4375 18 C 35.4375 8.3671875 27.6328125 0.5625 18 0.5625 Z M 28.125 19.96875 C 28.125 20.43281173706055 27.74531173706055 20.8125 27.28125 20.8125 L 20.8125 20.8125 L 20.8125 27.28125 C 20.8125 27.74531173706055 20.43281173706055 28.125 19.96875 28.125 L 16.03125 28.125 C 15.56718730926514 28.125 15.1875 27.74531173706055 15.1875 27.28125 L 15.1875 20.8125 L 8.71875 20.8125 C 8.254687309265137 20.8125 7.875 20.43281173706055 7.875 19.96875 L 7.875 16.03125 C 7.875 15.56718730926514 8.254687309265137 15.1875 8.71875 15.1875 L 15.1875 15.1875 L 15.1875 8.71875 C 15.1875 8.254687309265137 15.56718730926514 7.875 16.03125 7.875 L 19.96875 7.875 C 20.43281173706055 7.875 20.8125 8.254687309265137 20.8125 8.71875 L 20.8125 15.1875 L 27.28125 15.1875 C 27.74531173706055 15.1875 28.125 15.56718730926514 28.125 16.03125 L 28.125 19.96875 Z" />
+          </Svg>
         </View>
-      </View>
-      {
-        !isEditShopInfo ?
-          <TouchableOpacity style={styles.shopInfo_btnEdit}
-            onPress={() => onChangeisEditShopInfo(true)}>
-            <View style={styles.shopInfo_btnEdit_bg}></View>
-            <Text style={styles.shopInfo_btnEdit_title}>Chỉnh sửa</Text>
-          </TouchableOpacity>
-          : <TouchableOpacity style={styles.shopInfo_btnEdit}
-            onPress={() => onChangeisEditShopInfo(false)}>
-            <View style={styles.shopInfo_btnEdit_bg}></View>
-            <Text style={styles.shopInfo_btnEdit_title}>Lưu lại</Text>
-          </TouchableOpacity>
-      }
-    </ScrollView>
+        {
+          !isEditShopInfo ?
+            <TouchableOpacity style={styles.shopInfo_btnEdit}
+              onPress={() => onChangeisEditShopInfo(true)}>
+              <View style={styles.shopInfo_btnEdit_bg}></View>
+              <Text style={styles.shopInfo_btnEdit_title}>Chỉnh sửa</Text>
+            </TouchableOpacity>
+            : <TouchableOpacity style={styles.shopInfo_btnEdit}
+              onPress={() => onChangeisEditShopInfo(false)}>
+              <View style={styles.shopInfo_btnEdit_bg}></View>
+              <Text style={styles.shopInfo_btnEdit_title}>Lưu lại</Text>
+            </TouchableOpacity>
+        }
+      </ScrollView>
+
+    </View>
   );
 
 }
@@ -144,36 +145,32 @@ const styles = StyleSheet.create({
     "opacity": 1,
     "position": "relative",
     "backgroundColor": "rgba(249, 249, 249, 1)",
-    "width": 393,
+    "width": "100%",
     "height": 851,
     "left": 0,
     "top": 0
   },
   "shopInfo_rectangle22": {
-    "opacity": 1,
-    "position": "absolute",
+    // "opacity": 1,
+    // "position": "absolute",
     "backgroundColor": "rgba(220, 220, 220, 1)",
-    "borderTopLeftRadius": 0,
-    "borderTopRightRadius": 0,
-    "borderBottomLeftRadius": 0,
-    "borderBottomRightRadius": 0,
-    "width": 393,
-    "height": 851,
-    "left": 0,
-    "top": 0
+    // "borderTopLeftRadius": 0,
+    // "borderTopRightRadius": 0,
+    // "borderBottomLeftRadius": 0,
+    // "borderBottomRightRadius": 0,
+    // "width": 393,
+    // "height": 851,
+    // "left": 0,
+    // "top": 0
+    "flex": 1
   },
   "shopInfo_header": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "transparent",
-    "width": 393,
-    "height": 85,
-    "left": 0,
-    "top": 0
+    "width": "100%",
+    "height": 90,
+    "marginTop": 0
   },
   "shopInfo_header_bgf54e5df8": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "rgba(241, 211, 126, 1)",
     "borderTopLeftRadius": 0,
     "borderTopRightRadius": 0,
@@ -187,79 +184,35 @@ const styles = StyleSheet.create({
     },
     "shadowRadius": 6,
     "width": 393,
-    "height": 85,
-    "left": 0,
-    "top": 0
+    "height": 90,
   },
   "shopInfo_header_titlea84bead2": {
-    "opacity": 1,
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
-    "fontSize": 22,
+    "fontSize": 27,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 181,
-    "height": 27,
-    "left": 106,
-    "top": 46
+    "textAlign": "center",
+    "width": "100%",
+    "top": 30,
   },
   "shopInfo_form": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "transparent",
-    "width": 351,
-    "height": 672,
-    "left": 21,
-    "top": 109
+    "width": "90%",
+    "marginTop": 0,
+    "marginLeft": "5%",
+    "marginBottom": 120
   },
-  "shopInfo_form_bgdb1f3437": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 1)",
-    "borderTopLeftRadius": 10,
-    "borderTopRightRadius": 10,
-    "borderBottomLeftRadius": 10,
-    "borderBottomRightRadius": 10,
-    "shadowColor": "rgb(0,  0,  0)",
-    "shadowOpacity": 0.1607843137254902,
-    "shadowOffset": {
-      "width": 0,
-      "height": 3
-    },
-    "shadowRadius": 6,
-    "width": 351,
-    "height": 672,
-    "left": 0,
-    "top": 0
-  },
-  "shopInfo_form_name": {
-    "opacity": 1,
-    "position": "absolute",
+  "shopInfo_form_textfield": {
     "backgroundColor": "transparent",
-    "width": 309,
+    "width": "90%",
     "height": 65,
-    "left": 21,
-    "top": 13
+    "marginTop": 20,
+    "marginLeft": "5%",
   },
-  "shopInfo_form_name_input": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "borderTopLeftRadius": 7,
-    "borderTopRightRadius": 7,
-    "borderBottomLeftRadius": 7,
-    "borderBottomRightRadius": 7,
-    "width": 309,
-    "height": 43,
-    "left": 0,
-    "top": 22
-  },
-  "shopInfo_form_name_label": {
-    "opacity": 1,
-    "position": "absolute",
+  "shopInfo_form_textfield_label": {
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 15,
@@ -267,29 +220,25 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 70,
-    "height": 18,
-    "left": 3,
-    "top": 0
-  },
-  "shopInfo_form_name_text": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(142, 142, 142, 1)",
-    "fontSize": 13,
-    "fontWeight": "400",
-    "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": '100%',
+    "width": "90%",
     "height": 15,
-    "left": 18,
-    "top": 38
+    "marginLeft": 5,
+
   },
-  "shopInfo_form_name_textInput": {
-    "opacity": 1,
-    "position": "absolute",
+  "shopInfo_form_textfield_value": {
+    "backgroundColor": "rgba(255, 255, 255, 0)",
+    "color": "rgba(142, 142, 142, 1)",
+    "fontSize": 13,
+    "fontWeight": "400",
+    "fontStyle": "normal",
+    "fontFamily": "Roboto",
+    "textAlign": "left",
+    "width": '90%',
+    "height": 20,
+    "marginLeft": 20,
+    "marginTop": 15
+  },
+  "shopInfo_form_textfield_input": {
     "backgroundColor": "rgba(217, 217, 217, 1)",
     "color": "rgba(142, 142, 142, 1)",
     "fontSize": 13,
@@ -297,168 +246,17 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": '100%',
-    "height": 43,
-    "left": 0,
-    "top": 22
+    "width": '90%',
+    "height": 40,
+    "marginLeft": 5,
+    "marginTop": 10
   },
-  "shopInfo_form_address_textInput": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(217, 217, 217, 1)",
-    "color": "rgba(142, 142, 142, 1)",
-    "fontSize": 13,
-    "fontWeight": "400",
-    "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": '100%',
-    "height": 43,
-    "left": 0,
-    "top": 22
-  },
-  "shopInfo_form_phone_textInput": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(217, 217, 217, 1)",
-    "color": "rgba(142, 142, 142, 1)",
-    "fontSize": 13,
-    "fontWeight": "400",
-    "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": '100%',
-    "height": 43,
-    "left": 0,
-    "top": 22
-  },
-  "shopInfo_form_description_textInput": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(217, 217, 217, 1)",
-    "color": "rgba(142, 142, 142, 1)",
-    "fontSize": 13,
-    "fontWeight": "400",
-    "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": '100%',
-    "height": 80,
-    "left": 0,
-    "top": 22
-  },
-  "shopInfo_form_address": {
-    "opacity": 1,
-    "position": "absolute",
+  "shopInfo_form_multiline": {
     "backgroundColor": "transparent",
-    "width": 309,
-    "height": 65,
-    "left": 21,
-    "top": 98
-  },
-  "shopInfo_form_address_input": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "borderTopLeftRadius": 7,
-    "borderTopRightRadius": 7,
-    "borderBottomLeftRadius": 7,
-    "borderBottomRightRadius": 7,
-    "width": 309,
-    "height": 60,
-    "left": 0,
-    "top": 22
-  },
-  "shopInfo_form_address_label": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(84, 71, 65, 1)",
-    "fontSize": 15,
-    "fontWeight": "700",
-    "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 70,
-    "height": 18,
-    "left": 3,
-    "top": 0
-  },
-  "shopInfo_form_address_text": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(142, 142, 142, 1)",
-    "fontSize": 13,
-    "fontWeight": "400",
-    "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": '100%',
-    "height": 15,
-    "left": 18,
-    "top": 38
-  },
-  "shopInfo_form_phone": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "transparent",
-    "width": 309,
-    "height": 65,
-    "left": 21,
-    "top": 183
-  },
-  "shopInfo_form_phone_input": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "borderTopLeftRadius": 7,
-    "borderTopRightRadius": 7,
-    "borderBottomLeftRadius": 7,
-    "borderBottomRightRadius": 7,
-    "width": 309,
-    "height": 43,
-    "left": 0,
-    "top": 22
-  },
-  "shopInfo_form_phone_label": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(84, 71, 65, 1)",
-    "fontSize": 15,
-    "fontWeight": "700",
-    "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 100,
-    "height": 18,
-    "left": 3,
-    "top": 0
-  },
-  "shopInfo_form_phone_text": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(142, 142, 142, 1)",
-    "fontSize": 13,
-    "fontWeight": "400",
-    "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 80,
-    "height": 15,
-    "left": 18,
-    "top": 38
-  },
-  "shopInfo_form_description": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "transparent",
-    "width": 309,
-    "height": 'fit-content',
-    "left": 21,
-    "top": 268
+    "width": "90%",
+    "height": 'auto',
+    "marginTop": 20,
+    "marginLeft": "5%",
   },
   "shopInfo_form_description_input": {
     "opacity": 1,
@@ -473,9 +271,7 @@ const styles = StyleSheet.create({
     "left": 0,
     "top": 22
   },
-  "shopInfo_form_description_label": {
-    "opacity": 1,
-    "position": "absolute",
+  "shopInfo_form_multiline_label": {
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 15,
@@ -483,14 +279,11 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 70,
-    "height": 'fit-content',
-    "left": 3,
-    "top": 0
+    "width": "90%",
+    "height": 'auto',
+    "marginLeft": 5,
   },
-  "shopInfo_form_description_text": {
-    "opacity": 1,
-    "position": "absolute",
+  "shopInfo_form_multiline_value": {
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(142, 142, 142, 1)",
     "fontSize": 13,
@@ -499,60 +292,53 @@ const styles = StyleSheet.create({
     "fontFamily": "Roboto",
     "textAlign": "left",
     "lineHeight": 16,
-    "width": 291,
-    "height": 'fit-content',
-    "left": 11,
-    "top": 32.5
+    "width": '90%',
+    "height": 'auto',
+    "marginLeft": 20,
+    "marginTop": 15
+  },
+  "shopInfo_form_multiline_input": {
+    "backgroundColor": "rgba(217, 217, 217, 1)",
+    "color": "rgba(142, 142, 142, 1)",
+    "fontSize": 13,
+    "fontWeight": "400",
+    "fontStyle": "normal",
+    "fontFamily": "Roboto",
+    "textAlign": "left",
+    "width": '90%',
+    "height": 70,
+    "marginLeft": 5,
+    "marginTop": 10
   },
   "shopInfo_form_image": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "transparent",
-    "width": 287,
-    "height": 123,
-    "left": 21,
-    "top": 386
+    "width": "90%",
+    "height": 150,
+    "marginTop": 20,
+    "marginLeft": "5%",
   },
   "shopInfo_form_image_example": {
-    "opacity": 1,
-    "position": "absolute",
+
+    "display": "inline",
+    "padding": 15,
     "backgroundColor": "transparent",
-    "width": 189,
-    "height": 94,
-    "left": 0,
-    "top": 29
+    "width": "90%",
+    "height": 90,
+    "marginTop": 15,
+    "marginLeft": "5%"
   },
   "shopInfo_form_image_example_i1": {
-    "opacity": 1,
-    "position": "absolute",
+    "position": "relative",
     "marginTop": 0,
-    "marginRight": 0,
+    "marginRight": 10,
     "marginBottom": 0,
     "marginLeft": 0,
     "borderTopLeftRadius": 7,
     "borderTopRightRadius": 7,
     "borderBottomLeftRadius": 7,
     "borderBottomRightRadius": 7,
-    "width": 92,
-    "height": 94,
-    "left": 0,
-    "top": 0
-  },
-  "shopInfo_form_image_example_i2": {
-    "opacity": 1,
-    "position": "absolute",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "borderTopLeftRadius": 7,
-    "borderTopRightRadius": 7,
-    "borderBottomLeftRadius": 7,
-    "borderBottomRightRadius": 7,
-    "width": 92,
-    "height": 94,
-    "left": 97,
-    "top": 0
+    "width": 80,
+    "height": 80,
   },
   "shopInfo_form_image_btnAdd620bac46": {
     "opacity": 1,
@@ -576,13 +362,17 @@ const styles = StyleSheet.create({
     "left": 0,
     "top": 0
   },
-  "shopInfo_form_image_btnAdd620bac46_addIcon214e3aa4": {
-    "opacity": 1,
-    "position": "absolute",
-    "width": 34.88,
-    "height": 34.88,
-    "left": 26,
-    "top": 31.55
+  "shopInfo_form_image_btnAdd": {
+    "marginTop": 15,
+    "marginRight": 20,
+    "marginBottom": 0,
+    "marginLeft": 0,
+    "borderTopLeftRadius": 7,
+    "borderTopRightRadius": 7,
+    "borderBottomLeftRadius": 7,
+    "borderBottomRightRadius": 7,
+    "width": 50,
+    "height": 50,
   },
   "shopInfo_form_image_labela73d757d": {
     "opacity": 1,
@@ -600,13 +390,11 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "shopInfo_form_menu": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "transparent",
-    "width": 92,
-    "height": 119,
-    "left": 22,
-    "top": 529
+    "width": "90%",
+    "height": 150,
+    "marginTop": 20,
+    "marginLeft": "5%",
   },
   "shopInfo_form_menu_btnAdd": {
     "opacity": 1,
@@ -654,29 +442,22 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "shopInfo_btnEdit": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "transparent",
-    "width": 351,
+    "width": "90%",
     "height": 35,
-    "left": 21,
-    "top": 803
+    "marginLeft": "5%"
   },
   "shopInfo_btnEdit_bg": {
-    "opacity": 1,
     "position": "absolute",
     "backgroundColor": "rgba(249, 174, 81, 1)",
     "borderTopLeftRadius": 14,
     "borderTopRightRadius": 14,
     "borderBottomLeftRadius": 14,
     "borderBottomRightRadius": 14,
-    "width": 351,
+    "width": "100%",
     "height": 35,
-    "left": 0,
-    "top": 0
   },
   "shopInfo_btnEdit_title": {
-    "opacity": 1,
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(255, 255, 255, 1)",
@@ -684,10 +465,9 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 68,
+    "textAlign": "center",
+    "width": "100%",
     "height": 18,
-    "left": 142,
-    "top": 9
+    "top": "20%"
   }
 });

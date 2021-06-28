@@ -352,7 +352,7 @@ const styles = StyleSheet.create({
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(255, 255, 255, 1)",
-    "fontSize": 10,
+    "fontSize": 9,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
