@@ -1,69 +1,61 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from "prop-types";
-import {StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableOpacity} from 'react-native';
-import {Image as ReactImage} from 'react-native';
+import { StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableOpacity } from 'react-native';
+import { Image as ReactImage } from 'react-native';
 
 
-const addvoucherScreen =({navigation}) => {
+const AddVoucherScreen = ({ navigation }) => {
   const onPressBack = () => {
     navigation.goBack();
-  } 
+  }
   const onPressSave = () => {
     navigation.reset({
-      index:0,
-      navigate:["Home"]
+      index: 0,
+      navigate: ["Home"]
     });
   }
 
-    return (
+  return (
     <View style={styles.addvourcher}>
-        <TouchableOpacity onPress={onPressSave}  style={styles.addvourcher_btnHuy}>
-            <View style={styles.addvourcher_btnHuy_rectangle1505}></View>
-            <Text  style={styles.addvourcher_btnHuy_luLi}>LƯU LẠI</Text>
-        </TouchableOpacity>
-        <View  style={styles.addvourcher_form}>
-            <View  style={styles.addvourcher_form_bgdde23b2a}></View>
-            <View  style={styles.addvourcher_form_titlea5a00643}>
-                <View style={styles.addvourcher_form_titlea5a00643_input60ff3925}></View>
-                <Text  style={styles.addvourcher_form_titlea5a00643_label9535316c}>Tên ưu đãi</Text>
-            </View>
-            <View  style={styles.addvourcher_form_enddate}>
-                <View   style={styles.addvourcher_form_enddate_input}></View>
-                <Text  style={styles.addvourcher_form_enddate_label}>Ngày hết hạn</Text>
-            </View>
-            <View  style={styles.addvourcher_form_sotiengiamgia}>
-                <View  style={styles.addvourcher_form_sotiengiamgia_input}></View>
-                <Text  style={styles.addvourcher_form_sotiengiamgia_label}>Số tiền giảm giá</Text>
-            </View>
-            <View  style={styles.addvourcher_form_gioihanphieu}>
-                <View  style={styles.addvourcher_form_gioihanphieu_input}></View>
-                <Text  style={styles.addvourcher_form_gioihanphieu_label}>Số lượng mã ưu đãi</Text>
-            </View>
-            <View  style={styles.addvourcher_form_mota}>
-                <View  style={styles.addvourcher_form_mota_input}></View>
-                <Text  style={styles.addvourcher_form_mota_label}>Mô tả</Text>
-            </View>
+      <TouchableOpacity onPress={onPressSave} style={styles.addvourcher_btnHuy}>
+        <View style={styles.addvourcher_btnHuy_rectangle1505}></View>
+        <Text style={styles.addvourcher_btnHuy_luLi}>LƯU LẠI</Text>
+      </TouchableOpacity>
+      <View style={styles.addvourcher_form}>
+        <View style={styles.addvourcher_form_bgdde23b2a}></View>
+        <View style={styles.addvourcher_form_titlea5a00643}>
+          <View style={styles.addvourcher_form_titlea5a00643_input60ff3925}></View>
+          <Text style={styles.addvourcher_form_titlea5a00643_label9535316c}>Tên ưu đãi</Text>
         </View>
+        <View style={styles.addvourcher_form_enddate}>
+          <View style={styles.addvourcher_form_enddate_input}></View>
+          <Text style={styles.addvourcher_form_enddate_label}>Ngày hết hạn</Text>
+        </View>
+        <View style={styles.addvourcher_form_sotiengiamgia}>
+          <View style={styles.addvourcher_form_sotiengiamgia_input}></View>
+          <Text style={styles.addvourcher_form_sotiengiamgia_label}>Số tiền giảm giá</Text>
+        </View>
+        <View style={styles.addvourcher_form_gioihanphieu}>
+          <View style={styles.addvourcher_form_gioihanphieu_input}></View>
+          <Text style={styles.addvourcher_form_gioihanphieu_label}>Số lượng mã ưu đãi</Text>
+        </View>
+        <View style={styles.addvourcher_form_mota}>
+          <View style={styles.addvourcher_form_mota_input}></View>
+          <Text style={styles.addvourcher_form_mota_label}>Mô tả</Text>
+        </View>
+      </View>
 
-        
-        <TouchableOpacity onPress={onPressBack}  style={styles.addvourcher_header}>
-            <View style={styles.addvourcher_header_bg}></View>
-            <ReactImage  source={require('./assets/back.png')} style={styles.addvourcher_header_back} />
-            <Text  style={styles.addvourcher_header_title}>THÊM VOUCHER</Text>
-        </TouchableOpacity>
+
+      <TouchableOpacity onPress={onPressBack} style={styles.addvourcher_header}>
+        <View style={styles.addvourcher_header_bg}></View>
+        <ReactImage source={require('./assets/back.png')} style={styles.addvourcher_header_back} />
+        <Text style={styles.addvourcher_header_title}>THÊM VOUCHER</Text>
+      </TouchableOpacity>
     </View>
-    );
+  );
 
 }
-export default addvoucherScreen;
-
-addvoucherScreen.propTypes = {
-
-}
-
-addvoucherScreen.defaultProps = {
-
-}
+export default AddVoucherScreen;
 
 
 const styles = StyleSheet.create({
@@ -73,7 +65,7 @@ const styles = StyleSheet.create({
     "backgroundColor": "rgba(249, 249, 249, 1)",
     "width": 393,
     "height": 851,
-  
+
   },
   "addvourcher_rectangle22": {
     "opacity": 1,

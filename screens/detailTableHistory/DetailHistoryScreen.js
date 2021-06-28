@@ -8,7 +8,7 @@ import { Text as SvgText } from 'react-native-svg';
 import { Image as SvgImage } from 'react-native-svg';
 import { RotationGestureHandler } from 'react-native-gesture-handler';
 
-const DetailHistory = ({navigation}) => {
+const DetailHistoryScreen = ({navigation}) => {
 
   const onPressBack = () => {
     navigation.goBack();
@@ -58,7 +58,7 @@ const DetailHistory = ({navigation}) => {
   );
 }
 
-export default DetailHistory;
+export default DetailHistoryScreen;
 
 
 const styles = StyleSheet.create({

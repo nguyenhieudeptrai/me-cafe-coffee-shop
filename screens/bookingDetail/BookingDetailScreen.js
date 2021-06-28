@@ -7,8 +7,7 @@ import { Path as SvgPath } from 'react-native-svg';
 import { Text as SvgText } from 'react-native-svg';
 import { Image as SvgImage } from 'react-native-svg';
 
-export default BookingDetail = () => {
-
+const BookingDetailScreen = ({navigation}) => {
 
   return (
     <View style={styles.bookingDetail}>
@@ -55,7 +54,7 @@ export default BookingDetail = () => {
     </View>
   );
 }
-
+export default BookingDetailScreen;
 
 
 const styles = StyleSheet.create({
