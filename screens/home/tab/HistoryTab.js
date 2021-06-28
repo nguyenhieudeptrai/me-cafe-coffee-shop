@@ -7,7 +7,40 @@ import { Path as SvgPath } from 'react-native-svg';
 import { Text as SvgText } from 'react-native-svg';
 import { Image as SvgImage } from 'react-native-svg';
 
-
+const dataBookingTable = [
+  {
+    TabbleNum: 1,
+    personNum: 2,
+  },
+  {
+    TabbleNum: 2,
+    personNum: 1,
+  },
+  {
+    TabbleNum: 3,
+    personNum: 4,
+  },
+  {
+    TabbleNum: 4,
+    personNum: 6,
+  },
+  {
+    TabbleNum: 6,
+    personNum: 2,
+  },
+  {
+    TabbleNum: 7,
+    personNum: 3,
+  },
+  {
+    TabbleNum: 8,
+    personNum: 2,
+  },
+  {
+    TabbleNum: 10,
+    personNum: 3,
+  },
+]
 const HistoryTab = ({ navigation }) => {
 
   const onPressDetailHistory = () => {

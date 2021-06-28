@@ -127,17 +127,12 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "account_header_title1103c87d": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 22,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 234,
-    "height": 27,
     "left": 80,
     "top": 23
   },
@@ -151,7 +146,6 @@ const styles = StyleSheet.create({
     "alignSelf":'center'
   },
   "account_form_bgfec2c280": {
-    "opacity": 1,
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 1)",
     "borderTopLeftRadius": 10,
@@ -165,8 +159,6 @@ const styles = StyleSheet.create({
       "height": 3
     },
     "shadowRadius": 6,
-    "width": 351,
-    "height": 604,
     "left": 0,
     "top": 0
   },
@@ -208,17 +200,12 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "account_form_name11525854_nguynMinhAnh": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(142, 142, 142, 1)",
     "fontSize": 13,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 102,
-    "height": 15,
     "left": 18,
     "top": 38
   },
@@ -245,32 +232,22 @@ const styles = StyleSheet.create({
     "top": 22
   },
   "account_form_addressf9fa9f46_label2b6f35e8": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 15,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 60,
-    "height": 18,
     "left": 3,
     "top": 0
   },
   "account_form_addressf9fa9f46_x232LeVnVitQun9Tphcm": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(142, 142, 142, 1)",
     "fontSize": 13,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 189,
-    "height": 15,
     "left": 18,
     "top": 38
   },
@@ -297,32 +274,22 @@ const styles = StyleSheet.create({
     "top": 22
   },
   "account_form_phonedbf082b5_label318bf2ec": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 15,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 100,
-    "height": 18,
     "left": 3,
     "top": 0
   },
   "account_form_phonedbf082b5_x0335657533": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(142, 142, 142, 1)",
     "fontSize": 13,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 80,
-    "height": 15,
     "left": 18,
     "top": 38
   },
@@ -336,37 +303,26 @@ const styles = StyleSheet.create({
     "top": 367
   },
   "account_form_mail_inputa77003a1": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(217, 217, 217, 1)",
     "borderTopLeftRadius": 7,
     "borderTopRightRadius": 7,
     "borderBottomLeftRadius": 7,
     "borderBottomRightRadius": 7,
-    "width": 309,
-    "height": 43,
     "left": 0,
     "top": 24
   },
   "account_form_mail_labelf92dd575": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 15,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 60,
-    "height": 18,
     "left": 4,
     "top": 0
   },
   "account_form_mail_nguyenminhanh": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(142, 142, 142, 1)",
     "fontSize": 13,
     "fontWeight": "400",
@@ -374,8 +330,6 @@ const styles = StyleSheet.create({
     "fontFamily": "Roboto",
     "textAlign": "left",
     "lineHeight": 16,
-    "width": 291,
-    "height": 27,
     "left": 15,
     "top": 37.5
   },
@@ -402,24 +356,17 @@ const styles = StyleSheet.create({
     "top": 23
   },
   "account_form_job7c17c74a_label": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 15,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 55,
-    "height": 18,
     "left": 0,
     "top": 0
   },
   "account_form_job7c17c74a_qunL": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(142, 142, 142, 1)",
     "fontSize": 13,
     "fontWeight": "400",
@@ -427,8 +374,6 @@ const styles = StyleSheet.create({
     "fontFamily": "Roboto",
     "textAlign": "left",
     "lineHeight": 16,
-    "width": 291,
-    "height": 27,
     "left": 15,
     "top": 36.5
   },
@@ -455,17 +400,12 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "account_btnEdit_title": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(255, 255, 255, 1)",
     "fontSize": 14,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 80,
-    "height": 17,
     "left": 126,
     "top": 10
   },
@@ -509,32 +449,22 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "account_info_left_job": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(83, 71, 65, 1)",
     "fontSize": 12,
     "fontWeight": "400",
     "fontStyle": "italic",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 40,
-    "height": 14,
     "left": 23,
     "top": 84
   },
   "account_info_left_name": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(83, 71, 65, 1)",
     "fontSize": 12,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 99,
-    "height": 14,
     "left": 0,
     "top": 70
   },
@@ -548,45 +478,30 @@ const styles = StyleSheet.create({
     "top": 21
   },
   "account_info_right_address": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(204, 153, 129, 0)",
     "fontSize": 13,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 189,
-    "height": 15,
     "left": 0,
     "top": 28
   },
   "account_info_right_phone": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(204, 153, 129, 0)",
     "fontSize": 13,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 166,
-    "height": 15,
     "left": 0,
     "top": 49
   },
   "account_info_right_shopName": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(83, 71, 65, 1)",
     "fontSize": 20,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 178,
-    "height": 24,
     "left": 0,
     "top": 0
   }
