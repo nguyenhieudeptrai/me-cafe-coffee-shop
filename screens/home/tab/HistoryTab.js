@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "history_group59_group58_ban1": {
-    "opacity": 1,
+    
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
@@ -100,54 +100,36 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 64,
-    "height": 30,
     "left": 28,
     "top": 24
   },
   "history_group59_group58_x2Ngi": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 20,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "center",
-    "width": 68,
-    "height": 24,
     "left": 25,
     "top": 64
   },
   "history_lchS": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 24,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "center",
-    "width": 79,
-    "height": 29,
     "left": 51,
     "top": 130
   },
   "history_sBan6": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 15,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 62,
-    "height": 18,
     "left": 51,
     "top": 162
   },
