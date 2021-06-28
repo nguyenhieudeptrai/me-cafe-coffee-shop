@@ -9,11 +9,14 @@ const addvoucherScreen =({navigation}) => {
     navigation.goBack();
   } 
   const onPressSave = () => {
-    navigation.navigate("./home/tab/VoucherTab");
+    navigation.reset({
+      index:0,
+      navigate:["Home"]
+    });
   }
 
     return (
-    <ScrollView dstyle={styles.addvourcher}>
+    <View style={styles.addvourcher}>
         <TouchableOpacity onPress={onPressSave}  style={styles.addvourcher_btnHuy}>
             <View style={styles.addvourcher_btnHuy_rectangle1505}></View>
             <Text  style={styles.addvourcher_btnHuy_luLi}>LƯU LẠI</Text>
@@ -25,7 +28,7 @@ const addvoucherScreen =({navigation}) => {
                 <Text  style={styles.addvourcher_form_titlea5a00643_label9535316c}>Tên ưu đãi</Text>
             </View>
             <View  style={styles.addvourcher_form_enddate}>
-                <View  style={styles.addvourcher_form_enddate_input}></View>
+                <View   style={styles.addvourcher_form_enddate_input}></View>
                 <Text  style={styles.addvourcher_form_enddate_label}>Ngày hết hạn</Text>
             </View>
         </View>
@@ -34,7 +37,7 @@ const addvoucherScreen =({navigation}) => {
             <ReactImage  source={require('./assets/back.png')} style={styles.addvourcher_header_back} />
             <Text  style={styles.addvourcher_header_title}>THÊM VOUCHER</Text>
         </TouchableOpacity>
-    </ScrollView>
+    </View>
     );
 
 }
