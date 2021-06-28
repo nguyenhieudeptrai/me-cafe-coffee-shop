@@ -18,7 +18,6 @@ const AddVoucherScreen = ({ navigation }) => {
   return (
     <View style={styles.addvourcher}>
       <TouchableOpacity onPress={onPressBack} style={styles.addvourcher_header}>
-        <View style={styles.addvourcher_header_bg}></View>
         <ReactImage source={require('./assets/back.png')} style={styles.addvourcher_header_back} />
         <Text style={styles.addvourcher_header_title}>THÊM VOUCHER</Text>
       </TouchableOpacity>
@@ -44,12 +43,12 @@ const AddVoucherScreen = ({ navigation }) => {
           <View style={styles.addvourcher_form_mota_input}></View>
           <Text style={styles.addvourcher_form_mota_label}>Mô tả</Text>
         </View>
-       
+
       </View>
       <TouchableOpacity onPress={onPressSave} style={styles.addvourcher_btnHuy}>
-          <View style={styles.addvourcher_btnHuy_rectangle1505}></View>
-          <Text style={styles.addvourcher_btnHuy_luLi}>LƯU LẠI</Text>
-        </TouchableOpacity>
+        <View style={styles.addvourcher_btnHuy_rectangle1505}></View>
+        <Text style={styles.addvourcher_btnHuy_luLi}>LƯU LẠI</Text>
+      </TouchableOpacity>
 
     </View>
   );
@@ -100,11 +99,7 @@ const styles = StyleSheet.create({
     "top": 10
   },
   "addvourcher_form": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "transparent",
-    "left": 15,
-    "top": 110
+    flex:1
   },
   "addvourcher_form_bgdde23b2a": {
     "backgroundColor": "rgba(255, 255, 255, 1)",
@@ -149,7 +144,7 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "addvourcher_form_enddate": {
-    "flex":1,
+    "flex": 1,
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
@@ -180,12 +175,12 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",  
+    "textAlign": "left",
     "left": 3,
     "top": 0
   },
   "addvourcher_form_sotiengiamgia": {
-    "flex":1,
+    "flex": 1,
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
@@ -219,7 +214,7 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "addvourcher_form_gioihanphieu": {
-    "flex":1,
+    "flex": 1,
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
@@ -286,17 +281,6 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "addvourcher_header": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "transparent",
-    "width": 393,
-    "height": 86,
-    "left": 0,
-    "top": 0
-  },
-  "addvourcher_header_bg": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "rgba(241, 211, 126, 1)",
     "shadowOpacity": 0.16,
     "shadowOffset": {
@@ -304,10 +288,8 @@ const styles = StyleSheet.create({
       "height": 3
     },
     "shadowRadius": 6,
-    "width": 393,
+    "width": "100%",
     "height": 86,
-    "left": 0,
-    "top": 0
   },
   "addvourcher_header_back": {
     "opacity": 1,
@@ -318,16 +300,11 @@ const styles = StyleSheet.create({
     "top": 45
   },
   "addvourcher_header_title": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 22,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "left": 113,
-    "top": 47
+    alignSelf:"center"
   },
 });
