@@ -7,7 +7,13 @@ import { Path as SvgPath } from 'react-native-svg';
 import { Text as SvgText } from 'react-native-svg';
 import { Image as SvgImage } from 'react-native-svg';
 
+const dataBookingTable = [
+  {
+    TabbleName: "Bàn 1",
+    personNum: "02 Người",
+  },
 
+]
 const HistoryTab = ({ navigation }) => {
 
   const onPressDetailHistory = () => {
