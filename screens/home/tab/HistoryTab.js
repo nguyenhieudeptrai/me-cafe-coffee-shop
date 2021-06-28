@@ -12,7 +12,34 @@ const dataBookingTable = [
     TabbleNum: 1,
     personNum: 2,
   },
-
+  {
+    TabbleNum: 2,
+    personNum: 1,
+  },
+  {
+    TabbleNum: 3,
+    personNum: 4,
+  },
+  {
+    TabbleNum: 4,
+    personNum: 6,
+  },
+  {
+    TabbleNum: 6,
+    personNum: 2,
+  },
+  {
+    TabbleNum: 7,
+    personNum: 3,
+  },
+  {
+    TabbleNum: 8,
+    personNum: 2,
+  },
+  {
+    TabbleNum: 10,
+    personNum: 3,
+  },
 ]
 const HistoryTab = ({ navigation }) => {
 
