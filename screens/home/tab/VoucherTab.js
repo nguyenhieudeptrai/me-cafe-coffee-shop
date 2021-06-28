@@ -120,8 +120,6 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 120,
-    "height": 47,
     "left": 147,
     "top": 50
   },
@@ -284,7 +282,7 @@ const styles = StyleSheet.create({
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(255, 170, 0, 1)",
-    "fontSize": 35,
+    "fontSize": 30,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",

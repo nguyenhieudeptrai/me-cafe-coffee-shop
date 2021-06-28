@@ -64,6 +64,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   "addvourcher_rectangle22": {
+    "flex":1,
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "rgba(220, 220, 220, 1)",
@@ -73,27 +74,30 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "addvourcher_btnHuy": {
+    "flex":1,
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
-    "width": 360,
+    "width": 320,
     "height": 36,
-    "left": 17,
-    "top": 730
+    "left": 10,
+    "top": 550
   },
   "addvourcher_btnHuy_rectangle1505": {
     "opacity": 1,
+    "flex":1,
     "position": "absolute",
     "backgroundColor": "rgba(249, 174, 81, 1)",
     "borderTopLeftRadius": 14,
     "borderTopRightRadius": 14,
     "borderBottomLeftRadius": 14,
     "borderBottomRightRadius": 14,
-    "width": 363,
+    "width": 320,
     "height": 36,
   },
   "addvourcher_btnHuy_luLi": {
     "opacity": 1,
+    "flex":1,
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(255, 255, 255, 1)",
@@ -104,11 +108,12 @@ const styles = StyleSheet.create({
     "textAlign": "left",
     "width": 70,
     "height": 17,
-    "left": 160,
+    "left": 120,
     "top": 10
   },
   "addvourcher_form": {
     "opacity": 1,
+    "flex":1,
     "position": "absolute",
     "backgroundColor": "transparent",
     "width": 363,
@@ -164,6 +169,7 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "addvourcher_form_enddate": {
+    "flex":1,
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
@@ -201,6 +207,7 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "addvourcher_form_sotiengiamgia": {
+    "flex":1,
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
@@ -236,6 +243,7 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "addvourcher_form_gioihanphieu": {
+    "flex":1,
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
@@ -347,8 +355,6 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 167,
-    "height": 27,
     "left": 113,
     "top": 47
   },
