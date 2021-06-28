@@ -44,12 +44,12 @@ const AddVoucherScreen = ({ navigation }) => {
           <View style={styles.addvourcher_form_mota_input}></View>
           <Text style={styles.addvourcher_form_mota_label}>Mô tả</Text>
         </View>
-        <TouchableOpacity onPress={onPressSave} style={styles.addvourcher_btnHuy}>
+       
+      </View>
+      <TouchableOpacity onPress={onPressSave} style={styles.addvourcher_btnHuy}>
           <View style={styles.addvourcher_btnHuy_rectangle1505}></View>
           <Text style={styles.addvourcher_btnHuy_luLi}>LƯU LẠI</Text>
         </TouchableOpacity>
-      </View>
-
 
     </View>
   );
@@ -64,7 +64,6 @@ const styles = StyleSheet.create({
     flex: 1
   },
   "addvourcher_rectangle22": {
-    "flex":1,
     "opacity": 1,
     "backgroundColor": "rgba(220, 220, 220, 1)",
     "width": 393,
@@ -74,10 +73,8 @@ const styles = StyleSheet.create({
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
-    "width": 320,
-    "height": 36,
-    "left": 10,
-    "top": 550
+    "left": 30,
+    "top": 720
   },
   "addvourcher_btnHuy_rectangle1505": {
     "opacity": 1,
@@ -104,11 +101,8 @@ const styles = StyleSheet.create({
   },
   "addvourcher_form": {
     "opacity": 1,
-    "flex":1,
     "position": "absolute",
     "backgroundColor": "transparent",
-    "width": 363,
-    "height": 600,
     "left": 15,
     "top": 110
   },
