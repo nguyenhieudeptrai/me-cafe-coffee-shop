@@ -67,13 +67,13 @@ const HomeScreen = () => {
           }}
           component={HomeTab} />
         <Tab.Screen
-          name="Thông tin quán"
+          name="Quán tôi"
           options={{
             img: require('./assets/tabShop.png')
           }}
           component={ShopInfoTab}/>
         <Tab.Screen
-          name="VourcherTab"
+          name="Khuyễn mãi"
           options={{
             img: require('./assets/tabVoucher.png')
           }}
