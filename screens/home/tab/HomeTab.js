@@ -7,6 +7,43 @@ import { Path as SvgPath } from 'react-native-svg';
 import { Text as SvgText } from 'react-native-svg';
 import { Image as SvgImage } from 'react-native-svg';
 
+const dataBooking = [
+  {
+    tableNum:4,
+    cusName:"Nguyễn Hiếu",
+    startTime:"08:30",
+    duringTo:"09:30",
+    status:"Sắp tới",
+  },
+  {
+    tableNum:1,
+    cusName:"Nguyễn Hiếu",
+    startTime:"07:30",
+    duringTo:"08:30",
+    status:"Sắp tới",
+  },
+  {
+    tableNum:2,
+    cusName:"Trần Thiên Quý",
+    startTime:"07:00",
+    duringTo:"08:00",
+    status:"Đang tại quán",
+  },
+  {
+    tableNum:3,
+    cusName:"Trần Thiên Quý",
+    startTime:"07:15",
+    duringTo:"08:15",
+    status:"Đang tại quán",
+  },
+  {
+    tableNum:4,
+    cusName:"Trần Thiên Quý",
+    startTime:"07:00",
+    duringTo:"08:00",
+    status:"Đang tại quán",
+  }
+]
 const HomeTab = () => {
   return (
     <View style={styles.home}>
@@ -35,27 +72,29 @@ const HomeTab = () => {
       </View> */}
       <View style={styles.home_listBooking}>
         <View style={styles.home_listBooking_header}>
-          <Text style={styles.home_listBooking_header_title}>Đặt bàn hiện tại</Text>
+          <Text style={styles.home_listBooking_header_title}>Đặt bàn hôm nay</Text>
         </View>
         <FlatList
-          data={[{}]}
+          data={dataBooking}
           renderItem={({ item }) => (
             <View style={styles.home_listBooking_table}>
               <View style={styles.home_listBooking_table_headLeft}>
-                <Text style={styles.home_listBooking_table_headLeft_tableNum}>Bàn 1</Text>
+                <Text style={styles.home_listBooking_table_headLeft_tableNum}>Bàn {item.tableNum}</Text>
               </View>
               <View style={styles.home_listBooking_table_info}>
                 <View style={styles.home_listBooking_table_info_customer}>
                   <Text style={styles.home_listBooking_table_info_customer_khachHang}>Khách hàng:</Text>
-                  <Text style={styles.home_listBooking_table_info_customer_trnThienQu}>Trần Thiên Quý</Text>
+                  <Text style={styles.home_listBooking_table_info_customer_trnThienQu}>{item.cusName}</Text>
                 </View>
                 <View style={styles.home_listBooking_table_info_time}>
                   <Text style={styles.home_listBooking_table_info_time_thiGian}>Thời gian:</Text>
-                  <Text style={styles.home_listBooking_table_info_time_x0700080014062021}>07:00 - 08:00 (14/06)</Text>
+                  <Text style={styles.home_listBooking_table_info_time_x0700080014062021}>{item.startTime} - {item.duringTo}</Text>
                 </View>
                 <View style={styles.home_listBooking_table_info_status}>
                   <Text style={styles.home_listBooking_table_info_status_tinhTrng}>Tình trạng:</Text>
-                  <Text style={styles.home_listBooking_table_info_status_angTiQuan}>Đang tại quán</Text>
+                  <Text style={item.status==="Sắp tới"?
+                  styles.home_listBooking_table_info_status_angTiQuan_green:
+                  styles.home_listBooking_table_info_status_angTiQuan}>{item.status}</Text>
                 </View>
               </View>
             </View>
@@ -339,7 +378,8 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10,
   },
   "home_listBooking_table": {
-    margin: 10,
+    marginTop: 10,
+    marginHorizontal: 10,
     "padding": 10,
     flexDirection: "row",
     flex: 1,
@@ -398,6 +438,14 @@ const styles = StyleSheet.create({
   },
   "home_listBooking_table_info_status_angTiQuan": {
     "color": "rgba(183, 137, 0, 1)",
+    "fontSize": 14,
+    "fontWeight": "400",
+    "fontStyle": "italic",
+    "fontFamily": "Roboto",
+    marginLeft:5,
+  },
+  "home_listBooking_table_info_status_angTiQuan_green": {
+    "color": "#26B42A",
     "fontSize": 14,
     "fontWeight": "400",
     "fontStyle": "italic",
