@@ -63,13 +63,8 @@ export default DetailHistoryScreen;
 
 const styles = StyleSheet.create({
   "detailTableHistory": {
-    "opacity": 1,
-    "position": "relative",
+    "flex":1,
     "backgroundColor": "rgba(249, 249, 249, 1)",
-    "width": 393,
-    "height": 851,
-    "alignSelf": 'center',
-    "top": 0
   },
   "detailTableHistory_rectangle22": {
     "opacity": 1,
@@ -86,6 +81,7 @@ const styles = StyleSheet.create({
   },
   "detailTableHistory_header": {
     "opacity": 1,
+    "flex":1,
     "position": "absolute",
     "backgroundColor": "transparent",
     "width": 393,
@@ -118,17 +114,12 @@ const styles = StyleSheet.create({
     "top": 47
   },
   "detailTableHistory_header_title96a58c0f": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 22,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 200,
-    "height": 27,
     "left": 110,
     "top": 45
   },
@@ -163,17 +154,12 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "detailTableHistory_tableName_title": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 20,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 78,
-    "height": 24,
     "left": 32,
     "top": 4
   },
@@ -187,17 +173,12 @@ const styles = StyleSheet.create({
     "top": 189
   },
   "detailTableHistory_filter_label": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(7, 7, 7, 1)",
     "fontSize": 13,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 57,
-    "height": 15,
     "left": 0,
     "top": 4
   },
@@ -219,17 +200,12 @@ const styles = StyleSheet.create({
     "top": 13.5
   },
   "detailTableHistory_filter_from_x20122021": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 13,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 70,
-    "height": 20,
     "left": 15,
     "top": 0
   },
@@ -269,17 +245,12 @@ const styles = StyleSheet.create({
     "top": 14.5
   },
   "detailTableHistory_filter_to_x21122021": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 13,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 70,
-    "height": 15,
     "left": 28.5,
     "top": 0
   },
@@ -348,17 +319,12 @@ const styles = StyleSheet.create({
     "top": 39
   },
   "detailTableHistory_list_item_voucher_value46711b42": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 13,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 140,
-    "height": 15,
     "left": 40,
     "top": 3
   },
@@ -380,17 +346,12 @@ const styles = StyleSheet.create({
     "top": 9
   },
   "detailTableHistory_list_item_date_value": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 13,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 200,
-    "height": 17,
     "left": 40,
     "top": 4
   },
