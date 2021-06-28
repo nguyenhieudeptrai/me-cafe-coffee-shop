@@ -99,8 +99,6 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 70,
-    "height": 17,
     "left": 120,
     "top": 10
   },
@@ -153,8 +151,6 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 100,
-    "height": 18,
     "left": 3,
     "top": 0
   },
@@ -190,9 +186,7 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 100,
-    "height": 18,
+    "textAlign": "left",  
     "left": 3,
     "top": 0
   },
@@ -227,8 +221,6 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 120,
-    "height": 18,
     "left": 3,
     "top": 0
   },
@@ -263,8 +255,6 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 160,
-    "height": 18,
     "left": 3,
     "top": 0
   },
@@ -298,8 +288,6 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 120,
-    "height": 18,
     "left": 3,
     "top": 0
   },

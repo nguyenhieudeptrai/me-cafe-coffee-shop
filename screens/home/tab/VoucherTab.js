@@ -178,8 +178,6 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 181,
-    "height": 24,
   },
   "vouchermain_list_item_right_status": {
     "opacity": 1,
@@ -200,8 +198,6 @@ const styles = StyleSheet.create({
     "fontStyle": "italic",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 60,
-    "height": 18,
     "left": 0,
     "top": 0
   },
@@ -239,8 +235,6 @@ const styles = StyleSheet.create({
     "fontStyle": "italic",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 56,
-    "height": 18,
     "left": 0,
     "top": 0
   },
