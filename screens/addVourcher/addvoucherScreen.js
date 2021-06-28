@@ -17,13 +17,11 @@ const AddVoucherScreen = ({ navigation }) => {
 
   return (
     <View style={styles.addvourcher}>
-      <View style={styles.addvourcher_header}>
+      <TouchableOpacity onPress={onPressBack} style={styles.addvourcher_header}>
         <View style={styles.addvourcher_header_bg}></View>
-        <TouchableOpacity onPress={onPressBack} >
-          <ReactImage source={require('./assets/back.png')} style={styles.addvourcher_header_back} />
-        </TouchableOpacity>
+        <ReactImage source={require('./assets/back.png')} style={styles.addvourcher_header_back} />
         <Text style={styles.addvourcher_header_title}>THÊM VOUCHER</Text>
-      </View>
+      </TouchableOpacity>
       <View style={styles.addvourcher_form}>
         <View style={styles.addvourcher_form_bgdde23b2a}></View>
         <View style={styles.addvourcher_form_titlea5a00643}>
@@ -46,12 +44,12 @@ const AddVoucherScreen = ({ navigation }) => {
           <View style={styles.addvourcher_form_mota_input}></View>
           <Text style={styles.addvourcher_form_mota_label}>Mô tả</Text>
         </View>
+        <TouchableOpacity onPress={onPressSave} style={styles.addvourcher_btnHuy}>
+          <View style={styles.addvourcher_btnHuy_rectangle1505}></View>
+          <Text style={styles.addvourcher_btnHuy_luLi}>LƯU LẠI</Text>
+        </TouchableOpacity>
       </View>
 
-      <TouchableOpacity onPress={onPressSave} style={styles.addvourcher_btnHuy}>
-        <View style={styles.addvourcher_btnHuy_rectangle1505}></View>
-        <Text style={styles.addvourcher_btnHuy_luLi}>LƯU LẠI</Text>
-      </TouchableOpacity>
 
     </View>
   );
@@ -66,17 +64,13 @@ const styles = StyleSheet.create({
     flex: 1
   },
   "addvourcher_rectangle22": {
-    "flex": 1,
+    "flex":1,
     "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "rgba(220, 220, 220, 1)",
     "width": 393,
     "height": 851,
-    "left": 0,
-    "top": 0
   },
   "addvourcher_btnHuy": {
-    "flex": 1,
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
@@ -87,8 +81,6 @@ const styles = StyleSheet.create({
   },
   "addvourcher_btnHuy_rectangle1505": {
     "opacity": 1,
-    "flex": 1,
-    "position": "absolute",
     "backgroundColor": "rgba(249, 174, 81, 1)",
     "borderTopLeftRadius": 14,
     "borderTopRightRadius": 14,
@@ -99,7 +91,6 @@ const styles = StyleSheet.create({
   },
   "addvourcher_btnHuy_luLi": {
     "opacity": 1,
-    "flex": 1,
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(255, 255, 255, 1)",
@@ -114,7 +105,14 @@ const styles = StyleSheet.create({
     "top": 10
   },
   "addvourcher_form": {
-    "flex": 1,
+    "opacity": 1,
+    "flex":1,
+    "position": "absolute",
+    "backgroundColor": "transparent",
+    "width": 363,
+    "height": 600,
+    "left": 15,
+    "top": 110
   },
   "addvourcher_form_bgdde23b2a": {
     "backgroundColor": "rgba(255, 255, 255, 1)",
@@ -122,11 +120,8 @@ const styles = StyleSheet.create({
     "borderTopRightRadius": 13,
     "borderBottomLeftRadius": 13,
     "borderBottomRightRadius": 13,
-
     "width": 363,
     "height": 600,
-    "left": 0,
-    "top": 0
   },
   "addvourcher_form_titlea5a00643": {
     "opacity": 1,
@@ -164,7 +159,7 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "addvourcher_form_enddate": {
-    "flex": 1,
+    "flex":1,
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
@@ -202,7 +197,7 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "addvourcher_form_sotiengiamgia": {
-    "flex": 1,
+    "flex":1,
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
@@ -238,7 +233,7 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "addvourcher_form_gioihanphieu": {
-    "flex": 1,
+    "flex":1,
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
@@ -309,8 +304,13 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "addvourcher_header": {
-    "width": "100%",
+    "opacity": 1,
+    "position": "absolute",
+    "backgroundColor": "transparent",
+    "width": 393,
     "height": 86,
+    "left": 0,
+    "top": 0
   },
   "addvourcher_header_bg": {
     "opacity": 1,
