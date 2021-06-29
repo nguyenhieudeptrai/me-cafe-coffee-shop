@@ -324,7 +324,7 @@ const styles = StyleSheet.create({
   },
   "shopInfo_form_image": {
     "backgroundColor": "transparent",
-    "width": "90%",
+    "width": "100%",
     "height": 150,
     "marginTop": 20,
     "marginLeft": "5%",
