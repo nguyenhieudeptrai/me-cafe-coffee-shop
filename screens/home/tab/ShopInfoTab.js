@@ -19,8 +19,7 @@ const ShopInfoTab = () => {
   return (
     <View style={styles.shopInfo}>
       <View style={styles.shopInfo_header}>
-        <View style={styles.shopInfo_header_bgf54e5df8}></View>
-        <Text style={styles.shopInfo_header_titlea84bead2}>THÔNG TIN QUÁN</Text>
+        <Text style={styles.shopInfo_header_title}>THÔNG TIN QUÁN</Text>
       </View>
       <ScrollView style={styles.shopInfo_form}>
         <View style={styles.shopInfo_form_textfield}>
@@ -148,27 +147,7 @@ const styles = StyleSheet.create({
     "height": 851,
     "flex": 1
   },
-  "shopInfo_rectangle22": {
-    // "opacity": 1,
-    // "position": "absolute",
-    "backgroundColor": "rgba(220, 220, 220, 1)",
-    // "borderTopLeftRadius": 0,
-    // "borderTopRightRadius": 0,
-    // "borderBottomLeftRadius": 0,
-    // "borderBottomRightRadius": 0,
-    // "width": 393,
-    // "height": 851,
-    // "left": 0,
-    // "top": 0
-    "flex": 1
-  },
   "shopInfo_header": {
-    "backgroundColor": "transparent",
-    "width": "100%",
-    "height": 90,
-    "marginTop": 0
-  },
-  "shopInfo_header_bgf54e5df8": {
     "backgroundColor": "rgba(241, 211, 126, 1)",
     "borderTopLeftRadius": 0,
     "borderTopRightRadius": 0,
@@ -182,19 +161,16 @@ const styles = StyleSheet.create({
     },
     "shadowRadius": 6,
     "width": "100%",
-    "height": 80,
+    marginBottom:10
   },
-  "shopInfo_header_titlea84bead2": {
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
+  "shopInfo_header_title": {
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 20,
     "fontWeight": "700",
-    "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "center",
-    "width": "100%",
-    "top": 30,
+    alignSelf:"center",
+    marginTop:40,
+    marginBottom:15
   },
   "shopInfo_form": {
     "backgroundColor": "#FFF",

@@ -12,8 +12,7 @@ const AccountTab = () => {
   return (
     <View style={styles.account}>
       <View style={styles.account_header}>
-        <View style={styles.account_header_bg860642ed}></View>
-        <Text style={styles.account_header_title1103c87d}>THÔNG TIN TÀI KHOẢN</Text>
+        <Text style={styles.account_header_title}>THÔNG TIN TÀI KHOẢN</Text>
       </View>
       <ScrollView style={styles.account_form}>
         {/* <View style={styles.account_form_bgfec2c280}></View> */}
@@ -78,26 +77,8 @@ const styles = StyleSheet.create({
     "height": 851,
     "flex": 1
   },
-  "account_rectangle22": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(220, 220, 220, 1)",
-    "borderTopLeftRadius": 0,
-    "borderTopRightRadius": 0,
-    "borderBottomLeftRadius": 0,
-    "borderBottomRightRadius": 0,
-    "width": 393,
-    "height": 851,
-    "left": 0,
-    "top": 0
-  },
   "account_header": {
-    "backgroundColor": "transparent",
-    "width": "100%",
-    "height": 90,
-    "marginTop": 0
-  },
-  "account_header_bg860642ed": {
+    
     "backgroundColor": "rgba(241, 211, 126, 1)",
     "borderTopLeftRadius": 0,
     "borderTopRightRadius": 0,
@@ -111,19 +92,16 @@ const styles = StyleSheet.create({
     },
     "shadowRadius": 6,
     "width": "100%",
-    "height": 80,
+    marginBottom:10
   },
-  "account_header_title1103c87d": {
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
+  "account_header_title": {
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 20,
     "fontWeight": "700",
-    "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "center",
-    "width": "100%",
-    "top": 30,
+    alignSelf:"center",
+    marginTop:40,
+    marginBottom:15
   },
   "account_form": {
     "backgroundColor": "transparent",

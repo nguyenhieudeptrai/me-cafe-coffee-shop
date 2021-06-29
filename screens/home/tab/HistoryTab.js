@@ -56,7 +56,7 @@ const HistoryTab = ({ navigation }) => {
 
       <View style={styles.history_path}>
         <Text style={styles.history_lchS}>Lịch sử</Text>
-        <Text style={styles.history_sBan6}>Số bàn: 8</Text>
+        <Text style={styles.history_sBan6}>Số bàn: {dataBookingTable.length}</Text>
         <ScrollView style={{width:"100%"}}>
           <View style={styles.history_path6}>
             {dataBookingTable.map((item, index) => {
