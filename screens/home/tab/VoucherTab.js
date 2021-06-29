@@ -16,7 +16,7 @@ const VoucherTab =({ navigation }) => {
       <ScrollView style={styles.vouchermain}>
         <View style={styles.vouchermain_group61}>
           <View style={styles.vouchermain_group61_rectangle15}></View>
-          <Text style={styles.vouchermain_group61_voucher}>VOUCHER</Text>
+          <Text style={styles.vouchermain_group61_voucher}>Khuyễn mãi</Text>
         </View>
         <View style={styles.vouchermain_list}>
           <View style={styles.vouchermain_list_item}>
@@ -41,13 +41,13 @@ const VoucherTab =({ navigation }) => {
                   <View style={styles.vouchermain_list_item_left_type_bgfc50470f_rectangle1482}></View>
                   <View style={styles.vouchermain_list_item_left_type_bgfc50470f_rectangle1483}></View>
                 </View>
-                <Text style={styles.vouchermain_list_item_left_type_name}>Delivery</Text>
+                <Text style={styles.vouchermain_list_item_left_type_name}>Ưu đãi</Text>
               </View>
             </View>
           </View>
           <TouchableOpacity onPress={onPressAddVoucher} style={styles.vouchermain_list_btnAdd}>
             <View style={styles.vouchermain_list_btnAdd_bg}></View>
-            <Text style={styles.vouchermain_list_btnAdd_title}>Thêm Vourcher</Text>
+            <Text style={styles.vouchermain_list_btnAdd_title}>Thêm khuyễn mãi</Text>
             <Svg style={styles.vouchermain_list_btnAdd_addIcon} preserveAspectRatio="none" viewBox="0.5625 0.5625 34.875 34.875" fill="rgba(216, 174, 66, 1)"><SvgPath d="M 18 0.5625 C 8.3671875 0.5625 0.5625 8.3671875 0.5625 18 C 0.5625 27.6328125 8.3671875 35.4375 18 35.4375 C 27.6328125 35.4375 35.4375 27.6328125 35.4375 18 C 35.4375 8.3671875 27.6328125 0.5625 18 0.5625 Z M 28.125 19.96875 C 28.125 20.43281173706055 27.74531173706055 20.8125 27.28125 20.8125 L 20.8125 20.8125 L 20.8125 27.28125 C 20.8125 27.74531173706055 20.43281173706055 28.125 19.96875 28.125 L 16.03125 28.125 C 15.56718730926514 28.125 15.1875 27.74531173706055 15.1875 27.28125 L 15.1875 20.8125 L 8.71875 20.8125 C 8.254687309265137 20.8125 7.875 20.43281173706055 7.875 19.96875 L 7.875 16.03125 C 7.875 15.56718730926514 8.254687309265137 15.1875 8.71875 15.1875 L 15.1875 15.1875 L 15.1875 8.71875 C 15.1875 8.254687309265137 15.56718730926514 7.875 16.03125 7.875 L 19.96875 7.875 C 20.43281173706055 7.875 20.8125 8.254687309265137 20.8125 8.71875 L 20.8125 15.1875 L 27.28125 15.1875 C 27.74531173706055 15.1875 28.125 15.56718730926514 28.125 16.03125 L 28.125 19.96875 Z" /></Svg>
           </TouchableOpacity>
         </View>
