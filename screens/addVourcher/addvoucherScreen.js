@@ -30,29 +30,29 @@ const AddVoucherScreen = ({ navigation }) => {
       <View style={styles.addvourcher_form}>
         <View style={styles.addvourcher_form_title}>
           <Text style={styles.addvourcher_form_title_label}>Tên ưu đãi</Text>
-          <TextInput style={styles.addvourcher_form_title_input} placeholder="Nhập tên" />
+          <TextInput style={styles.addvourcher_form_title_input} placeholder="  Nhập tên" />
         </View>
 
         <View style={styles.addvourcher_form_enddate}>
 
           <Text style={styles.addvourcher_form_enddate_label}>Ngày hết hạn</Text>
-          <TextInput style={styles.addvourcher_form_enddate_input} placeholder="DD/MM/YYYY" />
+          <TextInput style={styles.addvourcher_form_enddate_input} placeholder="  DD/MM/YYYY" />
         </View>
 
         <View style={styles.addvourcher_form_sotiengiamgia}>
 
           <Text style={styles.addvourcher_form_sotiengiamgia_label}>Số tiền giảm giá</Text>
-          <TextInput style={styles.addvourcher_form_sotiengiamgia_input} placeholder="Nhập số tiền" />
+          <TextInput style={styles.addvourcher_form_sotiengiamgia_input} placeholder="  Nhập số tiền" />
         </View>
         <View style={styles.addvourcher_form_gioihanphieu}>
 
           <Text style={styles.addvourcher_form_gioihanphieu_label}>Số lượng mã ưu đãi</Text>
-          <TextInput style={styles.addvourcher_form_gioihanphieu_input} placeholder="Nhập số lượng mã" />
+          <TextInput style={styles.addvourcher_form_gioihanphieu_input} placeholder="  Nhập số lượng mã" />
         </View>
         <View style={styles.addvourcher_form_mota}>
 
           <Text style={styles.addvourcher_form_mota_label}>Mô tả</Text>
-          <TextInput style={styles.addvourcher_form_mota_input} placeholder="Nhập mô tả" />
+          <TextInput style={styles.addvourcher_form_mota_input} placeholder="  Nhập mô tả" />
         </View>
 
       </View>
@@ -80,8 +80,8 @@ const styles = StyleSheet.create({
     "height": 851,
   },
   "addvourcher_btnHuy": {
-    "left": 550,
-    "top": -40
+    "top": -40,
+    "alignSelf":'center'
   },
   "addvourcher_btnHuy_rectangle1505": {
     "opacity": 1,
@@ -264,8 +264,8 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "left": 600,
-    "top": 50
+    "top": 45,
+    "alignSelf":'center'
 
 
   },

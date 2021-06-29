@@ -109,8 +109,8 @@ flex:1
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "left": 600,
-    "top": 50
+    "top": 45,
+    "alignSelf":'center'
   },
   "vouchermain_list": {
     "opacity": 1,
