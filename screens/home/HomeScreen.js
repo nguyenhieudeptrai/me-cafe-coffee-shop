@@ -67,13 +67,13 @@ const HomeScreen = () => {
           }}
           component={HomeTab} />
         <Tab.Screen
-          name="Thông tin quán"
+          name="Quán tôi"
           options={{
             img: require('./assets/tabShop.png')
           }}
-          component={ShopInfoTab}/>
+          component={ShopInfoTab} />
         <Tab.Screen
-          name="VourcherTab"
+          name="Khuyễn mãi"
           options={{
             img: require('./assets/tabVoucher.png')
           }}
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
   "menu_item_icon": {
     "width": 30,
     "height": 30,
-    "bottom":7
+    "bottom": 7
   },
   "menu_item_title": {
     "backgroundColor": "rgba(255, 255, 255, 0)",

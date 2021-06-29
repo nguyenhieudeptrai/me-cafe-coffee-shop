@@ -69,13 +69,9 @@ VoucherTab.defaultProps = {
 
 const styles = StyleSheet.create({
   "vouchermain": {
-    "opacity": 1,
-    "position": "relative",
+
     "backgroundColor": "rgba(249, 249, 249, 1)",
-    "width": 393,
-    "height": 851,
-    "left": 0,
-    "top": 0
+flex:1
   },
   "vouchermain_rectangle22": {
     "opacity": 1,
@@ -83,32 +79,25 @@ const styles = StyleSheet.create({
     "backgroundColor": "rgba(219, 219, 219, 1)",
     "width": 393,
     "height": 851,
-    "left": 0,
-    "top": 0
+  
   },
   "vouchermain_group61": {
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
-    "width": 393,
+    "width": "100%",
     "height": 87,
-    "left": 0,
-    "top": 0
   },
   "vouchermain_group61_rectangle15": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "rgba(241, 211, 126, 1)",
-    "shadowOpacity": 0.1607843137254902,
+    "shadowOpacity": 0.16,
     "shadowOffset": {
       "width": 0,
       "height": 3
     },
     "shadowRadius": 6,
-    "width": 393,
+    "width": "100%",
     "height": 87,
-    "left": 0,
-    "top": 0
   },
   "vouchermain_group61_voucher": {
     "opacity": 1,
@@ -120,16 +109,14 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 120,
-    "height": 47,
-    "left": 147,
+    "left": 600,
     "top": 50
   },
   "vouchermain_list": {
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
-    "width": 361,
+    "width":"95%",
     "height": 212,
     "left": 16,
     "top": 105
@@ -138,25 +125,21 @@ const styles = StyleSheet.create({
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
-    "width": 361,
+    "width": "100%",
     "height": 97,
   },
   "vouchermain_list_item_rectangle32": {
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "rgba(229, 229, 229, 1)",
-    "borderTopLeftRadius": 7,
-    "borderTopRightRadius": 7,
-    "borderBottomLeftRadius": 7,
-    "borderBottomRightRadius": 7,
-    "shadowColor": "rgb(0,  0,  0)",
+borderRadius:7,
     "shadowOpacity": 0.16,
     "shadowOffset": {
       "width": 0,
       "height": 3
     },
     "shadowRadius": 5,
-    "width": 361,
+    "width": "100%",
     "height": 97,
     "left": 0,
     "top": 0
@@ -180,8 +163,6 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 181,
-    "height": 24,
   },
   "vouchermain_list_item_right_status": {
     "opacity": 1,
@@ -202,8 +183,6 @@ const styles = StyleSheet.create({
     "fontStyle": "italic",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 60,
-    "height": 18,
     "left": 0,
     "top": 0
   },
@@ -241,8 +220,6 @@ const styles = StyleSheet.create({
     "fontStyle": "italic",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 56,
-    "height": 18,
     "left": 0,
     "top": 0
   },
@@ -256,8 +233,6 @@ const styles = StyleSheet.create({
     "fontStyle": "italic",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 67,
-    "height": 18,
     "left": 52,
     "top": 0
   },
@@ -284,13 +259,11 @@ const styles = StyleSheet.create({
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(255, 170, 0, 1)",
-    "fontSize": 35,
+    "fontSize": 30,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 66,
-    "height": 42,
     "left": 9,
     "top": 28
   },
@@ -325,10 +298,7 @@ const styles = StyleSheet.create({
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "rgba(248, 226, 161, 1)",
-    "borderTopLeftRadius": 4,
-    "borderTopRightRadius": 4,
-    "borderBottomLeftRadius": 4,
-    "borderBottomRightRadius": 4,
+    "borderRadius":7,
     "width": 7,
     "height": 7,
     "left": 68,
@@ -352,21 +322,17 @@ const styles = StyleSheet.create({
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(255, 255, 255, 1)",
-    "fontSize": 10,
+    "fontSize": 9,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 36,
-    "height": 13,
     "left": 20,
     "top": 1
   },
   "vouchermain_list_btnAdd": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "transparent",
-    "width": 361,
+    "width": "100%",
     "height": 97,
     "left": 0,
     "top": 115
@@ -380,19 +346,19 @@ const styles = StyleSheet.create({
     "borderBottomLeftRadius": 7,
     "borderBottomRightRadius": 7,
     "shadowColor": "rgb(0,  0,  0)",
-    "shadowOpacity": 0.1607843137254902,
+    "shadowOpacity": 0.16,
     "shadowOffset": {
       "width": 0,
       "height": 3
     },
     "shadowRadius": 5,
-    "width": 361,
+    "width": "100%",
     "height": 97,
     "left": 0,
     "top": 0
   },
   "vouchermain_list_btnAdd_title": {
-    "opacity": 0.7400000095367432,
+    "opacity": 0.74,
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(16, 0, 0, 1)",
@@ -401,9 +367,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 111,
-    "height": 24,
-    "left": 125,
+    "left": 130,
     "top": 69
   },
   "vouchermain_list_btnAdd_addIcon": {

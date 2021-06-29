@@ -7,7 +7,7 @@ import { Path as SvgPath } from 'react-native-svg';
 import { Text as SvgText } from 'react-native-svg';
 import { Image as SvgImage } from 'react-native-svg';
 
-const ConfirmRegister = () => {
+const ConfirmRegisterScreen = () => {
 
   return (
     <View style={styles.confirmRegister}>
@@ -41,7 +41,7 @@ const ConfirmRegister = () => {
   );
 
 }
-export default ConfirmRegister;
+export default ConfirmRegisterScreen;
 
 
 const styles = StyleSheet.create({
