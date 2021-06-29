@@ -39,9 +39,7 @@ const DetailHistoryScreen = ({navigation}) => {
         </View>
       </View>
       <View style={styles.detailTableHistory_list}>
-        <View style={styles.detailTableHistory_list_item}>
-          <Svg style={styles.detailTableHistory_list_item_space} preserveAspectRatio="none" viewBox="0 -0.5 349.593017578125 1" fill="transparent"><SvgPath d="M 0 0 L 349.593017578125 0" /></Svg>
-          <View style={styles.detailTableHistory_list_item_bg}></View>
+        <View style={styles.detailTableHistory_list_item}>      
           <View style={styles.detailTableHistory_list_item_voucher}>
             <Text style={styles.detailTableHistory_list_item_voucher_value46711b42}>Đã sử dụng voucher 5k</Text>
             <ReactImage source={require('./assets/icon7fc8e711.png')} style={styles.detailTableHistory_list_item_voucher_icon7fc8e711} />
@@ -112,8 +110,8 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "left": 110,
-    "top": 45
+    "top": 45,
+    "alignSelf":'center'
   },
   "detailTableHistory_tableName": {
     "opacity": 1,
@@ -121,7 +119,7 @@ const styles = StyleSheet.create({
     "backgroundColor": "transparent",
     "width": 141,
     "height": 32,
-    "left": 126,
+    "alignSelf":'center',
     "top": 122
   },
   "detailTableHistory_tableName_bgc5fba65b": {
@@ -161,7 +159,7 @@ const styles = StyleSheet.create({
     "backgroundColor": "transparent",
     "width": 357.5,
     "height": 20,
-    "left": 18,
+    "alignSelf": 'center',
     "top": 189
   },
   "detailTableHistory_filter_label": {
@@ -259,31 +257,14 @@ const styles = StyleSheet.create({
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
-    "width": 358,
+    "width": "90%",
     "height": 77.5,
-    "left": 18,
+    "alignSelf": 'center',
     "top": 250
   },
   "detailTableHistory_list_item": {
     "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "transparent",
-    "width": 358,
-    "height": 77.5,
-    "left": 0,
-    "top": 0
-  },
-  "detailTableHistory_list_item_space": {
-    "opacity": 1,
-    "position": "absolute",
-    "width": 349.59,
-    "height": 1,
-    "left": 3.5,
-    "top": 77
-  },
-  "detailTableHistory_list_item_bg": {
-    "opacity": 1,
-    "position": "absolute",
+    "flex": 1,
     "backgroundColor": "rgba(255, 255, 255, 1)",
     "borderTopLeftRadius": 5,
     "borderTopRightRadius": 5,
@@ -296,11 +277,20 @@ const styles = StyleSheet.create({
       "height": 0
     },
     "shadowRadius": 6,
-    "width": 358,
+    "width": "100%",
     "height": 70,
     "left": 0,
     "top": 0
   },
+  "detailTableHistory_list_item_space": {
+    "opacity": 1,
+    "position": "absolute",
+    "width": 349.59,
+    "height": 1,
+    "left": 3.5,
+    "top": 77
+  },
+
   "detailTableHistory_list_item_voucher": {
     "opacity": 1,
     "position": "absolute",
@@ -318,7 +308,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "left": 40,
-    "top": 3
+    "top": 0
   },
   "detailTableHistory_list_item_voucher_icon7fc8e711": {
     "opacity": 1,
@@ -332,7 +322,7 @@ const styles = StyleSheet.create({
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
-    "width": 184,
+    "width": 200,
     "height": 26,
     "left": 73,
     "top": 9
