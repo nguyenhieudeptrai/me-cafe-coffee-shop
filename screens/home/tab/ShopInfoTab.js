@@ -142,7 +142,8 @@ ShopInfoTab.defaultProps = {
 
 const styles = StyleSheet.create({
   "shopInfo": {
-    "backgroundColor": "rgba(249, 249, 249, 1)",
+    // "backgroundColor": "rgba(249, 249, 249, 1)",
+    backgroundColor: "rgba(220, 220, 220, 1)",
     "width": "100%",
     "height": 851,
     "flex": 1
@@ -196,11 +197,20 @@ const styles = StyleSheet.create({
     "top": 30,
   },
   "shopInfo_form": {
-    "backgroundColor": "transparent",
+    "backgroundColor": "#FFF",
     "width": "90%",
     "marginTop": 0,
     "marginLeft": "5%",
-    "marginBottom": 0
+    "marginBottom": 0,
+    borderRadius:15,
+    "shadowColor": "rgb(0,  0,  0)",
+    "shadowOpacity": 0.1607843137254902,
+    "shadowOffset": {
+      "width": 0,
+      "height": 0
+    },
+    "shadowRadius": 6,
+    
   },
   "shopInfo_form_textfield": {
     "backgroundColor": "transparent",
@@ -223,7 +233,7 @@ const styles = StyleSheet.create({
 
   },
   "shopInfo_form_textfield_value": {
-    "backgroundColor": "rgba(255, 255, 255, 0)",
+    "backgroundColor": "#FFF",
     "color": "rgba(142, 142, 142, 1)",
     "fontSize": 13,
     "fontWeight": "400",
@@ -231,9 +241,10 @@ const styles = StyleSheet.create({
     "fontFamily": "Roboto",
     "textAlign": "left",
     "width": '90%',
-    "height": 20,
     "marginLeft": 20,
-    "marginTop": 15
+    "marginTop": 15,
+    padding:7,
+    borderRadius:4
   },
   "shopInfo_form_textfield_input": {
     "backgroundColor": "rgba(217, 217, 217, 1)",

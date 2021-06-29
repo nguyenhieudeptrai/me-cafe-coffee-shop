@@ -9,8 +9,8 @@ const WelcomeScreen = ({ navigation }) => {
   // setTimeout(() => {
   //   navigation.reset({
   //     index: 0,
-  //     actions: ["Home"]
-  //   })
+  //     routes: [{ name: 'Login' }],
+  // });
   // }, 3000);
 
   return (
