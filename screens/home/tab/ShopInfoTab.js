@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
       "height": 3
     },
     "shadowRadius": 6,
-    "width": 393,
+    "width": "100%",
     "height": 90,
   },
   "shopInfo_header_titlea84bead2": {
@@ -249,7 +249,9 @@ const styles = StyleSheet.create({
     "width": '90%',
     "height": 40,
     "marginLeft": 5,
-    "marginTop": 10
+    "marginTop": 10,
+    "padding": 15,
+    "color": "#000000"
   },
   "shopInfo_form_multiline": {
     "backgroundColor": "transparent",
@@ -308,7 +310,9 @@ const styles = StyleSheet.create({
     "width": '90%',
     "height": 70,
     "marginLeft": 5,
-    "marginTop": 10
+    "marginTop": 10,
+    "padding": 15,
+    "color": "#00000"
   },
   "shopInfo_form_image": {
     "backgroundColor": "transparent",
