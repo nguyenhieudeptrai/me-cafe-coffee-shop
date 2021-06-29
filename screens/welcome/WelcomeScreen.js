@@ -36,7 +36,9 @@ const styles = StyleSheet.create({
   },
   "WelcomeScreen_block": {
     alignSelf: "center",
-    marginTop:"50%"
+    margin:"50%",
+    
+    
   },
   "WelcomeScreen_logoPng": {
     "width": 268,
