@@ -70,7 +70,8 @@ VoucherTab.defaultProps = {
 const styles = StyleSheet.create({
   "vouchermain": {
 
-    "backgroundColor": "rgba(249, 249, 249, 1)",
+    // "backgroundColor": "rgba(249, 249, 249, 1)",
+    backgroundColor: "rgba(220, 220, 220, 1)",
 flex:1
   },
   "vouchermain_rectangle22": {
