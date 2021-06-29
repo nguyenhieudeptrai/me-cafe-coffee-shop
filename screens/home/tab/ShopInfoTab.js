@@ -142,13 +142,10 @@ ShopInfoTab.defaultProps = {
 
 const styles = StyleSheet.create({
   "shopInfo": {
-    "opacity": 1,
-    "position": "relative",
     "backgroundColor": "rgba(249, 249, 249, 1)",
     "width": "100%",
     "height": 851,
-    "left": 0,
-    "top": 0
+    "flex": 1
   },
   "shopInfo_rectangle22": {
     // "opacity": 1,
@@ -184,13 +181,13 @@ const styles = StyleSheet.create({
     },
     "shadowRadius": 6,
     "width": "100%",
-    "height": 90,
+    "height": 80,
   },
   "shopInfo_header_titlea84bead2": {
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
-    "fontSize": 27,
+    "fontSize": 20,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
@@ -203,7 +200,7 @@ const styles = StyleSheet.create({
     "width": "90%",
     "marginTop": 0,
     "marginLeft": "5%",
-    "marginBottom": 120
+    "marginBottom": 0
   },
   "shopInfo_form_textfield": {
     "backgroundColor": "transparent",
@@ -449,7 +446,8 @@ const styles = StyleSheet.create({
     "backgroundColor": "transparent",
     "width": "90%",
     "height": 35,
-    "marginLeft": "5%"
+    "marginLeft": "5%",
+    "marginBottom": 25
   },
   "shopInfo_btnEdit_bg": {
     "position": "absolute",
