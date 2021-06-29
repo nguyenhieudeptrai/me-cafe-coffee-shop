@@ -15,7 +15,7 @@ const VoucherTab = ({ navigation }) => {
   return (
     <ScrollView style={styles.vouchermain}>
       <View style={styles.vouchermain_header}>
-        <Text style={styles.vouchermain_header_title}>Khuyễn mãi</Text>
+        <Text style={styles.vouchermain_header_title}>KHUYỄN MÃI</Text>
       </View>
       <View style={styles.vouchermain_list}>
         <View style={styles.vouchermain_list_item}>
