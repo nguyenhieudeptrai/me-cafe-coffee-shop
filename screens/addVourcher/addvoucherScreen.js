@@ -17,30 +17,42 @@ const AddVoucherScreen = ({ navigation }) => {
 
   return (
     <View style={styles.addvourcher}>
-      <TouchableOpacity onPress={onPressBack} style={styles.addvourcher_header}>
-        <ReactImage source={require('./assets/back.png')} style={styles.addvourcher_header_back} />
+      <View style={styles.addvourcher_header}>
+        <TouchableOpacity style={styles.addvourcher_header_back} onPress={onPressBack}>
+          <ReactImage source={require('./assets/back.png')} style={styles.addvourcher_header_back} />
+        </TouchableOpacity>
+      
         <Text style={styles.addvourcher_header_title}>THÊM VOUCHER</Text>
-      </TouchableOpacity>
+
+      </View>
+
+
       <View style={styles.addvourcher_form}>
         <View style={styles.addvourcher_form_title}>
           <Text style={styles.addvourcher_form_title_label}>Tên ưu đãi</Text>
-          <TextInput style={styles.addvourcher_form_title_input} placeholder="Nhập tên"/>
+          <TextInput style={styles.addvourcher_form_title_input} placeholder="Nhập tên" />
         </View>
+
         <View style={styles.addvourcher_form_enddate}>
-          <View style={styles.addvourcher_form_enddate_input}></View>
+
           <Text style={styles.addvourcher_form_enddate_label}>Ngày hết hạn</Text>
+          <TextInput style={styles.addvourcher_form_enddate_input} placeholder="DD/MM/YYYY" />
         </View>
+
         <View style={styles.addvourcher_form_sotiengiamgia}>
-          <View style={styles.addvourcher_form_sotiengiamgia_input}></View>
+
           <Text style={styles.addvourcher_form_sotiengiamgia_label}>Số tiền giảm giá</Text>
+          <TextInput style={styles.addvourcher_form_sotiengiamgia_input} placeholder="Nhập số tiền" />
         </View>
         <View style={styles.addvourcher_form_gioihanphieu}>
-          <View style={styles.addvourcher_form_gioihanphieu_input}></View>
+
           <Text style={styles.addvourcher_form_gioihanphieu_label}>Số lượng mã ưu đãi</Text>
+          <TextInput style={styles.addvourcher_form_gioihanphieu_input} placeholder="Nhập số lượng mã" />
         </View>
         <View style={styles.addvourcher_form_mota}>
-          <View style={styles.addvourcher_form_mota_input}></View>
+
           <Text style={styles.addvourcher_form_mota_label}>Mô tả</Text>
+          <TextInput style={styles.addvourcher_form_mota_input} placeholder="Nhập mô tả" />
         </View>
 
       </View>
@@ -68,7 +80,8 @@ const styles = StyleSheet.create({
     "height": 851,
   },
   "addvourcher_btnHuy": {
-    alignSelf:"center"
+    "left": 550,
+    "top": -40
   },
   "addvourcher_btnHuy_rectangle1505": {
     "opacity": 1,
@@ -94,9 +107,9 @@ const styles = StyleSheet.create({
     "top": 10
   },
   "addvourcher_form": {
-    flex:1,
-    width:"90%",
-    alignSelf:"center"
+    flex: 1,
+    width: "90%",
+    alignSelf: "center"
   },
   "addvourcher_form_bgdde23b2a": {
     "backgroundColor": "rgba(255, 255, 255, 1)",
@@ -120,7 +133,7 @@ const styles = StyleSheet.create({
     "backgroundColor": "rgba(217, 217, 217, 1)",
     "borderRadius": 7,
     "height": 43,
-    flex:1
+    flex: 1
   },
   "addvourcher_form_title_label": {
     "color": "rgba(84, 71, 65, 1)",
@@ -130,141 +143,100 @@ const styles = StyleSheet.create({
     "fontFamily": "Roboto",
   },
   "addvourcher_form_enddate": {
-    "flex": 1,
+
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
-    "width": 348,
+    "width": "100%",
     "height": 65,
     "left": 7,
     "top": 87
   },
   "addvourcher_form_enddate_input": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "rgba(217, 217, 217, 1)",
-    "borderTopLeftRadius": 7,
-    "borderTopRightRadius": 7,
-    "borderBottomLeftRadius": 7,
-    "borderBottomRightRadius": 7,
-    "width": 348,
+    "borderRadius": 7,
     "height": 43,
-    "left": 0,
-    "top": 22
+    flex: 1
   },
   "addvourcher_form_enddate_label": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 15,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "left": 3,
-    "top": 0
   },
   "addvourcher_form_sotiengiamgia": {
-    "flex": 1,
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
-    "width": 348,
+    "width": "100%",
     "height": 65,
     "left": 7,
     "top": 167
   },
   "addvourcher_form_sotiengiamgia_input": {
     "backgroundColor": "rgba(217, 217, 217, 1)",
-    "borderTopLeftRadius": 7,
-    "borderTopRightRadius": 7,
-    "borderBottomLeftRadius": 7,
-    "borderBottomRightRadius": 7,
-    "width": 348,
+    "borderRadius": 7,
     "height": 43,
-    "left": 0,
-    "top": 22
+    flex: 1
+
   },
   "addvourcher_form_sotiengiamgia_label": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 15,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "left": 3,
-    "top": 0
+
   },
   "addvourcher_form_gioihanphieu": {
-    "flex": 1,
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
-    "width": 348,
+    "width": "100%",
     "height": 65,
     "left": 7,
     "top": 240
   },
   "addvourcher_form_gioihanphieu_input": {
     "backgroundColor": "rgba(217, 217, 217, 1)",
-    "borderTopLeftRadius": 7,
-    "borderTopRightRadius": 7,
-    "borderBottomLeftRadius": 7,
-    "borderBottomRightRadius": 7,
-    "width": 348,
+    "borderRadius": 7,
     "height": 43,
-    "left": 0,
-    "top": 22
+    flex: 1
   },
   "addvourcher_form_gioihanphieu_label": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 15,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "left": 3,
-    "top": 0
+
   },
   "addvourcher_form_mota": {
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
-    "width": 348,
+    "width": "100%",
     "height": 65,
     "left": 7,
     "top": 310
   },
   "addvourcher_form_mota_input": {
     "backgroundColor": "rgba(217, 217, 217, 1)",
-    "borderTopLeftRadius": 7,
-    "borderTopRightRadius": 7,
-    "borderBottomLeftRadius": 7,
-    "borderBottomRightRadius": 7,
-    "width": 348,
-    "height": 83,
-    "left": 0,
-    "top": 22
+    "borderRadius": 7,
+    "height": 43,
+    flex: 1
   },
   "addvourcher_form_mota_label": {
-    "opacity": 1,
-    "position": "absolute",
+
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 15,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "left": 3,
-    "top": 0
   },
   "addvourcher_header": {
     "backgroundColor": "rgba(241, 211, 126, 1)",
@@ -278,19 +250,23 @@ const styles = StyleSheet.create({
     "height": 86,
   },
   "addvourcher_header_back": {
-    "opacity": 1,
-    "position": "absolute",
+ 
     "width": 20,
     "height": 20,
     "left": 19,
-    "top": 45
+    "top": 26
   },
   "addvourcher_header_title": {
+    "opacity": 1,
+    "position": "absolute",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 22,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    alignSelf:"center"
+    "left": 600,
+    "top": 50
+
+
   },
 });
