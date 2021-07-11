@@ -358,7 +358,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "center",
-    "marginTop": "2%"
+    "marginTop": "1%"
   },
   "account_info": {
     "display": "flex",
