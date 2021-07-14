@@ -18,7 +18,7 @@ const ConfirmRegisterScreen = () => {
       <View style={styles.confirmRegister_logo}>
         <ReactImage source={require('./assets/logoPng.png')} style={styles.confirmRegister_logo_logoPng} />
         <ReactImage source={require('./assets/asset1.png')} style={styles.confirmRegister_logo_asset1} />
-        <Text style={styles.confirmRegister_logo_appName}>ADMIN MANAGEMENT</Text>
+        <Text style={styles.confirmRegister_logo_appName}>Ứng dụng cho của hàng</Text>
       </View>
       <Text style={styles.confirmRegister_otpTitle}>Xác nhận Mã OTP</Text>
       <Text style={styles.confirmRegister_description}>Một mã xác thực gồm 6 chữ số đã được gửi

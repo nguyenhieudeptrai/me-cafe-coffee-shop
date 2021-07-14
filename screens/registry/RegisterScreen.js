@@ -24,7 +24,7 @@ const RegisterScreen = ({ navigation }) => {
       <View style={styles.register_logo}>
         <ReactImage source={require('./assets/logoPng.png')} style={styles.register_logo_logoPng} />
         <ReactImage source={require('./assets/asset1.png')} style={styles.register_logo_asset1} />
-        <Text style={styles.register_logo_appName}>ADMIN MANAGEMENT</Text>
+        <Text style={styles.register_logo_appName}>Ứng dụng cho của hàng</Text>
       </View>
       <View style={styles.register_text_Title}><Text style={styles.register_text_NhapSDT}>Nhập số điện thoại của bạn</Text></View>
       <View style={styles.register_inputPhone}>
