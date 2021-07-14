@@ -362,7 +362,7 @@ const styles = StyleSheet.create({
   },
   "account_info": {
     "display": "flex",
-    "gap": 10,
+    // "gap": 10,
     "flexWrap": "wrap",
     "backgroundColor": "transparent",
     "width": "100%",

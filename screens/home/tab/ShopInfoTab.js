@@ -4,8 +4,8 @@ import { StyleSheet, Text, View, TextInput, FlatList, ScrollView, TouchableOpaci
 import { Image as ReactImage } from 'react-native';
 import Svg, { Defs, Pattern } from 'react-native-svg';
 import { Path as SvgPath } from 'react-native-svg';
-import { Text as SvgText } from 'react-native-svg';
 import { Image as SvgImage } from 'react-native-svg';
+import { Div, Button, Select, Radio, Checkbox, Input, Text as MText, Icon } from "react-native-magnus";
 
 const ShopInfoTab = () => {
 
@@ -15,6 +15,8 @@ const ShopInfoTab = () => {
   const [description, onChangeDescription] = React.useState('Quán tọa lạc tại trục đường chính của quận 9, với không gian thoáng đãng, yên tĩnh, phù hợp để học tập và làm việc.');
 
   const [isEditShopInfo, onChangeisEditShopInfo] = React.useState(false);
+  const selectRef = React.createRef();
+  const [roomItem, setRoomItem] = React.useState(1);
 
   return (
     <View style={styles.shopInfo}>
@@ -108,6 +110,100 @@ const ShopInfoTab = () => {
             <SvgPath d="M 18 0.5625 C 8.3671875 0.5625 0.5625 8.3671875 0.5625 18 C 0.5625 27.6328125 8.3671875 35.4375 18 35.4375 C 27.6328125 35.4375 35.4375 27.6328125 35.4375 18 C 35.4375 8.3671875 27.6328125 0.5625 18 0.5625 Z M 28.125 19.96875 C 28.125 20.43281173706055 27.74531173706055 20.8125 27.28125 20.8125 L 20.8125 20.8125 L 20.8125 27.28125 C 20.8125 27.74531173706055 20.43281173706055 28.125 19.96875 28.125 L 16.03125 28.125 C 15.56718730926514 28.125 15.1875 27.74531173706055 15.1875 27.28125 L 15.1875 20.8125 L 8.71875 20.8125 C 8.254687309265137 20.8125 7.875 20.43281173706055 7.875 19.96875 L 7.875 16.03125 C 7.875 15.56718730926514 8.254687309265137 15.1875 8.71875 15.1875 L 15.1875 15.1875 L 15.1875 8.71875 C 15.1875 8.254687309265137 15.56718730926514 7.875 16.03125 7.875 L 19.96875 7.875 C 20.43281173706055 7.875 20.8125 8.254687309265137 20.8125 8.71875 L 20.8125 15.1875 L 27.28125 15.1875 C 27.74531173706055 15.1875 28.125 15.56718730926514 28.125 16.03125 L 28.125 19.96875 Z" />
           </Svg>
         </View>
+        <View style={{
+          "backgroundColor": "transparent",
+          "width": "90%",
+          "height": "auto",
+          "marginTop": 20,
+          "marginLeft": "5%",
+        }}>
+          <Text style={styles.shopInfo_form_textfield_label}>Thông tin quán</Text>
+        </View>
+        <Div mb={20}>
+          <Div h="auto" w="80%" ml="9%" mt={10} shadow="lg" rounded="md" bg="#BCF5A9" >
+            <Div row width="100%">
+              <MText fontWeight="bold" ml={10}>Nhóm 4 người</MText>
+              <Icon mt={2} name="edit" color="#2E2E2E" borderWidth={1} ml={70} mr={10} onTouchStart={() => { setRoomItem(1); selectRef.current.open() }} />
+              <Icon mt={2} name="delete" color="#2E2E2E" borderWidth={1} />
+            </Div>
+            <MText ml={10}>Số chổ: 4 người</MText>
+            <MText ml={10}>Tiện ích: Máy chiếu, Máy lạnh</MText>
+            <MText ml={10}>Giá phòng: 100k/h</MText>
+          </Div>
+          <Div h="auto" w="80%" ml="9%" mt={10} shadow="lg" rounded="md" bg="#BCF5A9" onPress={() => { setRoomItem(2); selectRef.current.open() }}>
+            <Div row width="100%">
+              <MText fontWeight="bold" ml={10}>Phòng họp VIP</MText>
+              <Icon mt={2} name="edit" color="#2E2E2E" borderWidth={1} ml={70} mr={10} onTouchStart={() => { setRoomItem(2); selectRef.current.open() }} />
+              <Icon mt={2} name="delete" color="#2E2E2E" borderWidth={1} />
+            </Div>
+            <MText ml={10}>Số chổ: 10 người</MText>
+            <MText ml={10}>Tiện ích: Máy chiếu, Alexa Echo, Máy lạnh</MText>
+            <MText ml={10}>Giá phòng: 300k/h</MText>
+          </Div>
+        </Div>
+        <Div>
+          <Select
+            ref={selectRef}
+            onSelect={() => { setTimeSearch(getFullTime()) }}
+            multiple
+            data={[1]}
+            footer={(
+              <Div row>
+                <Button w="40%" ml="7%" mr="3%" mb={10} h={40} bg='#424242'
+                  onPress={() => { selectRef.current.close() }} >
+                  Hủy
+                </Button>
+                <Button w="40%" ml="3%" mr="7%" mb={10} h={40} bg='#D4AE39'
+                  onPress={() => { selectRef.current.close() }} >
+                  Chấp nhận
+                </Button>
+              </Div>
+
+            )}
+            renderItem={(item, index) => (
+              <Div>
+                <MText textAlign="center" fontWeight="bold" fontSize={20}>{roomItem == 1 ? 'Nhóm 4 người' : 'Phòng họp VIP'}</MText>
+                <Div mt={20} ml="5%" w="90%">
+                  <MText maxW="30%" width="30%" ml="3%">Số chổ: </MText>
+                  <TextInput style={{
+                    width: "80%",
+                    borderColor: "#6E6E6E",
+                    borderWidth: 1,
+                    borderRadius: 10,
+                    textAlign: "center",
+                    fontSize: 13,
+                    marginLeft: "10%",
+                  }}
+                  >{ roomItem == 1 ? '4' : '10'}</TextInput>
+                </Div>
+                <Div mt={20} ml="5%" w="90%">
+                  <MText maxW="30%" width="30%" ml="3%">Số phòng:</MText>
+                  <TextInput style={{
+                    width: "80%",
+                    borderColor: "#6E6E6E",
+                    borderWidth: 1,
+                    borderRadius: 10,
+                    textAlign: "center",
+                    fontSize: 13,
+                    marginLeft: "10%",
+                  }}
+                  >3</TextInput>
+                </Div>
+                <Div mt={20} ml="5%" w="90%">
+                  <MText maxW="30%" width="30%" ml="3%">Tiện ích</MText>
+                  <Checkbox defaultChecked ml="10%" value={1} suffix={<MText>Máy chiếu</MText>}></Checkbox>
+                  <Checkbox defaultChecked ml="10%" value={1} suffix={<MText>Máy lạnh</MText>}></Checkbox>
+                  <Checkbox ml="10%" value={1} suffix={<MText>Alexa Echo</MText>}></Checkbox>
+                  <Checkbox defaultChecked ml="10%" value={1} suffix={<MText>Wifi</MText>}></Checkbox>
+                  <Div row>
+                    <Icon name="plus" w={20} rounded={4} borderWidth={1} fontSize={17} ml="11%" mt={5} />
+                    <MText ml={5}>Thêm</MText>
+                  </Div>
+                </Div>
+              </Div>
+            )}
+          ></Select>
+        </Div>
         {
           !isEditShopInfo ?
             <TouchableOpacity style={styles.shopInfo_btnEdit}
@@ -161,16 +257,16 @@ const styles = StyleSheet.create({
     },
     "shadowRadius": 6,
     "width": "100%",
-    marginBottom:10
+    marginBottom: 10
   },
   "shopInfo_header_title": {
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 20,
     "fontWeight": "700",
     "fontFamily": "Roboto",
-    alignSelf:"center",
-    marginTop:40,
-    marginBottom:15
+    alignSelf: "center",
+    marginTop: 40,
+    marginBottom: 15
   },
   "shopInfo_form": {
     "backgroundColor": "#FFF",
@@ -178,7 +274,7 @@ const styles = StyleSheet.create({
     "marginTop": 0,
     "marginLeft": "5%",
     "marginBottom": 0,
-    borderRadius:15,
+    borderRadius: 15,
     "shadowColor": "rgb(0,  0,  0)",
     "shadowOpacity": 0.1607843137254902,
     "shadowOffset": {
@@ -186,7 +282,7 @@ const styles = StyleSheet.create({
       "height": 0
     },
     "shadowRadius": 6,
-    
+
   },
   "shopInfo_form_textfield": {
     "backgroundColor": "transparent",
@@ -219,8 +315,8 @@ const styles = StyleSheet.create({
     "width": '90%',
     "marginLeft": 20,
     "marginTop": 15,
-    padding:7,
-    borderRadius:4
+    padding: 7,
+    borderRadius: 4
   },
   "shopInfo_form_textfield_input": {
     "backgroundColor": "rgba(217, 217, 217, 1)",
@@ -296,7 +392,7 @@ const styles = StyleSheet.create({
     "marginLeft": 5,
     "marginTop": 10,
     "padding": 15,
-    "color": "#00000"
+    // "color": "#00000"
   },
   "shopInfo_form_image": {
     "backgroundColor": "transparent",
@@ -307,7 +403,7 @@ const styles = StyleSheet.create({
   },
   "shopInfo_form_image_example": {
 
-    "display": "inline",
+    // "display": "inline",
     "padding": 15,
     "backgroundColor": "transparent",
     "width": "90%",

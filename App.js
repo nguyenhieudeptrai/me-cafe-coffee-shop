@@ -9,7 +9,7 @@ import RegistryScreen from './screens/registry/RegisterScreen';
 import LoginScreen from './screens/login/LoginScreen';
 import HomeScreen from './screens/home/HomeScreen';
 import DetailHistoryScreen from './screens/detailTableHistory/DetailHistoryScreen';
-import AddvoucherScreen from './screens/addVourcher/AddvoucherScreen'
+import AddvoucherScreen from './screens/addVourcher/addvoucherScreen'
 import BookingDetailScreen from './screens/bookingDetail/BookingDetailScreen';
 
 const Stack = createStackNavigator();
