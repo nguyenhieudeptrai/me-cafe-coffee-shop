@@ -218,6 +218,19 @@ const ShopInfoTab = () => {
                   >3</TextInput>
                 </Div>
                 <Div mt={20} ml="5%" w="90%">
+                  <MText maxW="30%" width="30%" ml="3%">Giá: </MText>
+                  <TextInput style={{
+                    width: "80%",
+                    borderColor: "#6E6E6E",
+                    borderWidth: 1,
+                    borderRadius: 10,
+                    textAlign: "center",
+                    fontSize: 13,
+                    marginLeft: "10%",
+                  }}
+                  >{roomItem == 1 ? '100000' : '300000'}</TextInput>
+                </Div>
+                <Div mt={20} ml="5%" w="90%">
                   <MText maxW="30%" width="30%" ml="3%">Tiện ích</MText>
                   <Checkbox defaultChecked ml="10%" value={1} suffix={<MText>Máy chiếu</MText>}></Checkbox>
                   <Checkbox defaultChecked ml="10%" value={1} suffix={<MText>Máy lạnh</MText>}></Checkbox>
@@ -282,6 +295,19 @@ const ShopInfoTab = () => {
                 </Div>
                 <Div mt={20} ml="5%" w="90%">
                   <MText maxW="30%" width="30%" ml="3%">Số phòng:</MText>
+                  <TextInput style={{
+                    width: "80%",
+                    borderColor: "#6E6E6E",
+                    borderWidth: 1,
+                    borderRadius: 10,
+                    textAlign: "center",
+                    fontSize: 13,
+                    marginLeft: "10%",
+                  }}
+                  ></TextInput>
+                </Div>
+                <Div mt={20} ml="5%" w="90%">
+                  <MText maxW="30%" width="30%" ml="3%">Giá:</MText>
                   <TextInput style={{
                     width: "80%",
                     borderColor: "#6E6E6E",
