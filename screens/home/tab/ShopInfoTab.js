@@ -19,6 +19,8 @@ const ShopInfoTab = () => {
   const addRoomRef = React.createRef();
   const [roomItem, setRoomItem] = React.useState(1);
 
+  const [typeTable, setTypeTable] = useState(0);
+
   const footerButtons = [
     {
       text: "Hủy",
@@ -245,6 +247,7 @@ const ShopInfoTab = () => {
             )}
           ></Select>
         </Div>
+      </ScrollView>
         <Div>
           <Select
             ref={addRoomRef}
@@ -347,7 +350,6 @@ const ShopInfoTab = () => {
               <Text style={styles.shopInfo_btnEdit_title}>Lưu lại</Text>
             </TouchableOpacity>
         }
-      </ScrollView>
 
     </View>
   );

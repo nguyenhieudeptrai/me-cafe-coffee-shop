@@ -14,11 +14,11 @@ import BookingDetailScreen from './screens/bookingDetail/BookingDetailScreen';
 
 const Stack = createStackNavigator();
 
-LogBox.ignoreAllLogs();
+// LogBox.ignoreAllLogs();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="DetailHistory" component={DetailHistoryScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Welcome" component={WelcomeScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
