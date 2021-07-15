@@ -72,23 +72,12 @@ const HomeTab = ({ navigation }) => {
           <ReactImage source={require('../assets/asset1.png')} style={styles.home_header_logo_asset1} />
         </View>
         <View style={styles.home_header_nameAccount}>
-          <Text style={styles.home_header_hello}>Xin chào,</Text>
-          <Text style={styles.home_header_name}>Minh Anh</Text>
+          <Text style={styles.home_header_hello}>Welcome,</Text>
+          <Text style={styles.home_header_name}>Nguyễn Minh Anh</Text>
         </View>
         <ReactImage source={require('../assets/qrBtn.png')} style={styles.home_header_qrBtn} />
       </View>
-      {/* <View style={styles.home_info}>
-        <View style={styles.home_info_left}>
-          <Svg style={styles.home_info_left_photo} preserveAspectRatio="none" viewBox="0 0 60 60" fill="rgba(255, 255, 255, 0)"><Defs><Pattern id="img-photo" patternContentUnits="userSpaceOnUse" width="100%" height="100%"><SvgImage xlinkHref={require('../assets/photo.png')} x="0" y="0" width="60.00px" height="60.00px" /></Pattern></Defs><SvgPath d="M 30 0 C 46.56854248046875 0 60 13.43145942687988 60 30 C 60 46.56854248046875 46.56854248046875 60 30 60 C 13.43145942687988 60 0 46.56854248046875 0 30 C 0 13.43145942687988 13.43145942687988 0 30 0 Z" fill="url(#img-photo)" /></Svg>
-          <Text style={styles.home_info_left_descriptionAccount}>Quản lý</Text>
-          <Text style={styles.home_info_left_fullname}>Nguyễn Minh Anh</Text>
-        </View>
-        <View style={styles.home_info_right}>
-          <Text style={styles.home_info_right_address}>232 Lê Văn Việt, quận 9, TP.HCM</Text>
-          <Text style={styles.home_info_right_phone}>Số điện thoại: 0335.6575.33</Text>
-          <Text style={styles.home_info_right_shopName}>GIA ROOM COFFEE</Text>
-        </View>
-      </View> */}
+
       <View style={styles.home_listBooking}>
         <View style={styles.home_listBooking_header}>
           <Text style={styles.home_listBooking_header_title}>Đặt bàn hôm nay</Text>
@@ -199,7 +188,7 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
   },
   "home_header_hello": {
-    "color": "rgba(51, 51, 51, 1)",
+    "color": "#EC6D18",
     "fontSize": 23,
     "fontWeight": "500",
     "fontFamily": "Roboto",
@@ -207,16 +196,16 @@ const styles = StyleSheet.create({
   "home_header_name": {
     marginLeft: 10,
     "color": "rgba(51, 51, 51, 1)",
-    "fontSize": 17,
+    "fontSize": 14,
     "fontWeight": "400",
     "fontStyle": "italic",
     "fontFamily": "Roboto",
   },
   "home_header_qrBtn": {
-    "width": 35,
-    "height": 35,
-    marginRight: 30,
-    marginTop: 15,
+    "width": 28,
+    "height": 28,
+    marginRight: 27,
+    marginTop: 0,
   },
   "home_info": {
     "backgroundColor": "rgba(255, 255, 255, 1)",
@@ -397,6 +386,8 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10,
   },
   "home_listBooking_table": {
+    "borderRadius": 8,
+    backgroundColor:"#FFF7DF",
     marginTop: 10,
     marginHorizontal: 10,
     "padding": 10,
@@ -489,7 +480,7 @@ const styles = StyleSheet.create({
     },
     "shadowRadius": 6,
     backgroundColor: "rgba(249, 174, 81, 1)",
-    borderRadius: 20,
+    borderRadius: 14,
     justifyContent: "center",
     alignItems: "center",
     marginLeft: "1%"
@@ -541,8 +532,9 @@ const styles = StyleSheet.create({
   "home_listBooking_header_title": {
     "color": "rgba(212, 174, 57, 1)",
     "fontSize": 17,
-    "fontWeight": "700",
+    "fontWeight": "500",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
+    "marginTop":5
   },
 });

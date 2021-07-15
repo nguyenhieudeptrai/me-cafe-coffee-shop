@@ -22,7 +22,7 @@ const LoginScreen = ({navigation}) => {
       <View style={styles.login_logo}>
         <ReactImage source={require('./assets/logoPng.png')} style={styles.login_logo_logoPng} />
         <ReactImage source={require('./assets/asset1.png')} style={styles.login_logo_asset1} />
-        <Text style={styles.login_logo_appName}>Ứng dụng cho của hàng</Text>
+        <Text style={styles.login_logo_appName}>SHOP MANAGEMENT</Text>
       </View>
       <View style={styles.login_name}>
         <TextInput style={styles.login_name_tenNgNhpsInThoi} placeholder="Tên đăng nhập/Số điện thoại" />
@@ -102,22 +102,11 @@ const styles = StyleSheet.create({
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 18,
-    "fontWeight": "700",
+    "fontSize": 14,
+    "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
-    "width": 192,
-    "height": 22,
-    "left": 38,
+    "alignSelf": 'center',
     "top": 169
   },
   "login_loginBtn": {
@@ -145,7 +134,7 @@ const styles = StyleSheet.create({
   },
   "login_password": {
     "backgroundColor": "transparent",
-    borderBottomWidth: 2,
+    borderBottomWidth: 0.5,
     "borderColor": "rgba(246, 87, 0, 1)",
     "marginTop": 30,
     "width": "80%",
@@ -170,7 +159,7 @@ const styles = StyleSheet.create({
   },
   "login_name": {
     "backgroundColor": "transparent",
-    borderBottomWidth: 2,
+    borderBottomWidth: 0.5,
     "borderColor": "rgba(246, 87, 0, 1)",
     "marginTop": "5%",
     "width": "80%",
