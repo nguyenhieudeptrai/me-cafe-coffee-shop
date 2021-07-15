@@ -72,7 +72,7 @@ const HomeTab = ({ navigation }) => {
           <ReactImage source={require('../assets/asset1.png')} style={styles.home_header_logo_asset1} />
         </View>
         <View style={styles.home_header_nameAccount}>
-          <Text style={styles.home_header_hello}>Welcome,</Text>
+          <Text style={styles.home_header_hello}>Xin chào,</Text>
           <Text style={styles.home_header_name}>Nguyễn Minh Anh</Text>
         </View>
         <ReactImage source={require('../assets/qrBtn.png')} style={styles.home_header_qrBtn} />
@@ -192,6 +192,7 @@ const styles = StyleSheet.create({
     "fontSize": 23,
     "fontWeight": "500",
     "fontFamily": "Roboto",
+    "marginLeft":10
   },
   "home_header_name": {
     marginLeft: 10,

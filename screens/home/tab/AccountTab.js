@@ -358,13 +358,12 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "center",
-    "marginTop": "1%"
+    "marginTop": 10
   },
   "account_info": {
     "display": "flex",
     // "gap": 10,
     "flexWrap": "wrap",
-    "backgroundColor": "transparent",
     "width": "100%",
     "height": 139,
   },
