@@ -1,11 +1,10 @@
 import React, { useState, useReducer } from 'react';
-import PropTypes from "prop-types";
 import { StyleSheet, Text, View, TextInput, Alert, ScrollView, TouchableOpacity } from 'react-native';
 import { Image as ReactImage } from 'react-native';
 import Svg, { Defs, Pattern } from 'react-native-svg';
 import { Path as SvgPath } from 'react-native-svg';
 import { Image as SvgImage } from 'react-native-svg';
-import { Div, Button, Select, Radio, Checkbox, Input, Text as MText, Icon } from "react-native-magnus";
+import { Div, Button, Radio, Checkbox, Input, Text as MText, Icon, Overlay } from "react-native-magnus";
 
 const ShopInfoTab = () => {
 
@@ -19,7 +18,11 @@ const ShopInfoTab = () => {
   const addRoomRef = React.createRef();
   const [roomItem, setRoomItem] = React.useState(1);
 
+  const [overlayVisible, setOverlayVisible] = useState(true);
   const [typeTable, setTypeTable] = useState(0);
+  const [quantityPerson, setQuantityPerson] = useState(10);
+  const [quantityRoom, setQuantityRoom] = useState(1);
+  const [price, setPrice] = useState("0");
 
   const footerButtons = [
     {
@@ -128,16 +131,16 @@ const ShopInfoTab = () => {
           "backgroundColor": "transparent",
           "width": "90%",
           "marginLeft": "5%",
-          "marginTop":50
+          "marginTop": 50
         }}>
           <Text style={styles.shopInfo_form_textfield_label}>Thông tin phòng</Text>
         </View>
         <Div mb={20}>
           <Div h="53%" w="80%" ml="9%" mt={30} shadow="lg" rounded="md" bg="rgba(241, 211, 126, 1)"  >
             <Div row width="100%">
-              <MText fontWeight="bold" fontStyle="Roboto" color="#EC6D18" ml={10}>Nhóm 4 người</MText>
-              <Icon  mt={2} name="edit" fontFamily="Entypo" fontSize="4xl" color="#EC6D18" ml={70} mr={10} onTouchStart={() => { setRoomItem(1); selectRef.current.open() }} />
-              <Icon mt={2} name="delete-outline" fontFamily="MaterialCommunityIcons" fontSize="4xl" color="#EC6D18"  onTouchStart={() => { Alert.alert('Xác nhận', 'Bạn có chắc muốn xóa phòng đã chọn?', footerButtons) }} />
+              <MText fontWeight="bold" fontFamily="Roboto" color="#EC6D18" ml={10}>Nhóm 4 người</MText>
+              <Icon mt={2} name="edit" fontFamily="Entypo" fontSize="4xl" color="#EC6D18" ml={70} mr={10} onTouchStart={() => { setRoomItem(1); selectRef.current.open() }} />
+              <Icon mt={2} name="delete-outline" fontFamily="MaterialCommunityIcons" fontSize="4xl" color="#EC6D18" onTouchStart={() => { Alert.alert('Xác nhận', 'Bạn có chắc muốn xóa phòng đã chọn?', footerButtons) }} />
             </Div>
             <MText ml={10}>Số chổ: 4 người</MText>
             <MText ml={10}>Tiện ích: Máy chiếu, Máy lạnh</MText>
@@ -145,7 +148,7 @@ const ShopInfoTab = () => {
           </Div>
           <Div h="53%" w="80%" ml="9%" mt={10} shadow="lg" rounded="md" bg="rgba(241, 211, 126, 1)">
             <Div row width="100%">
-              <MText fontWeight="bold" fontStyle="Roboto" color="#EC6D18" ml={10}>Phòng họp VIP</MText>
+              <MText fontWeight="bold" fontFamily="Roboto" color="#EC6D18" ml={10}>Phòng họp VIP</MText>
               <Icon mt={2} name="edit" color="#2E2E2E" borderWidth={1} ml={70} mr={10} onTouchStart={() => { setRoomItem(2); selectRef.current.open() }} />
               <Icon mt={2} name="delete" color="#2E2E2E" borderWidth={1} onTouchStart={() => { Alert.alert('Xác nhận', 'Bạn có chắc muốn xóa phòng đã chọn?', footerButtons) }} />
             </Div>
@@ -171,172 +174,6 @@ const ShopInfoTab = () => {
           fill="rgba(216, 174, 66, 1)">
           <SvgPath d="M 18 0.5625 C 8.3671875 0.5625 0.5625 8.3671875 0.5625 18 C 0.5625 27.6328125 8.3671875 35.4375 18 35.4375 C 27.6328125 35.4375 35.4375 27.6328125 35.4375 18 C 35.4375 8.3671875 27.6328125 0.5625 18 0.5625 Z M 28.125 19.96875 C 28.125 20.43281173706055 27.74531173706055 20.8125 27.28125 20.8125 L 20.8125 20.8125 L 20.8125 27.28125 C 20.8125 27.74531173706055 20.43281173706055 28.125 19.96875 28.125 L 16.03125 28.125 C 15.56718730926514 28.125 15.1875 27.74531173706055 15.1875 27.28125 L 15.1875 20.8125 L 8.71875 20.8125 C 8.254687309265137 20.8125 7.875 20.43281173706055 7.875 19.96875 L 7.875 16.03125 C 7.875 15.56718730926514 8.254687309265137 15.1875 8.71875 15.1875 L 15.1875 15.1875 L 15.1875 8.71875 C 15.1875 8.254687309265137 15.56718730926514 7.875 16.03125 7.875 L 19.96875 7.875 C 20.43281173706055 7.875 20.8125 8.254687309265137 20.8125 8.71875 L 20.8125 15.1875 L 27.28125 15.1875 C 27.74531173706055 15.1875 28.125 15.56718730926514 28.125 16.03125 L 28.125 19.96875 Z" />
         </Svg>
-        <Div>
-          <Select
-            ref={selectRef}
-            onSelect={() => { setTimeSearch(getFullTime()) }}
-            multiple
-            data={[1]}
-            footer={(
-              <Div row>
-                <Button w="40%" ml="7%" mr="3%" mb={10} h={40} bg='#424242'
-                  onPress={() => { selectRef.current.close() }} >
-                  Hủy
-                </Button>
-                <Button w="40%" ml="3%" mr="7%" mb={10} h={40} bg='#D4AE39'
-                  onPress={() => { selectRef.current.close() }} >
-                  Chấp nhận
-                </Button>
-              </Div>
-
-            )}
-            renderItem={(item, index) => (
-              <Div mb={20}>
-                <MText textAlign="center" fontWeight="bold" fontSize={20}>{roomItem == 1 ? 'Nhóm 4 người' : 'Phòng họp VIP'}</MText>
-                <Div mt={20} ml="5%" w="90%">
-                  <MText maxW="30%" width="30%" ml="3%">Số chổ: </MText>
-                  <TextInput style={{
-                    width: "80%",
-                    borderColor: "#6E6E6E",
-                    borderWidth: 1,
-                    borderRadius: 10,
-                    textAlign: "center",
-                    fontSize: 13,
-                    marginLeft: "10%",
-                  }}
-                  >{roomItem == 1 ? '4' : '10'}</TextInput>
-                </Div>
-                <Div mt={20} ml="5%" w="90%">
-                  <MText maxW="30%" width="30%" ml="3%">Số phòng:</MText>
-                  <TextInput style={{
-                    width: "80%",
-                    borderColor: "#6E6E6E",
-                    borderWidth: 1,
-                    borderRadius: 10,
-                    textAlign: "center",
-                    fontSize: 13,
-                    marginLeft: "10%",
-                  }}
-                  >3</TextInput>
-                </Div>
-                <Div mt={20} ml="5%" w="90%">
-                  <MText maxW="30%" width="30%" ml="3%">Giá: </MText>
-                  <TextInput style={{
-                    width: "80%",
-                    borderColor: "#6E6E6E",
-                    borderWidth: 1,
-                    borderRadius: 10,
-                    textAlign: "center",
-                    fontSize: 13,
-                    marginLeft: "10%",
-                  }}
-                  >{roomItem == 1 ? '100000' : '300000'}</TextInput>
-                </Div>
-                <Div mt={20} ml="5%" w="90%">
-                  <MText maxW="30%" width="30%" ml="3%">Tiện ích</MText>
-                  <Checkbox defaultChecked ml="10%" value={1} suffix={<MText>Máy chiếu</MText>}></Checkbox>
-                  <Checkbox defaultChecked ml="10%" value={1} suffix={<MText>Máy lạnh</MText>}></Checkbox>
-                  <Checkbox ml="10%" value={1} suffix={<MText>Alexa Echo</MText>}></Checkbox>
-                  <Checkbox defaultChecked ml="10%" value={1} suffix={<MText>Wifi</MText>}></Checkbox>
-                  <Div row>
-                    <Icon name="plus" w={20} rounded={4} borderWidth={1} fontSize={17} ml="11%" mt={5} />
-                    <MText ml={5}>Thêm</MText>
-                  </Div>
-                </Div>
-              </Div>
-            )}
-          ></Select>
-        </Div>
-      </ScrollView>
-        <Div>
-          <Select
-            ref={addRoomRef}
-            onSelect={() => { }}
-            multiple
-            data={[1]}
-            footer={(
-              <Div row>
-                <Button w="40%" ml="7%" mr="3%" mb={10} h={40} bg='#424242'
-                  onPress={() => { addRoomRef.current.close() }} >
-                  Hủy
-                </Button>
-                <Button w="40%" ml="3%" mr="7%" mb={10} h={40} bg='#D4AE39'
-                  onPress={() => { addRoomRef.current.close() }} >
-                  Chấp nhận
-                </Button>
-              </Div>
-
-            )}
-            renderItem={(item, index) => (
-              <Div mb={20}>
-                <MText textAlign="center" fontWeight="bold" fontSize={20}>Thêm Phòng</MText>
-                <Div mt={20} ml="5%" w="90%">
-                  <MText maxW="30%" width="30%" ml="3%">Tên phòng: </MText>
-                  <TextInput style={{
-                    width: "80%",
-                    borderColor: "#6E6E6E",
-                    borderWidth: 1,
-                    borderRadius: 10,
-                    textAlign: "center",
-                    fontSize: 13,
-                    marginLeft: "10%",
-                  }}
-                  ></TextInput>
-                </Div>
-                <Div mt={20} ml="5%" w="90%">
-                  <MText maxW="30%" width="30%" ml="3%">Số chổ: </MText>
-                  <TextInput style={{
-                    width: "80%",
-                    borderColor: "#6E6E6E",
-                    borderWidth: 1,
-                    borderRadius: 10,
-                    textAlign: "center",
-                    fontSize: 13,
-                    marginLeft: "10%",
-                  }}
-                  ></TextInput>
-                </Div>
-                <Div mt={20} ml="5%" w="90%">
-                  <MText maxW="30%" width="30%" ml="3%">Số phòng:</MText>
-                  <TextInput style={{
-                    width: "80%",
-                    borderColor: "#6E6E6E",
-                    borderWidth: 1,
-                    borderRadius: 10,
-                    textAlign: "center",
-                    fontSize: 13,
-                    marginLeft: "10%",
-                  }}
-                  ></TextInput>
-                </Div>
-                <Div mt={20} ml="5%" w="90%">
-                  <MText maxW="30%" width="30%" ml="3%">Giá:</MText>
-                  <TextInput style={{
-                    width: "80%",
-                    borderColor: "#6E6E6E",
-                    borderWidth: 1,
-                    borderRadius: 10,
-                    textAlign: "center",
-                    fontSize: 13,
-                    marginLeft: "10%",
-                  }}
-                  ></TextInput>
-                </Div>
-                <Div mt={20} ml="5%" w="90%">
-                  <MText maxW="30%" width="30%" ml="3%">Tiện ích</MText>
-                  <Checkbox  ml="10%" value={1} suffix={<MText>Máy chiếu</MText>}></Checkbox>
-                  <Checkbox  ml="10%" value={1} suffix={<MText>Máy lạnh</MText>}></Checkbox>
-                  <Checkbox ml="10%" value={1} suffix={<MText>Alexa Echo</MText>}></Checkbox>
-                  <Checkbox  ml="10%" value={1} suffix={<MText>Wifi</MText>}></Checkbox>
-                  <Div row>
-                    <Icon name="plus" w={20} rounded={4} borderWidth={1} fontSize={17} ml="11%" mt={5} />
-                    <MText ml={5}>Thêm</MText>
-                  </Div>
-                </Div>
-              </Div>
-            )}
-          />
-        </Div>
         {
           !isEditShopInfo ?
             <TouchableOpacity style={styles.shopInfo_btnEdit}
@@ -350,6 +187,104 @@ const ShopInfoTab = () => {
               <Text style={styles.shopInfo_btnEdit_title}>Lưu lại</Text>
             </TouchableOpacity>
         }
+      </ScrollView>
+      <Div>
+
+        <Overlay visible={overlayVisible} p="xl">
+          <MText textAlign="center" fontWeight="bold" fontSize={20} mb="sm">THÊM</MText>
+          <Div row>
+            <Button flex={1} bg={typeTable == 0 ? "#D5AE37" : "#DADADA"}
+              color={typeTable == 0 ? "#FFF" : "#000"}
+              rounded={0} onPress={() => setTypeTable(0)}>
+              Phòng
+            </Button>
+            <Button flex={1} bg={typeTable == 1 ? "#D5AE37" : "#DADADA"}
+              color={typeTable == 1 ? "#FFF" : "#000"}
+              rounded={0} onPress={() => setTypeTable(1)}>
+              Bàn
+            </Button>
+          </Div>
+          <Div borderWidth={1} borderColor="#B0B0B0" p={10}>
+            <Div>
+              <MText>Số lượng người trong {typeTable == 0 ? "phòng" : "bàn"} </MText>
+              <Div row borderColor="#9C9C9C" borderWidth={2} rounded="md" mx="2xl" mt="md">
+                <Button bg={null} p="md" onPress={() => {if(quantityPerson>1)setQuantityPerson(quantityPerson - 1)}}>
+                  <Icon name="minussquare" fontFamily="AntDesign" fontSize="xl" color="#D5AE37" />
+                </Button>
+                <TextInput style={{
+                  borderColor: "#6E6E6E",
+                  textAlign: "center",
+                  fontSize: 13,
+                  flex: 1,
+                }}
+                  keyboardType="phone-pad"
+                  onChangeText={(text) => { if (parseInt(text) > 0) setQuantityPerson(parseInt(text)) }}
+                  value={`${quantityPerson}`}
+                />
+                <Button bg={null} p="md" onPress={() => setQuantityPerson(quantityPerson + 1)}>
+                  <Icon name="plussquare" fontFamily="AntDesign" fontSize="xl" color="#D5AE37" />
+                </Button>
+              </Div>
+            </Div>
+            <Div mt={20}>
+              <MText>Số lượng {typeTable == 0 ? "phòng" : "bàn"}:</MText>
+              <Div row borderColor="#9C9C9C" borderWidth={2} rounded="md" mx="2xl" mt="md">
+                <Button bg={null} p="md" onPress={() =>{if(quantityRoom>1) setQuantityRoom(quantityRoom - 1);}}>
+                  <Icon name="minussquare" fontFamily="AntDesign" fontSize="xl" color="#D5AE37" />
+                </Button>
+                <TextInput style={{
+                  borderColor: "#6E6E6E",
+                  textAlign: "center",
+                  fontSize: 13,
+                  flex: 1,
+                }}
+                  keyboardType="phone-pad"
+                  onChangeText={(text) => { if (parseInt(text) > 0) setQuantityRoom(parseInt(text)) }}
+                  value={`${quantityRoom}`}
+                />
+                <Button bg={null} p="md" onPress={() =>{ setQuantityRoom(quantityRoom + 1)}}>
+                  <Icon name="plussquare" fontFamily="AntDesign" fontSize="xl" color="#D5AE37" />
+                </Button>
+              </Div>
+
+            </Div>
+            {typeTable == 0 && <>
+              <Div mt={20}>
+                <MText>Giá mỗi giờ:</MText>
+                <Div borderColor="#9C9C9C" borderWidth={2} rounded="md" mx="2xl" mt="md">
+                  <TextInput style={{
+                    borderColor: "#6E6E6E",
+                    textAlign: "center",
+                    fontSize: 13,
+                    height: 30,
+                  }}
+                    keyboardType="phone-pad"
+                    onChangeText={(text) => { if (parseInt(text) > 0) setPrice(parseInt(text)); else setPrice(0) }}
+                    value={`${price}`}
+                  />
+                </Div>
+              </Div>
+              <Div mt={20}>
+                <MText>Tiện ích</MText>
+                <Checkbox ml="10%" value={1} activeColor="#D5AE37" suffix={<MText>Máy chiếu</MText>}></Checkbox>
+                <Checkbox ml="10%" value={1} activeColor="#D5AE37" suffix={<MText>Máy lạnh</MText>}></Checkbox>
+                <Checkbox ml="10%" value={1} activeColor="#D5AE37" suffix={<MText>Wifi</MText>}></Checkbox>
+              </Div>
+            </>}
+          </Div>
+          <Div row mt="lg">
+            <Button flex={1} mb={10} h={40} bg='#424242'
+              onPress={() => { setOverlayVisible(false); setQuantityPerson(10); setQuantityRoom(1); setPrice(0) }} >
+              Hủy
+            </Button>
+            <Button flex={1} mb={10} h={40} bg='#D4AE39'
+              onPress={() => { setOverlayVisible(false); setQuantityPerson(10); setQuantityRoom(1); setPrice(0) }} >
+              Hoàn tất
+            </Button>
+          </Div>
+        </Overlay>
+      </Div>
+
 
     </View>
   );
@@ -434,7 +369,7 @@ const styles = StyleSheet.create({
     "width": "90%",
     "height": 15,
     "marginLeft": 5,
-"marginTop":30
+    "marginTop": 30
   },
   "shopInfo_form_textfield_value": {
     "backgroundColor": "#FFF",
@@ -603,7 +538,7 @@ const styles = StyleSheet.create({
     "height": 50,
   },
   "shopInfo_form_image_btnAddMenu": {
-    "position":'absolute',
+    "position": 'absolute',
     "marginTop": 100,
     "marginLeft": 120,
     "borderTopLeftRadius": 7,
