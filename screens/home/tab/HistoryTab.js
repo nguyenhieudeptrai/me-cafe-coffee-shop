@@ -65,7 +65,7 @@ const HistoryTab = ({ navigation }) => {
                   <View style={styles.history_group59_group58}>
                     <Svg style={styles.history_group59_group58_path7} preserveAspectRatio="none" viewBox="0 0 118 118" fill="rgba(249, 174, 81, 1)"><SvgPath d="M 23 0 L 95 0 C 107.7025527954102 0 118 10.29745006561279 118 23 L 118 95 C 118 107.7025527954102 107.7025527954102 118 95 118 L 23 118 C 10.29745006561279 118 0 107.7025527954102 0 95 L 0 23 C 0 10.29745006561279 10.29745006561279 0 23 0 Z" /></Svg>
                     <Text style={styles.history_group59_group58_ban1}>Bàn {item.TabbleNum}</Text>
-                    <Text style={styles.history_group59_group58_x2Ngi}>{item.personNum} người</Text>
+                    <Text style={styles.history_group59_group58_x2Ngi}>{item.personNum} chỗ ngồi</Text>
                   </View>
                 </TouchableOpacity>
               )
@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
     "width": 118,
     "height": 118,
     "margin":30,
+
   },
   "history_group59_group58": {
     "opacity": 1,
@@ -131,11 +132,11 @@ const styles = StyleSheet.create({
   "history_group59_group58_x2Ngi": {
     "position": "absolute",
     "color": "rgba(84, 71, 65, 1)",
-    "fontSize": 20,
+    "fontSize": 17,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "left": 25,
+    "alignSelf": 'center',
     "top": 64
   },
   "history_lchS": {

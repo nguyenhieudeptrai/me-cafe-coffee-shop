@@ -39,7 +39,7 @@ const ShopInfoTab = () => {
       <View style={styles.shopInfo_header}>
         <Text style={styles.shopInfo_header_title}>THÔNG TIN QUÁN</Text>
       </View>
-      <ScrollView style={styles.shopInfo_form}>
+      <ScrollView contentContainerStyle={styles.shopInfo_form}>
         <View style={styles.shopInfo_form_textfield}>
           <Text style={styles.shopInfo_form_textfield_label}>Tên quán</Text>
           {
@@ -135,58 +135,37 @@ const ShopInfoTab = () => {
         }}>
           <Text style={styles.shopInfo_form_textfield_label}>Thông tin phòng</Text>
         </View>
-        <Div mb={20}>
-          <Div h="53%" w="80%" ml="9%" mt={30} shadow="lg" rounded="md" bg="rgba(241, 211, 126, 1)"  >
+        <Div mb={80}>
+          <Div h={100} w="80%" ml="9%" mt={30} shadow="lg" rounded="md" bg="#FFF7DF"  >
             <Div row width="100%">
-              <MText fontWeight="bold" fontFamily="Roboto" color="#EC6D18" ml={10}>Nhóm 4 người</MText>
-              <Icon mt={2} name="edit" fontFamily="Entypo" fontSize="4xl" color="#EC6D18" ml={70} mr={10} onTouchStart={() => { setRoomItem(1); selectRef.current.open() }} />
-              <Icon mt={2} name="delete-outline" fontFamily="MaterialCommunityIcons" fontSize="4xl" color="#EC6D18" onTouchStart={() => { Alert.alert('Xác nhận', 'Bạn có chắc muốn xóa phòng đã chọn?', footerButtons) }} />
+              <MText mt={5} fontWeight="700" fontSize={20} fontFamily="Roboto" color="#EC6D18" ml={10}>Nhóm 4 người</MText>
+              <Icon mt={5} name="edit" fontFamily="Entypo" fontSize="4xl" color="#EC6D18" ml={90} mr={10} onTouchStart={() => { setRoomItem(1); selectRef.current.open() }} />
+              <Icon mt={5} name="trash" fontFamily="Entypo" fontSize="4xl" color="#EC6D18" onTouchStart={() => { Alert.alert('Xác nhận', 'Bạn có chắc muốn xóa phòng đã chọn?', footerButtons) }} />
             </Div>
-            <MText ml={10}>Số chổ: 4 người</MText>
-            <MText ml={10}>Tiện ích: Máy chiếu, Máy lạnh</MText>
-            <MText ml={10}>Giá phòng: 100k/h</MText>
+            <MText fontSize={20} fontFamily="Roboto" color="#707070" ml={10}>Số lượng: 4 người</MText>
           </Div>
-          <Div h="53%" w="80%" ml="9%" mt={10} shadow="lg" rounded="md" bg="rgba(241, 211, 126, 1)">
+          <Div h={120} w="80%" ml="9%" mt={30} shadow="lg" rounded="md" bg="#FFF7DF">
             <Div row width="100%">
-              <MText fontWeight="bold" fontFamily="Roboto" color="#EC6D18" ml={10}>Phòng họp VIP</MText>
-              <Icon mt={2} name="edit" color="#2E2E2E" borderWidth={1} ml={70} mr={10} onTouchStart={() => { setRoomItem(2); selectRef.current.open() }} />
-              <Icon mt={2} name="delete" color="#2E2E2E" borderWidth={1} onTouchStart={() => { Alert.alert('Xác nhận', 'Bạn có chắc muốn xóa phòng đã chọn?', footerButtons) }} />
+              <MText mt={5} fontWeight="bold" fontFamily="Roboto" color="#EC6D18" ml={10}>Phòng họp</MText>
+              <Icon mt={5} name="edit" fontFamily="Entypo" fontSize="4xl" color="#EC6D18" ml={120} mr={10} onTouchStart={() => { setRoomItem(2); selectRef.current.open() }} />
+              <Icon mt={5} name="trash" fontFamily="Entypo" fontSize="4xl" color="#EC6D18" onTouchStart={() => { Alert.alert('Xác nhận', 'Bạn có chắc muốn xóa phòng đã chọn?', footerButtons) }} />
             </Div>
-            <MText ml={10}>Số chổ: 10 người</MText>
-            <MText ml={10}>Tiện ích: Máy chiếu, Alexa Echo, Máy lạnh</MText>
-            <MText ml={10}>Giá phòng: 300k/h</MText>
+            <MText fontSize={20} fontFamily="Roboto" color="#707070" ml={10}>Số lượng: 10 người</MText>
+            <MText fontSize={20} fontFamily="Roboto" color="#707070" ml={10}>Giá phòng: 300k/h</MText>
+            <Div row justifyContent="center" ml={10} mt={5}>
+              <MText fontSize={20} fontFamily="Roboto" color="#707070">Tiện ích</MText>
+              <View style={{ flex:1, flexDirection: "row", marginLeft:10, }}>
+                <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, }} />
+                <View style={{ alignItems: "center" }}>
+                  <ReactImage source={require('../../../assets/roomicon.png')} style={{ "width": 22, "height": 17 }} />
+                  <Text style={{ fontSize: 11 }}>10 người</Text>
+                </View>
+                <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, }} />
+                <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 26, }} />
+              </View>
+            </Div>
           </Div>
         </Div>
-        <Svg style={{
-          "marginTop": 1,
-          "marginRight": 20,
-          "marginBottom": 20,
-          "marginLeft": "9%",
-          "borderTopLeftRadius": 7,
-          "borderTopRightRadius": 7,
-          "borderBottomLeftRadius": 7,
-          "borderBottomRightRadius": 7,
-          "width": 50,
-          "height": 50,
-        }}
-          preserveAspectRatio="none" viewBox="0.5625 0.5625 34.875 34.875"
-          onPress={() => { addRoomRef.current.open() }}
-          fill="rgba(216, 174, 66, 1)">
-          <SvgPath d="M 18 0.5625 C 8.3671875 0.5625 0.5625 8.3671875 0.5625 18 C 0.5625 27.6328125 8.3671875 35.4375 18 35.4375 C 27.6328125 35.4375 35.4375 27.6328125 35.4375 18 C 35.4375 8.3671875 27.6328125 0.5625 18 0.5625 Z M 28.125 19.96875 C 28.125 20.43281173706055 27.74531173706055 20.8125 27.28125 20.8125 L 20.8125 20.8125 L 20.8125 27.28125 C 20.8125 27.74531173706055 20.43281173706055 28.125 19.96875 28.125 L 16.03125 28.125 C 15.56718730926514 28.125 15.1875 27.74531173706055 15.1875 27.28125 L 15.1875 20.8125 L 8.71875 20.8125 C 8.254687309265137 20.8125 7.875 20.43281173706055 7.875 19.96875 L 7.875 16.03125 C 7.875 15.56718730926514 8.254687309265137 15.1875 8.71875 15.1875 L 15.1875 15.1875 L 15.1875 8.71875 C 15.1875 8.254687309265137 15.56718730926514 7.875 16.03125 7.875 L 19.96875 7.875 C 20.43281173706055 7.875 20.8125 8.254687309265137 20.8125 8.71875 L 20.8125 15.1875 L 27.28125 15.1875 C 27.74531173706055 15.1875 28.125 15.56718730926514 28.125 16.03125 L 28.125 19.96875 Z" />
-        </Svg>
-        {
-          !isEditShopInfo ?
-            <TouchableOpacity style={styles.shopInfo_btnEdit}
-              onPress={() => onChangeisEditShopInfo(true)}>
-              <View style={styles.shopInfo_btnEdit_bg}></View>
-              <Text style={styles.shopInfo_btnEdit_title}>Chỉnh sửa</Text>
-            </TouchableOpacity>
-            : <TouchableOpacity style={styles.shopInfo_btnEdit}
-              onPress={() => onChangeisEditShopInfo(false)}>
-              <View style={styles.shopInfo_btnEdit_bg}></View>
-              <Text style={styles.shopInfo_btnEdit_title}>Lưu lại</Text>
-            </TouchableOpacity>
-        }
       </ScrollView>
       <Div>
 
@@ -293,13 +272,6 @@ const ShopInfoTab = () => {
 
 export default ShopInfoTab;
 
-ShopInfoTab.propTypes = {
-
-}
-
-ShopInfoTab.defaultProps = {
-
-}
 
 
 const styles = StyleSheet.create({
@@ -307,8 +279,7 @@ const styles = StyleSheet.create({
     // "backgroundColor": "rgba(249, 249, 249, 1)",
     backgroundColor: "rgba(220, 220, 220, 1)",
     "width": "100%",
-    "height": 851,
-    "flex": 1
+    "height": "100%",
   },
   "shopInfo_header": {
     "backgroundColor": "rgba(241, 211, 126, 1)",
@@ -338,10 +309,7 @@ const styles = StyleSheet.create({
   "shopInfo_form": {
     "backgroundColor": "#FFF",
     "width": "90%",
-    "marginTop": 0,
-    "marginLeft": "5%",
-    "marginBottom": 0,
-    borderRadius: 15,
+    "marginHorizontal": "5%",
     "shadowColor": "rgb(0,  0,  0)",
     "shadowOpacity": 0.1607843137254902,
     "shadowOffset": {

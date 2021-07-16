@@ -9,10 +9,7 @@ const AddVoucherScreen = ({ navigation }) => {
     navigation.goBack();
   }
   const onPressSave = () => {
-    navigation.reset({
-      index: 0,
-      navigate: ["Home"]
-    });
+    navigation.navigate("Home");
   }
 
   return (

@@ -73,7 +73,7 @@ const HomeScreen = () => {
           }}
           component={ShopInfoTab} />
         <Tab.Screen
-          name="Khuyễn mãi"
+          name="Khuyến mãi"
           options={{
             img: require('./assets/tabVoucher.png')
           }}
