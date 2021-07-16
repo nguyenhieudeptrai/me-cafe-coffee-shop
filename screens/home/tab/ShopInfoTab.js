@@ -13,12 +13,9 @@ const ShopInfoTab = () => {
   const [phone, onChangePhone] = React.useState('0335.6575.33');
   const [description, onChangeDescription] = React.useState('Quán tọa lạc tại trục đường chính của quận 9, với không gian thoáng đãng, yên tĩnh, phù hợp để học tập và làm việc.');
 
-  const [isEditShopInfo, onChangeisEditShopInfo] = React.useState(false);
-  const selectRef = React.createRef();
-  const addRoomRef = React.createRef();
-  const [roomItem, setRoomItem] = React.useState(1);
+  const [editMode, setEditMode] = useState(false);
 
-  const [overlayVisible, setOverlayVisible] = useState(true);
+  const [overlayVisible, setOverlayVisible] = useState(false);
   const [typeTable, setTypeTable] = useState(0);
   const [quantityPerson, setQuantityPerson] = useState(10);
   const [quantityRoom, setQuantityRoom] = useState(1);
@@ -39,11 +36,11 @@ const ShopInfoTab = () => {
       <View style={styles.shopInfo_header}>
         <Text style={styles.shopInfo_header_title}>THÔNG TIN QUÁN</Text>
       </View>
-      <ScrollView contentContainerStyle={styles.shopInfo_form}>
+      <ScrollView style={{ width: "100%" }} contentContainerStyle={styles.shopInfo_form}>
         <View style={styles.shopInfo_form_textfield}>
           <Text style={styles.shopInfo_form_textfield_label}>Tên quán</Text>
           {
-            !isEditShopInfo ?
+            !editMode ?
               <Text style={styles.shopInfo_form_textfield_value}>{name}</Text>
               :
               <TextInput
@@ -57,7 +54,7 @@ const ShopInfoTab = () => {
         <View style={styles.shopInfo_form_textfield}>
           <Text style={styles.shopInfo_form_textfield_label}>Địa chỉ</Text>
           {
-            !isEditShopInfo ?
+            !editMode ?
               <Text style={styles.shopInfo_form_textfield_value}>{address}</Text>
               :
               <TextInput
@@ -71,7 +68,7 @@ const ShopInfoTab = () => {
         <View style={styles.shopInfo_form_textfield}>
           <Text style={styles.shopInfo_form_textfield_label}>Số điện thoại</Text>
           {
-            !isEditShopInfo ?
+            !editMode ?
               <Text style={styles.shopInfo_form_textfield_value}>{phone}</Text>
               : <TextInput
                 style={styles.shopInfo_form_textfield_input}
@@ -85,7 +82,7 @@ const ShopInfoTab = () => {
         <View style={styles.shopInfo_form_multiline}>
           <Text style={styles.shopInfo_form_multiline_label}>Mô tả</Text>
           {
-            !isEditShopInfo ?
+            !editMode ?
               <Text style={styles.shopInfo_form_multiline_value}>{description}</Text>
               : <TextInput
                 multiline
@@ -100,14 +97,16 @@ const ShopInfoTab = () => {
         </View>
         <View style={styles.shopInfo_form_image}>
           <Text style={styles.shopInfo_form_textfield_label}>Hình ảnh quán</Text>
-          <ScrollView style={styles.shopInfo_form_image_example} horizontal={true}>
+          <ScrollView contentContainerStyle={styles.shopInfo_form_image_example} horizontal={true}>
             <ReactImage source={require('../assets/i1.png')} style={styles.shopInfo_form_image_example_i1} />
             <ReactImage source={require('../assets/i2.png')} style={styles.shopInfo_form_image_example_i1} />
-            <Svg style={styles.shopInfo_form_image_btnAdd}
-              preserveAspectRatio="none" viewBox="0.5625 0.5625 34.875 34.875"
-              fill="rgba(216, 174, 66, 1)">
-              <SvgPath d="M 18 0.5625 C 8.3671875 0.5625 0.5625 8.3671875 0.5625 18 C 0.5625 27.6328125 8.3671875 35.4375 18 35.4375 C 27.6328125 35.4375 35.4375 27.6328125 35.4375 18 C 35.4375 8.3671875 27.6328125 0.5625 18 0.5625 Z M 28.125 19.96875 C 28.125 20.43281173706055 27.74531173706055 20.8125 27.28125 20.8125 L 20.8125 20.8125 L 20.8125 27.28125 C 20.8125 27.74531173706055 20.43281173706055 28.125 19.96875 28.125 L 16.03125 28.125 C 15.56718730926514 28.125 15.1875 27.74531173706055 15.1875 27.28125 L 15.1875 20.8125 L 8.71875 20.8125 C 8.254687309265137 20.8125 7.875 20.43281173706055 7.875 19.96875 L 7.875 16.03125 C 7.875 15.56718730926514 8.254687309265137 15.1875 8.71875 15.1875 L 15.1875 15.1875 L 15.1875 8.71875 C 15.1875 8.254687309265137 15.56718730926514 7.875 16.03125 7.875 L 19.96875 7.875 C 20.43281173706055 7.875 20.8125 8.254687309265137 20.8125 8.71875 L 20.8125 15.1875 L 27.28125 15.1875 C 27.74531173706055 15.1875 28.125 15.56718730926514 28.125 16.03125 L 28.125 19.96875 Z" />
-            </Svg>
+            {editMode &&
+              <Svg style={styles.shopInfo_form_image_btnAdd}
+                preserveAspectRatio="none" viewBox="0.5625 0.5625 34.875 34.875"
+                fill="rgba(216, 174, 66, 1)">
+                <SvgPath d="M 18 0.5625 C 8.3671875 0.5625 0.5625 8.3671875 0.5625 18 C 0.5625 27.6328125 8.3671875 35.4375 18 35.4375 C 27.6328125 35.4375 35.4375 27.6328125 35.4375 18 C 35.4375 8.3671875 27.6328125 0.5625 18 0.5625 Z M 28.125 19.96875 C 28.125 20.43281173706055 27.74531173706055 20.8125 27.28125 20.8125 L 20.8125 20.8125 L 20.8125 27.28125 C 20.8125 27.74531173706055 20.43281173706055 28.125 19.96875 28.125 L 16.03125 28.125 C 15.56718730926514 28.125 15.1875 27.74531173706055 15.1875 27.28125 L 15.1875 20.8125 L 8.71875 20.8125 C 8.254687309265137 20.8125 7.875 20.43281173706055 7.875 19.96875 L 7.875 16.03125 C 7.875 15.56718730926514 8.254687309265137 15.1875 8.71875 15.1875 L 15.1875 15.1875 L 15.1875 8.71875 C 15.1875 8.254687309265137 15.56718730926514 7.875 16.03125 7.875 L 19.96875 7.875 C 20.43281173706055 7.875 20.8125 8.254687309265137 20.8125 8.71875 L 20.8125 15.1875 L 27.28125 15.1875 C 27.74531173706055 15.1875 28.125 15.56718730926514 28.125 16.03125 L 28.125 19.96875 Z" />
+              </Svg>
+            }
           </ScrollView>
           {/* <View style={styles.shopInfo_form_image_btnAdd620bac46}>
             <View style={styles.shopInfo_form_image_btnAdd620bac46_bgee288635}></View>
@@ -121,51 +120,78 @@ const ShopInfoTab = () => {
         </View>
         <View style={styles.shopInfo_form_menu}>
           <Text style={styles.shopInfo_form_textfield_label}>Menu quán</Text>
-          <ReactImage source={require('../assets/i1.png')} style={styles.shopInfo_form_image_menu} />
-          <Svg style={styles.shopInfo_form_image_btnAddMenu} preserveAspectRatio="none"
-            viewBox="0.5625 0.5625 34.875 34.875" fill="rgba(216, 174, 66, 1)">
-            <SvgPath d="M 18 0.5625 C 8.3671875 0.5625 0.5625 8.3671875 0.5625 18 C 0.5625 27.6328125 8.3671875 35.4375 18 35.4375 C 27.6328125 35.4375 35.4375 27.6328125 35.4375 18 C 35.4375 8.3671875 27.6328125 0.5625 18 0.5625 Z M 28.125 19.96875 C 28.125 20.43281173706055 27.74531173706055 20.8125 27.28125 20.8125 L 20.8125 20.8125 L 20.8125 27.28125 C 20.8125 27.74531173706055 20.43281173706055 28.125 19.96875 28.125 L 16.03125 28.125 C 15.56718730926514 28.125 15.1875 27.74531173706055 15.1875 27.28125 L 15.1875 20.8125 L 8.71875 20.8125 C 8.254687309265137 20.8125 7.875 20.43281173706055 7.875 19.96875 L 7.875 16.03125 C 7.875 15.56718730926514 8.254687309265137 15.1875 8.71875 15.1875 L 15.1875 15.1875 L 15.1875 8.71875 C 15.1875 8.254687309265137 15.56718730926514 7.875 16.03125 7.875 L 19.96875 7.875 C 20.43281173706055 7.875 20.8125 8.254687309265137 20.8125 8.71875 L 20.8125 15.1875 L 27.28125 15.1875 C 27.74531173706055 15.1875 28.125 15.56718730926514 28.125 16.03125 L 28.125 19.96875 Z" />
-          </Svg>
+          <ScrollView contentContainerStyle={styles.shopInfo_form_image_example} horizontal={true}>
+            <ReactImage source={require('../assets/i1.png')} style={styles.shopInfo_form_image_example_i1} />
+          </ScrollView>
         </View>
         <View style={{
           "backgroundColor": "transparent",
-          "width": "90%",
-          "marginLeft": "5%",
-          "marginTop": 50
+          "marginTop": 5
         }}>
-          <Text style={styles.shopInfo_form_textfield_label}>Thông tin phòng</Text>
-        </View>
-        <Div mb={80}>
-          <Div h={100} w="80%" ml="9%" mt={30} shadow="lg" rounded="md" bg="#FFF7DF"  >
-            <Div row width="100%">
-              <MText mt={5} fontWeight="700" fontSize={20} fontFamily="Roboto" color="#EC6D18" ml={10}>Nhóm 4 người</MText>
-              <Icon mt={5} name="edit" fontFamily="Entypo" fontSize="4xl" color="#EC6D18" ml={90} mr={10} onTouchStart={() => { setRoomItem(1); selectRef.current.open() }} />
-              <Icon mt={5} name="trash" fontFamily="Entypo" fontSize="4xl" color="#EC6D18" onTouchStart={() => { Alert.alert('Xác nhận', 'Bạn có chắc muốn xóa phòng đã chọn?', footerButtons) }} />
-            </Div>
-            <MText fontSize={20} fontFamily="Roboto" color="#707070" ml={10}>Số lượng: 4 người</MText>
+          <Div row alignItems="center">
+            <Text style={styles.shopInfo_form_textfield_label}>Thông tin phòng</Text>
+            {editMode && <Button bg="#D4AE39" py="sm" px="md" row mr="lg" onPress={() => setOverlayVisible(true)}>
+              <Icon name="plus" fontFamily="Entypo" fontSize="2xl" color="#FFF" />
+              <MText fontWeight="700" fontFamily="Roboto" color="#FFF">Thêm</MText>
+            </Button>
+            }
           </Div>
-          <Div h={120} w="80%" ml="9%" mt={30} shadow="lg" rounded="md" bg="#FFF7DF">
-            <Div row width="100%">
-              <MText mt={5} fontWeight="bold" fontFamily="Roboto" color="#EC6D18" ml={10}>Phòng họp</MText>
-              <Icon mt={5} name="edit" fontFamily="Entypo" fontSize="4xl" color="#EC6D18" ml={120} mr={10} onTouchStart={() => { setRoomItem(2); selectRef.current.open() }} />
-              <Icon mt={5} name="trash" fontFamily="Entypo" fontSize="4xl" color="#EC6D18" onTouchStart={() => { Alert.alert('Xác nhận', 'Bạn có chắc muốn xóa phòng đã chọn?', footerButtons) }} />
+          <Div mb={10} px="lg">
+            <Div mt={10} shadow="lg" rounded="md" bg="#FFF7DF" px="lg" py="sm" >
+              <Div row>
+                <MText flex={1} mt={5} fontWeight="700" fontSize="2xl" fontFamily="Roboto" color="#EC6D18">Bàn: 2 chỗ ngồi</MText>
+                {editMode && <>
+                  <Icon mt={5} name="edit" fontFamily="Entypo" fontSize="4xl" color="#EC6D18" mr={10}
+                    onTouchStart={() => { setOverlayVisible(true); }} />
+                  <Icon mt={5} name="trash" fontFamily="Entypo" fontSize="4xl" color="#EC6D18"
+                    onTouchStart={() => { Alert.alert('Xác nhận', 'Bạn có chắc muốn xóa phòng đã chọn?', footerButtons) }} />
+                </>}
+              </Div>
+              <MText fontSize={"md"} fontFamily="Roboto" color="#707070">Số lượng: 2</MText>
             </Div>
-            <MText fontSize={20} fontFamily="Roboto" color="#707070" ml={10}>Số lượng: 10 người</MText>
-            <MText fontSize={20} fontFamily="Roboto" color="#707070" ml={10}>Giá phòng: 300k/h</MText>
-            <Div row justifyContent="center" ml={10} mt={5}>
-              <MText fontSize={20} fontFamily="Roboto" color="#707070">Tiện ích</MText>
-              <View style={{ flex:1, flexDirection: "row", marginLeft:10, }}>
-                <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, }} />
-                <View style={{ alignItems: "center" }}>
-                  <ReactImage source={require('../../../assets/roomicon.png')} style={{ "width": 22, "height": 17 }} />
-                  <Text style={{ fontSize: 11 }}>10 người</Text>
+            <Div mt={10} shadow="lg" rounded="md" bg="#FFF7DF" px="lg" py="sm" >
+              <Div row>
+                <MText flex={1} mt={5} fontWeight="700" fontSize="2xl" fontFamily="Roboto" color="#EC6D18">Bàn: 4 chỗ ngồi</MText>
+                {editMode && <>
+                  <Icon mt={5} name="edit" fontFamily="Entypo" fontSize="4xl" color="#EC6D18" mr={10}
+                    onTouchStart={() => { setOverlayVisible(true); }} />
+                  <Icon mt={5} name="trash" fontFamily="Entypo" fontSize="4xl" color="#EC6D18"
+                    onTouchStart={() => { Alert.alert('Xác nhận', 'Bạn có chắc muốn xóa phòng đã chọn?', footerButtons) }} />
+                </>}
+              </Div>
+              <MText fontSize={"md"} fontFamily="Roboto" color="#707070">Số lượng: 3</MText>
+            </Div>
+            <Div mt={10} shadow="lg" rounded="md" bg="#FFF7DF" px="lg" py="sm">
+              <Div row width="100%">
+                <MText flex={1} mt={5} fontWeight="700" fontSize="2xl" fontFamily="Roboto" color="#EC6D18">Phòng họp: 10 người</MText>
+                {editMode && <>
+                  <Icon mt={5} name="edit" fontFamily="Entypo" fontSize="4xl" color="#EC6D18" mr={10}
+                    onTouchStart={() => { setOverlayVisible(true); }} />
+                  <Icon mt={5} name="trash" fontFamily="Entypo" fontSize="4xl" color="#EC6D18"
+                    onTouchStart={() => { Alert.alert('Xác nhận', 'Bạn có chắc muốn xóa phòng đã chọn?', footerButtons) }} />
+                </>}
+              </Div>
+              <MText fontSize={"md"} fontFamily="Roboto" color="#707070">Số lượng: 2 </MText>
+              <Div row justifyContent="center" my={10}>
+                <MText fontSize={"md"} fontFamily="Roboto" color="#707070">Tiện ích</MText>
+                <View style={{ flex: 1, flexDirection: "row", marginLeft: 10, }}>
+                  <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, }} />
+                  <View style={{ alignItems: "center" }}>
+                    <ReactImage source={require('../../../assets/roomicon.png')} style={{ "width": 22, "height": 17 }} />
+                    <Text style={{ fontSize: 11 }}>10 người</Text>
+                  </View>
+                  <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, }} />
+                  <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 26, }} />
                 </View>
-                <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, }} />
-                <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 26, }} />
-              </View>
+              </Div>
+              <MText fontSize={"md"} fontFamily="Roboto" color="#707070">Giá phòng: 300k/giờ</MText>
             </Div>
           </Div>
-        </Div>
+
+        </View>
+        <Button w="100%" bg="#D4AE39" onPress={() => setEditMode(!editMode)}>
+          {!editMode ? "Chỉnh sửa thông tin cơ bản" : "Hoàn tất"}
+        </Button>
       </ScrollView>
       <Div>
 
@@ -187,7 +213,7 @@ const ShopInfoTab = () => {
             <Div>
               <MText>Số lượng người trong {typeTable == 0 ? "phòng" : "bàn"} </MText>
               <Div row borderColor="#9C9C9C" borderWidth={2} rounded="md" mx="2xl" mt="md">
-                <Button bg={null} p="md" onPress={() => {if(quantityPerson>1)setQuantityPerson(quantityPerson - 1)}}>
+                <Button bg={null} p="md" onPress={() => { if (quantityPerson > 1) setQuantityPerson(quantityPerson - 1) }}>
                   <Icon name="minussquare" fontFamily="AntDesign" fontSize="xl" color="#D5AE37" />
                 </Button>
                 <TextInput style={{
@@ -208,7 +234,7 @@ const ShopInfoTab = () => {
             <Div mt={20}>
               <MText>Số lượng {typeTable == 0 ? "phòng" : "bàn"}:</MText>
               <Div row borderColor="#9C9C9C" borderWidth={2} rounded="md" mx="2xl" mt="md">
-                <Button bg={null} p="md" onPress={() =>{if(quantityRoom>1) setQuantityRoom(quantityRoom - 1);}}>
+                <Button bg={null} p="md" onPress={() => { if (quantityRoom > 1) setQuantityRoom(quantityRoom - 1); }}>
                   <Icon name="minussquare" fontFamily="AntDesign" fontSize="xl" color="#D5AE37" />
                 </Button>
                 <TextInput style={{
@@ -221,7 +247,7 @@ const ShopInfoTab = () => {
                   onChangeText={(text) => { if (parseInt(text) > 0) setQuantityRoom(parseInt(text)) }}
                   value={`${quantityRoom}`}
                 />
-                <Button bg={null} p="md" onPress={() =>{ setQuantityRoom(quantityRoom + 1)}}>
+                <Button bg={null} p="md" onPress={() => { setQuantityRoom(quantityRoom + 1) }}>
                   <Icon name="plussquare" fontFamily="AntDesign" fontSize="xl" color="#D5AE37" />
                 </Button>
               </Div>
@@ -308,7 +334,6 @@ const styles = StyleSheet.create({
   },
   "shopInfo_form": {
     "backgroundColor": "#FFF",
-    "width": "90%",
     "marginHorizontal": "5%",
     "shadowColor": "rgb(0,  0,  0)",
     "shadowOpacity": 0.1607843137254902,
@@ -317,27 +342,20 @@ const styles = StyleSheet.create({
       "height": 0
     },
     "shadowRadius": 6,
-
+    paddingHorizontal: 10,
+    paddingVertical: 10
   },
   "shopInfo_form_textfield": {
     "backgroundColor": "transparent",
-    "width": "90%",
-    "height": 65,
-    "marginTop": 20,
-    "marginLeft": "5%",
   },
   "shopInfo_form_textfield_label": {
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 15,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": "90%",
-    "height": 15,
-    "marginLeft": 5,
-    "marginTop": 30
+    flex: 1,
   },
   "shopInfo_form_textfield_value": {
     "backgroundColor": "#FFF",
@@ -347,9 +365,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": '90%',
     "marginLeft": 20,
-    "marginTop": 15,
     padding: 7,
     borderRadius: 4
   },
@@ -361,19 +377,13 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": '90%',
-    "height": 40,
-    "marginLeft": 5,
     "marginTop": 10,
-    "padding": 15,
+    "paddingHorizontal": 10,
+    paddingVertical:5,
     "color": "#000000"
   },
   "shopInfo_form_multiline": {
     "backgroundColor": "transparent",
-    "width": "90%",
-    "height": 'auto',
-    "marginTop": 20,
-    "marginLeft": "5%",
   },
   "shopInfo_form_description_input": {
     "opacity": 1,
@@ -396,9 +406,6 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": "90%",
-    "height": 'auto',
-    "marginLeft": 5,
   },
   "shopInfo_form_multiline_value": {
     "backgroundColor": "rgba(255, 255, 255, 0)",
@@ -407,44 +414,28 @@ const styles = StyleSheet.create({
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "lineHeight": 16,
-    "width": '90%',
-    "height": 'auto',
     "marginLeft": 20,
-    "marginTop": 15
   },
   "shopInfo_form_multiline_input": {
     "backgroundColor": "rgba(217, 217, 217, 1)",
-    "color": "rgba(142, 142, 142, 1)",
+    "color": "#000",
     "fontSize": 13,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": '90%',
-    "height": 70,
-    "marginLeft": 5,
     "marginTop": 10,
-    "padding": 15,
+    "paddingHorizontal": 10,
+    "paddingVertical": 5,
     // "color": "#00000"
   },
   "shopInfo_form_image": {
     "backgroundColor": "transparent",
     "width": "100%",
-    "height": 150,
-    "marginTop": 20,
-    "marginLeft": "5%",
+    marginVertical: 10,
   },
   "shopInfo_form_image_example": {
-
-    // "display": "inline",
-    "padding": 15,
-    "backgroundColor": "transparent",
-    "width": "90%",
-    "height": 90,
-    "marginTop": 15,
-    "marginLeft": "5%"
+    "marginVertical": 5,
   },
   "shopInfo_form_image_example_i1": {
     "position": "relative",
@@ -458,11 +449,11 @@ const styles = StyleSheet.create({
     "borderBottomRightRadius": 7,
     "width": 80,
     "height": 80,
+    "marginLeft": 20,
   },
 
   "shopInfo_form_image_menu": {
-    "marginTop": 30,
-    "marginBottom": 0,
+    "marginTop": 5,
     "marginLeft": 30,
     "borderTopLeftRadius": 7,
     "borderTopRightRadius": 7,
@@ -533,10 +524,7 @@ const styles = StyleSheet.create({
   },
   "shopInfo_form_menu": {
     "backgroundColor": "transparent",
-    "width": "90%",
-    "height": 100,
-    "marginTop": 20,
-    "marginLeft": "5%",
+    marginTop: 10,
   },
   "shopInfo_form_menu_btnAdd": {
     "opacity": 1,
